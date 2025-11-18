@@ -20,57 +20,60 @@
     }
     .container{max-width:var(--max-width);margin:0 auto;padding:20px}
 
-    header{display:flex;align-items:center;justify-content:space-between;padding:10px 0;text-align:left}
+    header{display:flex;align-items:center;justify-content:space-between;padding:10px 0}
     .logo{display:flex;gap:12px;align-items:center}
     nav a{margin-left:10px;padding:8px 12px;border-radius:8px;background:transparent;border:1px solid rgba(12,20,30,0.04)}
 
     h1{margin:8px 0}
     p.lead{color:var(--muted)}
 
-    .section{margin-top:28px}
+    .section{margin-top:18px}
     .section h3{margin:6px 0}
 
     .carousel{
       position:relative;
+      background:transparent;
       padding:12px;
       border-radius:12px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
       overflow:hidden;
-      display:inline-block;
     }
+
     .track{
       display:flex;
       gap:16px;
-      transition:transform 0.4s ease;
-      justify-content:center;
+      transition: transform 0.4s ease;
     }
+
     .place{
-      flex: 0 0 calc((100% - 16px*4)/5);
+      min-width:calc((100% - 16px*4)/5);
       background:var(--card-bg);
       border-radius:12px;
       box-shadow:var(--box-shadow);
       overflow:hidden;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
       text-align:center;
     }
-    .place img{
-      width:100%;
-      height:140px;
-      object-fit:cover;
-    }
-    .place .body{
-      padding:10px;
-    }
-    .place .body button{
+
+    .place img{width:100%;height:140px;object-fit:cover;border-radius:8px 8px 0 0;}
+    .place .body{padding:10px}
+    
+    .view-btn{
       display:block;
       margin-top:8px;
       padding:8px 10px;
       border-radius:8px;
-      border:0;
       background:var(--accent);
       color:white;
-      cursor:pointer;
+      text-decoration:none;
       width:80%;
       margin-left:auto;
       margin-right:auto;
+      text-align:center;
     }
 
     .arrow{
@@ -87,21 +90,13 @@
       cursor:pointer;
       z-index:10;
     }
-    .arrow.left{left:-18px}
-    .arrow.right{right:-18px}
+    .arrow.left{left:0}
+    .arrow.right{right:0}
 
-    footer{
-      margin-top:28px;
-      padding:20px 0;
-      background:var(--accent);
-      color:white;
-      font-weight:500;
-    }
-
-    @media(max-width:1200px){.place{flex:0 0 calc((100% - 16px*3)/5)}} 
-    @media(max-width:900px){.place{flex:0 0 calc((100% - 16px*2)/5)}}  
-    @media(max-width:600px){.place{flex:0 0 calc((100% - 16px)/2)}}    
-    @media(max-width:400px){.place{flex:0 0 100%}}                     
+    @media (max-width:1200px){.place{min-width:calc((100% - 16px*3)/4)}}
+    @media (max-width:992px){.place{min-width:calc((100% - 16px*2)/3)}}
+    @media (max-width:768px){.place{min-width:calc((100% - 16px*1)/2)}}
+    @media (max-width:480px){.place{min-width:100%}}
   </style>
 </head>
 <body>
@@ -128,92 +123,87 @@
       <p class="lead">Explore curated places across Sri Lanka — pick a category and discover immersive 360° tours.</p>
 
       <!-- Sections -->
-
-      <!-- Nature -->
       <section class="section">
         <h3>Nature</h3>
         <div class="carousel" id="nature">
           <div class="arrow left" data-target="nature">◀</div>
-          <div class="track">
-            <div class="place"><img src="nature1.jpg"><div class="body"><strong>Horton Plains</strong><button>View Tour</button></div></div>
-            <div class="place"><img src="nature2.jpg"><div class="body"><strong>Adam's Peak</strong><button>View Tour</button></div></div>
-            <div class="place"><img src="nature3.jpg"><div class="body"><strong>Knuckles Range</strong><button>View Tour</button></div></div>
-            <div class="place"><img src="nature4.jpg"><div class="body"><strong>Sinharaja Forest</strong><button>View Tour</button></div></div>
-            <div class="place"><img src="nature5.jpg"><div class="body"><strong>Yala National Park</strong><button>View Tour</button></div></div>
-            <div class="place"><img src="nature6.jpg"><div class="body"><strong>Kalpitiya</strong><button>View Tour</button></div></div>
-            <div class="place"><img src="nature7.jpg"><div class="body"><strong>Knuckles Peak</strong><button>View Tour</button></div></div>
+          <div class="track" data-visible="5">
+            <div class="place"><img src="nature1.jpg"><div class="body"><strong>Horton Plains</strong><a href="vr.html" class="view-btn">View Tour</a></div></div>
+            <div class="place"><img src="nature2.jpg"><div class="body"><strong>Adam's Peak</strong><a href="vr.html" class="view-btn">View Tour</a></div></div>
+            <div class="place"><img src="nature3.jpg"><div class="body"><strong>Knuckles Range</strong><a href="vr.html" class="view-btn">View Tour</a></div></div>
+            <div class="place"><img src="nature4.jpg"><div class="body"><strong>Sinharaja Forest</strong><a href="vr.html" class="view-btn">View Tour</a></div></div>
+            <div class="place"><img src="nature5.jpg"><div class="body"><strong>Yala National Park</strong><a href="vr.html" class="view-btn">View Tour</a></div></div>
+            <div class="place"><img src="nature6.jpg"><div class="body"><strong>Kalpitiya</strong><a href="vr.html" class="view-btn">View Tour</a></div></div>
+            <div class="place"><img src="nature7.jpg"><div class="body"><strong>Knuckles Peaks</strong><a href="vr.html" class="view-btn">View Tour</a></div></div>
           </div>
           <div class="arrow right" data-target="nature">▶</div>
         </div>
       </section>
 
-      <!-- Culture -->
       <section class="section">
         <h3>Culture</h3>
         <div class="carousel" id="culture">
           <div class="arrow left" data-target="culture">◀</div>
-          <div class="track">
-            <div class="place"><img src="culture1.jpg"><div class="body"><strong>Kandy Temple</strong><button>View Tour</button></div></div>
-            <div class="place"><img src="culture2.jpg"><div class="body"><strong>Polonnaruwa</strong><button>View Tour</button></div></div>
-            <div class="place"><img src="culture3.jpg"><div class="body"><strong>Galle Fort</strong><button>View Tour</button></div></div>
-            <div class="place"><img src="culture4.jpg"><div class="body"><strong>Jaffna</strong><button>View Tour</button></div></div>
-            <div class="place"><img src="culture5.jpg"><div class="body"><strong>Traditional Dances</strong><button>View Tour</button></div></div>
-            <div class="place"><img src="culture6.jpg"><div class="body"><strong>Temple Festivals</strong><button>View Tour</button></div></div>
-            <div class="place"><img src="culture7.jpg"><div class="body"><strong>Craft Villages</strong><button>View Tour</button></div></div>
+          <div class="track" data-visible="5">
+            <div class="place"><img src="culture1.jpg"><div class="body"><strong>Kandy Temple</strong><a href="vr.html" class="view-btn">View Tour</a></div></div>
+            <div class="place"><img src="culture2.jpg"><div class="body"><strong>Polonnaruwa</strong><a href="vr.html" class="view-btn">View Tour</a></div></div>
+            <div class="place"><img src="culture3.jpg"><div class="body"><strong>Galle Fort</strong><a href="vr.html" class="view-btn">View Tour</a></div></div>
+            <div class="place"><img src="culture4.jpg"><div class="body"><strong>Jaffna</strong><a href="vr.html" class="view-btn">View Tour</a></div></div>
+            <div class="place"><img src="culture5.jpg"><div class="body"><strong>Traditional Dances</strong><a href="vr.html" class="view-btn">View Tour</a></div></div>
+            <div class="place"><img src="culture6.jpg"><div class="body"><strong>Cultural Festival</strong><a href="vr.html" class="view-btn">View Tour</a></div></div>
+            <div class="place"><img src="culture7.jpg"><div class="body"><strong>Ancient Rituals</strong><a href="vr.html" class="view-btn">View Tour</a></div></div>
           </div>
           <div class="arrow right" data-target="culture">▶</div>
         </div>
       </section>
 
-      <!-- Historical -->
+      <!-- Repeat Historical, Beaches, Cities sections similarly with 7 cards each -->
       <section class="section">
         <h3>Historical</h3>
         <div class="carousel" id="historical">
           <div class="arrow left" data-target="historical">◀</div>
-          <div class="track">
-            <div class="place"><img src="hist1.jpg"><div class="body"><strong>Anuradhapura</strong><button>View Tour</button></div></div>
-            <div class="place"><img src="hist2.jpg"><div class="body"><strong>Sigiriya</strong><button>View Tour</button></div></div>
-            <div class="place"><img src="hist3.jpg"><div class="body"><strong>Rambodagalla</strong><button>View Tour</button></div></div>
-            <div class="place"><img src="hist4.jpg"><div class="body"><strong>Polonnaruwa</strong><button>View Tour</button></div></div>
-            <div class="place"><img src="hist5.jpg"><div class="body"><strong>Galle Fort</strong><button>View Tour</button></div></div>
-            <div class="place"><img src="hist6.jpg"><div class="body"><strong>Dambulla Cave</strong><button>View Tour</button></div></div>
-            <div class="place"><img src="hist7.jpg"><div class="body"><strong>Ancient Gardens</strong><button>View Tour</button></div></div>
+          <div class="track" data-visible="5">
+            <div class="place"><img src="hist1.jpg"><div class="body"><strong>Anuradhapura</strong><a href="vr.html" class="view-btn">View Tour</a></div></div>
+            <div class="place"><img src="hist2.jpg"><div class="body"><strong>Sigiriya</strong><a href="vr.html" class="view-btn">View Tour</a></div></div>
+            <div class="place"><img src="hist3.jpg"><div class="body"><strong>Rambodagalla</strong><a href="vr.html" class="view-btn">View Tour</a></div></div>
+            <div class="place"><img src="hist4.jpg"><div class="body"><strong>Polonnaruwa Ruins</strong><a href="vr.html" class="view-btn">View Tour</a></div></div>
+            <div class="place"><img src="hist5.jpg"><div class="body"><strong>Ancient Temples</strong><a href="vr.html" class="view-btn">View Tour</a></div></div>
+            <div class="place"><img src="hist6.jpg"><div class="body"><strong>Royal Gardens</strong><a href="vr.html" class="view-btn">View Tour</a></div></div>
+            <div class="place"><img src="hist7.jpg"><div class="body"><strong>Frescoes</strong><a href="vr.html" class="view-btn">View Tour</a></div></div>
           </div>
           <div class="arrow right" data-target="historical">▶</div>
         </div>
       </section>
 
-      <!-- Beaches -->
       <section class="section">
         <h3>Beaches</h3>
         <div class="carousel" id="beaches">
           <div class="arrow left" data-target="beaches">◀</div>
-          <div class="track">
-            <div class="place"><img src="beach1.jpg"><div class="body"><strong>Unawatuna</strong><button>View Tour</button></div></div>
-            <div class="place"><img src="beach2.jpg"><div class="body"><strong>Mirissa</strong><button>View Tour</button></div></div>
-            <div class="place"><img src="beach3.jpg"><div class="body"><strong>Trincomalee</strong><button>View Tour</button></div></div>
-            <div class="place"><img src="beach4.jpg"><div class="body"><strong>Arugam Bay</strong><button>View Tour</button></div></div>
-            <div class="place"><img src="beach5.jpg"><div class="body"><strong>Nilaveli</strong><button>View Tour</button></div></div>
-            <div class="place"><img src="beach6.jpg"><div class="body"><strong>Pasikuda</strong><button>View Tour</button></div></div>
-            <div class="place"><img src="beach7.jpg"><div class="body"><strong>Hikkaduwa</strong><button>View Tour</button></div></div>
+          <div class="track" data-visible="5">
+            <div class="place"><img src="beach1.jpg"><div class="body"><strong>Unawatuna</strong><a href="vr.html" class="view-btn">View Tour</a></div></div>
+            <div class="place"><img src="beach2.jpg"><div class="body"><strong>Mirissa</strong><a href="vr.html" class="view-btn">View Tour</a></div></div>
+            <div class="place"><img src="beach3.jpg"><div class="body"><strong>Trincomalee</strong><a href="vr.html" class="view-btn">View Tour</a></div></div>
+            <div class="place"><img src="beach4.jpg"><div class="body"><strong>Arugam Bay</strong><a href="vr.html" class="view-btn">View Tour</a></div></div>
+            <div class="place"><img src="beach5.jpg"><div class="body"><strong>Nilaveli</strong><a href="vr.html" class="view-btn">View Tour</a></div></div>
+            <div class="place"><img src="beach6.jpg"><div class="body"><strong>Pasikuda</strong><a href="vr.html" class="view-btn">View Tour</a></div></div>
+            <div class="place"><img src="beach7.jpg"><div class="body"><strong>Kalpitiya</strong><a href="vr.html" class="view-btn">View Tour</a></div></div>
           </div>
           <div class="arrow right" data-target="beaches">▶</div>
         </div>
       </section>
 
-      <!-- Cities -->
       <section class="section">
         <h3>Cities</h3>
         <div class="carousel" id="cities">
           <div class="arrow left" data-target="cities">◀</div>
-          <div class="track">
-            <div class="place"><img src="city1.jpg"><div class="body"><strong>Colombo</strong><button>View Tour</button></div></div>
-            <div class="place"><img src="city2.jpg"><div class="body"><strong>Negombo</strong><button>View Tour</button></div></div>
-            <div class="place"><img src="city3.jpg"><div class="body"><strong>Nuwara Eliya</strong><button>View Tour</button></div></div>
-            <div class="place"><img src="city4.jpg"><div class="body"><strong>Galle</strong><button>View Tour</button></div></div>
-            <div class="place"><img src="city5.jpg"><div class="body"><strong>Kandy</strong><button>View Tour</button></div></div>
-            <div class="place"><img src="city6.jpg"><div class="body"><strong>Jaffna</strong><button>View Tour</button></div></div>
-            <div class="place"><img src="city7.jpg"><div class="body"><strong>Trincomalee</strong><button>View Tour</button></div></div>
+          <div class="track" data-visible="5">
+            <div class="place"><img src="city1.jpg"><div class="body"><strong>Colombo</strong><a href="vr.html" class="view-btn">View Tour</a></div></div>
+            <div class="place"><img src="city2.jpg"><div class="body"><strong>Negombo</strong><a href="vr.html" class="view-btn">View Tour</a></div></div>
+            <div class="place"><img src="city3.jpg"><div class="body"><strong>Nuwara Eliya</strong><a href="vr.html" class="view-btn">View Tour</a></div></div>
+            <div class="place"><img src="city4.jpg"><div class="body"><strong>Galle</strong><a href="vr.html" class="view-btn">View Tour</a></div></div>
+            <div class="place"><img src="city5.jpg"><div class="body"><strong>Kandy</strong><a href="vr.html" class="view-btn">View Tour</a></div></div>
+            <div class="place"><img src="city6.jpg"><div class="body"><strong>Jaffna</strong><a href="vr.html" class="view-btn">View Tour</a></div></div>
+            <div class="place"><img src="city7.jpg"><div class="body"><strong>Matara</strong><a href="vr.html" class="view-btn">View Tour</a></div></div>
           </div>
           <div class="arrow right" data-target="cities">▶</div>
         </div>
@@ -222,17 +212,21 @@
     </main>
   </div>
 
-  <footer>
+  <!-- Old footer kept -->
+  <footer style="margin-top:28px;padding:20px 0;text-align:center;color:var(--muted);background:var(--accent);">
     © 2025 360°LK — Explore Sri Lanka • Contact: +94 77 1234567 • 360_lk@gmail.com
   </footer>
 
   <script>
-    document.querySelectorAll('.carousel').forEach(car=>{
+    // Carousel script: shift 2 cards at a time
+    document.querySelectorAll('.carousel').forEach(car => {
       const track = car.querySelector('.track');
       const left = car.querySelector('.arrow.left');
       const right = car.querySelector('.arrow.right');
       const items = track.children;
       let index = 0;
+      const visible = parseInt(track.getAttribute('data-visible')) || 5;
+      const shift = 2;
 
       function update(){
         const itemWidth = items[0].getBoundingClientRect().width + 16;
@@ -240,22 +234,22 @@
       }
 
       right.addEventListener('click', ()=>{
-        if(index < items.length - 5) index++;
-        update();
+        if(index < items.length - visible){
+          index = Math.min(index + shift, items.length - visible);
+          update();
+        }
       });
 
       left.addEventListener('click', ()=>{
-        if(index > 0) index--;
-        update();
+        if(index > 0){
+          index = Math.max(index - shift, 0);
+          update();
+        }
       });
 
-      window.addEventListener('resize', ()=>{index=0;track.style.transform='translateX(0px)'});
-    });
-
-    document.querySelectorAll('button').forEach(btn=>{
-      btn.addEventListener('click', e=>{
-        e.preventDefault();
-        alert('This will open the 360° tour.');
+      window.addEventListener('resize', ()=>{
+        index = 0;
+        track.style.transform='translateX(0px)';
       });
     });
   </script>
