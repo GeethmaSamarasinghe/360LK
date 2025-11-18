@@ -1,0 +1,234 @@
+<!--
+360°LK - Website starter files
+Contains two HTML pages: index.html and destinations.html
+Customize image/video links, map embed, and Google Form links as needed.
+
+Usage: Save as two separate files (index.html, destinations.html) or serve both from same folder.
+-->
+
+<!-- ========================= index.html ========================= -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>360°LK — Explore Sri Lanka</title>
+  <style>
+    :root{
+      --accent:#0b6e4f;
+      --accent-dark:#06573f;
+      --muted:#6b7280;
+      --card-bg:#ffffff;
+      --box-shadow: 0 6px 18px rgba(12,20,30,0.08);
+      --glass: rgba(255,255,255,0.8);
+      --max-width:1200px;
+      --nav-height:72px;
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:#f6f7fb;color:#0f1724}
+    a{color:inherit;text-decoration:none}
+
+    /* Top bar */
+    .topbar{background:linear-gradient(90deg, rgba(11,110,79,0.06), rgba(6,87,63,0.04));padding:12px 20px;box-shadow:0 1px 0 rgba(16,24,40,0.03)}
+    .container{max-width:var(--max-width);margin:0 auto}
+    .nav{height:var(--nav-height);display:flex;align-items:center;justify-content:space-between}
+    .logo{display:flex;align-items:center;gap:12px}
+    .logo img{height:44px;width:44px;border-radius:8px;object-fit:cover}
+    .brand{font-weight:700;font-size:18px}
+
+    /* Nav boxes */
+    .navlinks{display:flex;gap:10px}
+    .navlinks a{padding:8px 14px;border:1px solid transparent;border-radius:10px;background:transparent;display:inline-block}
+    .navlinks a.boxed{border-color:rgba(12,20,30,0.06);background:linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.45));box-shadow:var(--box-shadow)}
+    .navlinks a:hover{transform:translateY(-2px)}
+
+    /* Hero video */
+    .hero{padding:24px 0}
+    .hero-video{width:100%;height:420px;background:#000;border-radius:12px;overflow:hidden;box-shadow:var(--box-shadow);display:flex;align-items:center;justify-content:center}
+    .hero-video video{width:100%;height:100%;object-fit:cover}
+
+    /* Features cards row */
+    .row{display:flex;gap:16px;margin-top:18px}
+    .feature{flex:1;padding:16px;border-radius:12px;background:var(--card-bg);box-shadow:var(--box-shadow);display:flex;align-items:center;gap:12px}
+    .feature .icon{height:44px;width:44px;border-radius:10px;background:var(--accent);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700}
+    .feature h4{margin:0;font-size:15px}
+    .feature p{margin:0;color:var(--muted);font-size:13px}
+
+    /* Featured destinations box */
+    .box{margin-top:28px;background:var(--card-bg);padding:18px;border-radius:12px;box-shadow:var(--box-shadow)}
+    .cards-grid{display:flex;gap:12px}
+    .card{flex:1;border:1px solid #e5e7eb;border-radius:10px;overflow:hidden;min-height:160px;display:flex;flex-direction:column;box-shadow:var(--box-shadow);}
+    .card img{width:100%;height:120px;object-fit:cover}
+    .card .card-body{padding:10px}
+    .card h5{margin:0 0 6px 0}
+    .card p{margin:0;color:var(--muted);font-size:13px}
+
+    /* Explore section */
+    .explore{display:flex;gap:20px;align-items:center;margin-top:22px}
+    .explore .title{flex:1}
+    .map{flex:1;background:url('placeholder-map.png');min-height:220px;border-radius:12px;background-size:cover;background-position:center;box-shadow:var(--box-shadow)}
+
+    /* Why virtuality */
+    .features-grid{display:flex;gap:12px;margin-top:12px}
+
+    /* Footer */
+    footer{margin-top:28px;padding:18px 0;background:#0b6e4f;color:white}
+    footer .foot-inner{display:flex;justify-content:space-between;align-items:center;gap:12px}
+
+    /* Responsive */
+    @media (max-width:900px){
+      .row{flex-direction:column}
+      .cards-grid{flex-direction:column}
+      .explore{flex-direction:column}
+      .navlinks{display:none}
+    }
+
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <div class="logo">
+        <img src="logo-placeholder.png" alt="360°LK logo" />
+        <div>
+          <div class="brand">360°LK</div>
+          <div style="font-size:12px;color:var(--muted)">Virtual Tourism — Sri Lanka</div>
+        </div>
+      </div>
+
+      <nav class="navlinks">
+        <a href="index.html">Home</a>
+        <a href="destinations.html" >Plan</a>
+        <a href="destinations.html" >Destination</a>
+        <a href="#">Log in</a>
+        <a href="#contact" >Contact us</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-video">
+        <!-- Replace source with your promo video -->
+        <video autoplay muted loop playsinline>
+          <source src="promo-video.mp4" type="video/mp4">
+          Your browser does not support HTML5 video.
+        </video>
+      </div>
+
+      <div class="row">
+        <div class="feature">
+          <div class="icon">⛩</div>
+          <div>
+            <h4>2500+ years of history</h4>
+            <p>Ancient cities, temples and a rich cultural heritage.</p>
+          </div>
+        </div>
+        <div class="feature">
+          <div class="icon">🗺️</div>
+          <div>
+            <h4>100+ destinations to explore</h4>
+            <p>From highland tea estates to coastal beaches.</p>
+          </div>
+        </div>
+        <div class="feature">
+          <div class="icon">🎥</div>
+          <div>
+            <h4>360 Experiences — immersive tours</h4>
+            <p>Walkthroughs, hotspots and VR compatibility.</p>
+          </div>
+        </div>
+        <div class="feature">
+          <div class="icon">🤝</div>
+          <div>
+            <h4>Support local guides & communities</h4>
+            <p>Direct partnerships with local experts.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="box">
+        <h3>Featured Destinations</h3>
+        <div class="cards-grid">
+          <div class="card">
+            <img src="featured1.jpg" alt="Featured 1">
+            <div class="card-body"><h5>Sigiriya Rock</h5><p>A dramatic ancient fortress.</p></div>
+          </div>
+          <div class="card">
+            <img src="featured2.jpg" alt="Featured 2">
+            <div class="card-body"><h5>Ella & Nine Arch</h5><p>Scenic train routes and viewpoints.</p></div>
+          </div>
+          <div class="card">
+            <img src="featured3.jpg" alt="Featured 3">
+            <div class="card-body"><h5>Galle Fort</h5><p>Colonial architecture and coasts.</p></div>
+          </div>
+          <div class="card">
+            <img src="featured4.jpg" alt="Featured 4">
+            <div class="card-body"><h5>Yala National Park</h5><p>Wildlife safaris and nature.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="explore">
+        <div class="title">
+          <h2>Explore Sri Lanka</h2>
+          <p style="color:var(--muted)">Discover destinations across the island</p>
+        </div>
+        <div class="map" aria-hidden="true">
+          <!-- Replace with an embedded interactive map or image -->
+        </div>
+      </div>
+
+      <div class="box">
+        <h3>Why Explore Virtually?</h3>
+        <div class="features-grid" style="margin-top:12px">
+          <div class="feature">
+            <div class="icon">🌱</div>
+            <div><h4>Eco-friendly</h4><p>Reduce carbon footprint from travel.</p></div>
+          </div>
+          <div class="feature">
+            <div class="icon">📚</div>
+            <div><h4>Educational</h4><p>Use in schools and research.</p></div>
+          </div>
+          <div class="feature">
+            <div class="icon">🧭</div>
+            <div><h4>Accessible</h4><p>Experience places from anywhere.</p></div>
+          </div>
+          <div class="feature">
+            <div class="icon">💼</div>
+            <div><h4>Business-ready</h4><p>Partner packages and featured placements.</p></div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <footer>
+    <div class="container foot-inner">
+      <div style="display:flex;gap:12px;align-items:center">
+        <img src="logo-placeholder-white.png" alt="logo" style="height:44px;width:44px;object-fit:cover;border-radius:8px">
+        <div>
+          <div style="font-weight:700">360°LK</div>
+          <div style="font-size:12px;color:rgba(255,255,255,0.85)">Explore Sri Lanka — Virtually Real</div>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:18px;align-items:center;font-size:20px">
+        <a href="tel:+94112223344" style="color:white">📞</a>
+        <a href="mailto:info@360lk.com" style="color:white">✉️</a>
+        <a href="https://360lk.com" style="color:white">🌐</a>
+        <a href="https://facebook.com" style="color:white">👍</a>
+        <a href="https://youtube.com" style="color:white">▶️</a>
+      </div>
+
+      <div style="font-size:14px;opacity:0.95">© 2025 360°LK — All rights reserved</div>
+    </div>
+  </footer>
+
+</body>
+</html>
+
+
+
