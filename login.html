@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>360°LK - Login/Signup</title>
+    <link rel="stylesheet" href="login.css">
+
+</head>
+<body>
+    <div class="container">
+        <div class="left-side">
+            <div class="left-side-img"><img src="images/login.png"></div>
+            <div class="logo-section">
+                <div class="logo"><img src="images/360lk5.png"></div>
+                <div class="tagline">Explore Sri Lanka — Virtually Real</div>
+            </div>
+        </div>
+        
+        <div class="right-side">
+            <div class="form-container">
+                <div class="form-header">
+                    <h2>Welcome Back!</h2>
+                    <p>Login to continue your virtual journey through Sri Lanka</p>
+                </div>
+                
+                <div class="tab-switcher">
+                    <button class="tab-btn active" onclick="showTab('login')">Login</button>
+                    <button class="tab-btn" onclick="showTab('signup')">Sign Up</button>
+                </div>
+                
+                <!-- MESSAGE -->
+                <div class="success-message" id="successMessage">
+                    Account created successfully! Please login.
+                </div>
+                <div class="error-message" id="errorMessage">
+                    Invalid credentials. Please try again.
+                </div>
+                
+                <!-- LOGIN FORM -->
+                <div id="loginForm" class="form-section active">
+                    <form onsubmit="return false;">
+                        <div class="form-group">
+                            <label class="form-label">Email Address</label>
+                            <input type="email" class="form-input" placeholder="Enter your email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Password</label>
+                            <div class="password-group">
+                                <input type="password" class="form-input" id="loginPassword" placeholder="Enter your password" required>
+                                <button type="button" class="password-toggle" onclick="togglePassword('loginPassword')">👁️</button>
+                            </div>
+                        </div>
+                        
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                            <div class="checkbox-group" style="margin: 0;">
+                                <input type="checkbox" id="rememberMe">
+                                <label for="rememberMe">Remember me</label>
+                            </div>
+                            <div class="forgot-password" style="margin: 0;">
+                                <a href="#" onclick="alert('Password reset link will be sent to your email')">Forgot Password?</a>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">Login to 360°LK</button>
+                        
+                        <div class="divider">OR</div>
+                        
+                        <div class="social-login">
+                            <button type="button" class="social-btn" onclick="alert('Google login integration')">
+                                <span class="social-icon google">G</span>
+                                Continue with Google
+                            </button>
+                            <button type="button" class="social-btn" onclick="alert('Facebook login integration')">
+                                <span class="social-icon facebook">f</span>
+                                Continue with Facebook
+                            </button>
+                        </div>
+                        
+                        <div class="form-footer">
+                            Don't have an account? <a href="#" onclick="showTab('signup')">Sign up for free</a>
+                        </div>
+                    </form>
+                </div>
+                
+                <!-- SIGNUP FORM -->
+                <div id="signupForm" class="form-section">
+                    <form onsubmit="return false;">
+                        <div class="form-group">
+                            <label class="form-label">Full Name</label>
+                            <input type="text" class="form-input" placeholder="Enter your full name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Email Address</label>
+                            <input type="email" class="form-input" placeholder="Enter your email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Password</label>
+                            <div class="password-group">
+                                <input type="password" class="form-input" id="signupPassword" placeholder="Create a password (min. 8 characters)" required>
+                                <button type="button" class="password-toggle" onclick="togglePassword('signupPassword')">👁️</button>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Confirm Password</label>
+                            <div class="password-group">
+                                <input type="password" class="form-input" id="confirmPassword" placeholder="Confirm your password" required>
+                                <button type="button" class="password-toggle" onclick="togglePassword('confirmPassword')">👁️</button>
+                            </div>
+                        </div>
+                        
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="agreeTerms" required>
+                            <label for="agreeTerms">I agree to the Terms & Conditions and Privacy Policy</label>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">Create Account</button>
+                        
+                        <div class="divider">OR</div>
+                        
+                        <div class="social-login">
+                            <button type="button" class="social-btn" onclick="alert('Google signup integration')">
+                                <span class="social-icon google">G</span>
+                                Sign up with Google
+                            </button>
+                            <button type="button" class="social-btn" onclick="alert('Facebook signup integration')">
+                                <span class="social-icon facebook">f</span>
+                                Sign up with Facebook
+                            </button>
+                        </div>
+                        
+                        <div class="form-footer">
+                            Already have an account? <a href="#" onclick="showTab('login')">Login here</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
