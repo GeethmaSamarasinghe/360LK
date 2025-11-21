@@ -1,288 +1,201 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>360.lk – Packages</title>
-
-<style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: "Poppins", sans-serif;
-    }
-
-    body {
-        background: linear-gradient(135deg, #013a63, #0466c8);
-        color: #fff;
-        overflow-x: hidden;
-    }
-
-    /* NAVIGATION BAR */
-    nav {
-        width: 100%;
-        background: rgba(0,0,0,0.45);
-        backdrop-filter: blur(8px);
-        padding: 12px 50px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: 1000;
-        box-shadow: 0 3px 15px rgba(0,0,0,0.4);
-    }
-
-    nav .nav-left {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-    }
-
-    nav img {
-        width: 55px;
-    }
-
-    nav h2 {
-        font-size: 26px;
-        font-weight: 700;
-    }
-
-    nav ul {
-        list-style: none;
-        display: flex;
-        gap: 30px;
-    }
-
-    nav ul li a {
-        text-decoration: none;
-        color: #fff;
-        font-size: 16px;
-        transition: 0.3s;
-    }
-
-    nav ul li a:hover {
-        color: #00e5ff;
-    }
-
-    /* PAGE TITLE */
-    .title-section {
-        margin-top: 120px;
-        text-align: center;
-        padding: 20px;
-    }
-
-    .title-section h1 {
-        font-size: 45px;
-        margin-bottom: 10px;
-    }
-
-    .title-section p {
-        font-size: 18px;
-        opacity: 0.85;
-    }
-
-    /* PACKAGES GRID */
-    .pricing-container {
-        width: 90%;
-        max-width: 1400px;
-        margin: 40px auto;
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        gap: 22px;
-    }
-
-    .plan-card {
-        background: rgba(255,255,255,0.12);
-        padding: 26px;
-        border-radius: 16px;
-        text-align: center;
-        box-shadow: 0 8px 25px rgba(0,0,0,0.35);
-        backdrop-filter: blur(10px);
-        transition: 0.3s;
-        border: 1px solid rgba(255,255,255,0.25);
-        min-height: 380px;
-    }
-
-    .plan-card:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 12px 32px rgba(0,0,0,0.45);
-        border-color: #00eaff;
-    }
-
-    .plan-title {
-        font-size: 22px;
-        font-weight: 700;
-        margin-bottom: 10px;
-    }
-
-    .price {
-        font-size: 28px;
-        font-weight: 700;
-        color: #00eaff;
-        margin: 10px 0 18px;
-    }
-
-    .features {
-        text-align: left;
-        margin-bottom: 22px;
-        line-height: 1.7;
-        font-size: 14px;
-    }
-
-    .features li {
-        list-style: "✔  ";
-        margin-left: 10px;
-    }
-
-    .plan-btn {
-        width: 100%;
-        background: #00b4d8;
-        padding: 10px;
-        border: none;
-        border-radius: 12px;
-        color: #fff;
-        font-size: 15px;
-        font-weight: 600;
-        cursor: pointer;
-        transition: 0.3s;
-    }
-
-    .plan-btn:hover {
-        background: #0096c7;
-    }
-
-    /* FOOTER */
-    footer {
-        margin-top: 40px;
-        text-align: center;
-        padding: 18px 0;
-        background: rgba(0,0,0,0.4);
-        backdrop-filter: blur(4px);
-        font-size: 14px;
-    }
-
-    footer a {
-        color: #00eaff;
-        text-decoration: none;
-    }
-
-    /* RESPONSIVE */
-    @media screen and (max-width: 1100px) {
-        .pricing-container {
-            grid-template-columns: repeat(2, 1fr);
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>360°LK - Pricing Plan</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-    }
 
-    @media screen and (max-width: 650px) {
-        .pricing-container {
-            grid-template-columns: repeat(1, 1fr);
+        body {
+            font-family: 'Georgia', serif;
         }
-    }
 
-</style>
+        nav {
+            background-color: #8a9ba8;
+            padding: 15px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-left, .nav-right {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            color: #2c3e50;
+            text-decoration: none;
+        }
+
+        .logo {
+            font-size: 32px;
+            font-weight: bold;
+        }
+
+        .hero {
+            background-color: #667a8a;
+            padding: 80px 20px 100px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 72px;
+            color: white;
+            font-style: italic;
+            margin-bottom: 60px;
+        }
+
+        .pricing-cards {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            width: 280px;
+            height: 350px;
+            border-radius: 12px;
+            position: relative;
+        }
+
+        .card-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            background: rgba(255, 255, 255, 0.85);
+            padding: 40px 50px;
+            border-radius: 8px;
+        }
+
+        .card h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .card button {
+            background: transparent;
+            border: 2px solid #2c3e50;
+            padding: 12px 30px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        footer {
+            background-color: #5a4a3a;
+            color: #d4c4b0;
+            padding: 60px 50px 30px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 20px;
+        }
+
+        .footer-section a {
+            color: #d4c4b0;
+            text-decoration: none;
+            display: block;
+            margin: 10px 0;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #6a5a4a;
+        }
+    </style>
 </head>
-
 <body>
+    <nav>
+        <div class="nav-left">
+            <a href="#">Home</a>
+            <a href="#">Plans</a>
+            <a href="#">Destinations</a>
+        </div>
+        <div class="logo">360°LK</div>
+        <div class="nav-right">
+            <a href="#">Log in</a>
+            <a href="#">Our Story</a>
+            <a href="#">Contact us</a>
+        </div>
+    </nav>
 
-<!-- NAVIGATION BAR -->
-<nav>
-    <div class="nav-left">
-        <img src="https://i.postimg.cc/Wpr7JVnP/globe.png">
-        <h2>360.lk</h2>
-    </div>
+    <section class="hero">
+        <h1>Pricing Plan</h1>
+        <div class="pricing-cards">
+            <div class="card">
+                <div class="card-overlay">
+                    <h2>FREE</h2>
+                    <button>Get Plan</button>
+                </div>
+            </div>
 
-    <ul>
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="destinations.html">Destinations</a></li>
-        <li><a href="packages.html">Plans</a></li>
-        <li><a href="login.html">Log In</a></li>
-        <li><a href="contactus.html">Contact Us</a></li>
-    </ul>
-</nav>
+            <div class="card">
+                <div class="card-overlay">
+                    <h2>PREMIUM</h2>
+                    <button>Get Plan</button>
+                </div>
+            </div>
 
-<!-- PAGE TITLE -->
-<div class="title-section">
-    <h1>Packages</h1>
-    <p>Select the perfect plan and explore Sri Lanka in immersive VR.</p>
-</div>
+            <div class="card">
+                <div class="card-overlay">
+                    <h2>LEARN</h2>
+                    <button>Get Plan</button>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- 5 PACKAGE CARDS -->
-<div class="pricing-container">
-
-    <!-- 1. FREE PLAN -->
-    <div class="plan-card">
-        <h2 class="plan-title">Free Plan</h2>
-        <p class="price">LKR 0</p>
-        <ul class="features">
-            <li>Access to 5 basic destinations</li>
-            <li>Standard 360° viewing</li>
-            <li>Basic movement controls</li>
-            <li>Limited hotspots</li>
-        </ul>
-        <button class="plan-btn">Get Plan</button>
-    </div>
-
-    <!-- 2. MOST POPULAR PLACES PLAN -->
-    <div class="plan-card">
-        <h2 class="plan-title">Most Popular Places</h2>
-        <p class="price">LKR 1,500 / month</p>
-        <ul class="features">
-            <li>Access to 20+ top tourist sites</li>
-            <li>HD 360° walkthrough</li>
-            <li>VR-ready immersive experience</li>
-            <li>Cultural stories & guides</li>
-        </ul>
-        <button class="plan-btn">Get Plan</button>
-    </div>
-
-    <!-- 3. NEW EXPERIENCE PLAN -->
-    <div class="plan-card">
-        <h2 class="plan-title">Sri Lanka Adventure Pack</h2>
-        <p class="price">LKR 2,000 / month</p>
-        <ul class="features">
-            <li>Wildlife, beaches & mountain tours</li>
-            <li>Exclusive seasonal destinations</li>
-            <li>Bonus aerial VR views</li>
-            <li>Local guide audio tours</li>
-        </ul>
-        <button class="plan-btn">Get Plan</button>
-    </div>
-
-    <!-- 4. EDUCATIONAL PLAN -->
-    <div class="plan-card">
-        <h2 class="plan-title">Educational Plan</h2>
-        <p class="price">LKR 50,000 / year</p>
-        <ul class="features">
-            <li>School/University access</li>
-            <li>Geography & history VR tours</li>
-            <li>Teacher dashboard</li>
-            <li>Interactive learning hotspots</li>
-        </ul>
-        <button class="plan-btn">Get Plan</button>
-    </div>
-
-    <!-- 5. B2B CUSTOM PLAN -->
-    <div class="plan-card">
-        <h2 class="plan-title">B2B Custom</h2>
-        <p class="price">LKR 2,000,000 / year</p>
-        <ul class="features">
-            <li>Custom VR tours for hotels/resorts</li>
-            <li>Branding & marketing integration</li>
-            <li>Dedicated content production</li>
-            <li>API & analytics dashboard</li>
-        </ul>
-        <button class="plan-btn">Get Plan</button>
-    </div>
-
-</div>
-
-<!-- FOOTER -->
-<footer>
-    © 2024 360.lk | <a href="contactus.html">Contact Us</a>
-</footer>
-
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About 360°LK</h3>
+                <p>An immersive virtual tour/on platform connecting cultures, knowledge and travel</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="#">Home</a>
+                <a href="#">Plans</a>
+                <a href="#">Destinations</a>
+                <a href="#">Log In</a>
+                <a href="#">Our Story</a>
+            </div>
+            <div class="footer-section">
+                <h3>Top Destinations</h3>
+                <a href="#">Sigiriya Rock Fortress</a>
+                <a href="#">Temple of the Tooth Relic</a>
+                <a href="#">Unawatuna Beach</a>
+                <a href="#">Yala National Park</a>
+                <a href="#">Nallur Kovil</a>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Phone: +94 77 1234567</p>
+                <p>Email: 360lk@gmail.com</p>
+                <p>Website: 360_lk.com</p>
+            </div>
+        </div>
+        <div class="copyright">
+            © 2025 360LK
+        </div>
+    </footer>
 </body>
 </html>
+
+  
