@@ -14,7 +14,7 @@ body {
       
 .left-side {
     flex: 1;
-            background: url(images/login.png);
+            background: url(Media/login.png);
             background-size: 720px auto;
             display: flex;
             flex-direction: column;
