@@ -185,3 +185,53 @@ body {
 .checkbox-group a:hover {
     text-decoration: underline;
 }
+
+/* Buttons */
+.btn {
+    width: 50%;
+    padding: 14px;
+    border: none;
+    border-radius: 50px;
+    font-size: 15px;
+    font-weight: 600;
+    display: block;
+    margin: 0 auto;
+    align-content: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+        
+.btn-primary {
+    background: #94B2AD;
+    color: white;
+    box-shadow: 0 4px 15px #94B2AD;
+}
+        
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px #94B2AD;
+}
+        
+.btn-primary:active {
+    transform: translateY(0);
+}
+        
+/* Divider */
+.divider {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 25px 0;
+    color: #000;
+    font-size: 13px;
+}
+        
+.divider::before,
+.divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: #000;
+}
+        
