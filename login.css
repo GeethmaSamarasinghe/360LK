@@ -1,0 +1,49 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+        
+body {
+    display: flex;
+    background: white;
+    min-height: 100vh;
+}
+      
+.left-side {
+    flex: 1;
+            background: url(images/login.png);
+            background-size: 720px auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 40px;
+            color: white;
+            position: relative;
+}
+        
+.logo {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    font-size: 28px;
+}
+        
+.logo img {
+    width: auto;
+    height: 70px;
+    margin-right: 20px;
+}
+
+.tagline {
+    font-size: 24px;
+    font-style: italic;
+    text-align: center;
+    margin-bottom: 50px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    max-width: 600px;
+    align-self: center;
+}
+        

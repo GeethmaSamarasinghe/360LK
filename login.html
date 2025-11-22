@@ -5,18 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>360°LK - Login/Signup</title>
     <link rel="stylesheet" href="login.css">
-
 </head>
 <body>
-    <div class="container">
-        <div class="left-side">
-            <div class="left-side-img"><img src="images/login.png"></div>
-            <div class="logo-section">
-                <div class="logo"><img src="images/360lk5.png"></div>
-                <div class="tagline">Explore Sri Lanka — Virtually Real</div>
-            </div>
-        </div>
+    <!-- Left Side -->
+    <div class="left-side">
+            <div class="logo"><img src="images/360lk5.png"></div>
+            <div class="tagline">Explore Sri Lanka — Virtually Real</div>
+    </div>
         
+        <!-- Right Side - Forms -->
         <div class="right-side">
             <div class="form-container">
                 <div class="form-header">
@@ -24,12 +21,13 @@
                     <p>Login to continue your virtual journey through Sri Lanka</p>
                 </div>
                 
+                <!-- Tab Switcher -->
                 <div class="tab-switcher">
                     <button class="tab-btn active" onclick="showTab('login')">Login</button>
                     <button class="tab-btn" onclick="showTab('signup')">Sign Up</button>
                 </div>
                 
-                <!-- MESSAGE -->
+                <!-- Success/Error Messages -->
                 <div class="success-message" id="successMessage">
                     Account created successfully! Please login.
                 </div>
@@ -140,6 +138,5 @@
                 </div>
             </div>
         </div>
-    </div>
-</body>
+    </body>
 </html>
