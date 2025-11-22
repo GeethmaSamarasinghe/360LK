@@ -12,16 +12,17 @@ body {
     min-height: 100vh;
 }
       
+/* left side */
 .left-side {
     flex: 1;
-            background: url(images/login.png);
-            background-size: 720px auto;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            padding: 40px;
-            color: white;
-            position: relative;
+    background: url(images/login.png);
+    background-size: 720px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 40px;
+    color: white;
+    position: relative;
 }
         
 .logo {
@@ -47,3 +48,38 @@ body {
     align-self: center;
 }
         
+/* Right Side */
+.right-side {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 60px;
+    background: white;
+}
+        
+.form-container {
+    max-width: 400px;
+    margin: 0 auto;
+    width: 100%;
+    background: #CEB79A;
+    padding: 40px;
+    border-radius: 40px;
+}
+        
+.form-header {
+    margin-bottom: 40px;
+}
+        
+.form-header h2 {
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 10px;
+}
+        
+.form-header p {
+    color: #666;
+    font-size: 14px;
+}
+        
+
