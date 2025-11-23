@@ -267,52 +267,6 @@ h1 {
   background: rgb(155, 154, 150);
   color: #000000;
 }
-    
-/* Footer */
-.footer {
-    background: #2c3e50;
-    color: white;
-    padding: 50px 40px 30px;
-}
-        
-.footer-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 40px;
-    max-width: 1200px;
-    margin: 0 auto 30px;
-}
-        
-.footer-col h4 {
-    font-size: 14px;
-    margin-bottom: 20px;
-    color: #ff6b35;
-}
-.footer-col p {
-    font-size: 11px; 
-    color: #ccc; 
-    line-height: 1.6; 
-    margin-bottom: 15px;
-}
-
-.footer-col ul {
-            list-style: none;
-        }
-        
-.footer-col li {
-    padding: 8px 0;
-    font-size: 12px;
-    color: #ccc;
-}
-        
-.footer-bottom {
-    border-top: 1px solid #555;
-    padding-top: 20px;
-    text-align: center;
-    font-size: 11px;
-    color: #999;
-}
-        
 
 /* 360° Virtual Tour Preview */
 
@@ -594,5 +548,52 @@ h1 {
     background:#d89b51;
 }
 
+/* Footer */
+.footer {
+    background: #544B41;
+    color: 94B2AD;
+    padding: 50px 40px 30px;
+    height: 370px;
 
+}
+        
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto 30px;
+}
+        
+.footer-col h4 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #FFB343;
+}
+.footer-col p {
+    font-size: 16px; 
+    color: #ccc; 
+    line-height: 1.6; 
+    margin-bottom: 15px;
+}
+
+.footer-col ul {
+    list-style: none;
+}
+        
+.footer-col li {
+    padding-right: 0;
+    padding-bottom: 15px;
+    font-size: 14px;
+    color: #94B2AD;
+}
+        
+.footer-bottom {
+    border-top: 1px solid #555;
+    padding-top: 20px;
+    text-align: center;
+    font-size: 12px;
+    color: #CEB79A;
+}
+        
 
