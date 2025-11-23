@@ -8,42 +8,40 @@
         
 body {
     display: flex;
+    flex-direction: column;
     background: white;
     min-height: 100vh;
 }
-      
+    
+.container {
+    display: flex;
+    flex: 1;
+    min-height: calc(100vh - 60px);
+}
+
 .left-side {
     flex: 1;
     background: linear-gradient(rgba(256, 256, 256, 0.4), rgba(256, 256, 256, 0.4)), url(Media/login.jpeg);
     background-size: 720px auto;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     padding: 40px;
     color: white;
-    position: relative;
-}
-        
-.logo {
-    display: flex;
-    align-items: center;
-    font-weight: 730 1308;
-    font-size: 28px;
+    text-align: center;    
 }
         
 .logo img {
-    width: auto;
-    height: 150px;
-    margin-right: 20px;
+    max-width: 200px;
+    margin-bottom: 30px;
 }
 
 .tagline {
-    font-size: 24px;
+    font-size: 20px;
     font-style: italic;
     text-align: center;
     margin-bottom: 50px;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-    max-width: 600px;
     align-self: center;
 }
         
@@ -51,9 +49,9 @@ body {
 .right-side {
     flex: 1;
     display: flex;
-    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    padding: 60px;
+    padding: 40px;
     background: white;
 }
         
@@ -62,17 +60,18 @@ body {
     margin: 0 auto;
     width: 100%;
     background: #CEB79A;
-    padding: 40px;
+    padding: 20px;
     border-radius: 40px;
 }
         
 .form-header {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
+    text-align: center;
 }
         
 .form-header h2 {
     font-size: 32px;
-    color: #333;
+    color: #544B41;
     margin-bottom: 10px;
 }
         
@@ -88,12 +87,12 @@ body {
     margin-bottom: 20px;
     background: #94B2AD;
     border-radius: 10px;
-    padding: 5px;
+    padding: 4px;
 }
         
 .tab-btn {
     flex: 1;
-    padding: 12px 20px;
+    padding: 12px;
     border: none;
     background: transparent;
     cursor: pointer;
@@ -139,7 +138,7 @@ body {
         
 .form-input {
     width: 100%;
-    padding: 14px 16px;
+    padding: 14px 15px;
     border: 2px solid #e0e0e0;
     border-radius: 15px;
     font-size: 14px;
@@ -163,7 +162,7 @@ body {
         
 .password-toggle {
     position: absolute;
-    right: 16px;
+    right: 15px;
     top: 50%;
     transform: translateY(-50%);
     background: none;
@@ -289,7 +288,6 @@ body {
 }
         
 .social-btn {
-    width: 100%;
     padding: 8px;
     border: 2px solid rgba(256, 256, 256, 0.25);
     border-radius: 20px;
@@ -312,7 +310,6 @@ body {
 .social-icon {
     width: 20px;
     height: 20px;
-    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -321,7 +318,7 @@ body {
 /* Footer Text */
 .form-footer {
     text-align: center;
-    margin-top: 25px;
+    margin-top: 15px;
     font-size: 13px;
     color: #666;
 }
@@ -336,6 +333,21 @@ body {
     text-decoration: underline;
 }
         
+/* Footer Styles */
+footer {
+    background: #544B41;
+    color: #E3D2BD;
+    text-align: center;
+    padding: 20px;
+    margin-top: auto;
+}
 
+        
+
+.footer-content {
+    color: #E3D2BD;
+    font-size: 14px;
+    margin-top: 10px;
+}
 
         
