@@ -1,3 +1,4 @@
+/* ===== RESET & BASE STYLES ===== */
 * {
     margin: 0;
     padding: 0;
@@ -81,177 +82,225 @@ nav.scrolled {
     color: #2c5f4f;
 }
 
-/* ===== HERO SECTION ===== */
-.hero {
-    background: linear-gradient(135deg, rgba(108, 135, 159, 0.9), rgba(156, 175, 163, 0.9)),
-                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><rect fill="%23a8c0b5" width="1200" height="400"/></svg>');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    padding: 150px 50px 80px;
-    text-align: center;
-    margin-top: 60px;
-    position: relative;
-    overflow: hidden;
-}
 
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: radial-gradient(circle at 50% 50%, transparent 0%, rgba(0,0,0,0.1) 100%);
-}
+.parallax-hero {
+            height: 60vh;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 60px;
+        }
 
-.hero h1 {
-    font-size: 56px;
-    color: #2c3e50;
-    margin-bottom: 20px;
-    font-weight: 300;
-    letter-spacing: 2px;
-    position: relative;
-    z-index: 1;
-    animation: fadeInDown 1s ease;
-}
+        .parallax-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 120%;
+            background: linear-gradient(rgba(108, 122, 137, 0.7), rgba(108, 122, 137, 0.7)),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%236c7a89" width="1200" height="600"/><path fill="%23556270" d="M0 400 Q300 350 600 400 T1200 400 V600 H0 Z"/></svg>');
+            background-size: cover;
+            background-position: center;
+            transform: translateZ(0);
+            will-change: transform;
+        }
 
-@keyframes fadeInDown {
-    from {
-        opacity: 0;
-        transform: translateY(-30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+        .hero-title {
+            position: relative;
+            z-index: 2;
+            color: white;
+            font-size: 5rem;
+            font-style: italic;
+            text-align: center;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+        }
 
-/* ===== PRICING CARDS ===== */
-.pricing-cards {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    padding: 50px;
-    flex-wrap: wrap;
-    position: relative;
-    top: -50px;
-}
+        /* Carousel Container */
+        .carousel-section {
+            padding: 5rem 2rem;
+            background: linear-gradient(to bottom, rgba(108, 122, 137, 0.1), rgba(108, 122, 137, 0.05));
+            position: relative;
+            perspective: 1200px;
+        }
 
-.card {
-    background-size: cover;
-    background-position: center;
-    border-radius: 20px;
-    padding: 40px 30px;
-    width: 280px;
-    height: 380px;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    opacity: 0;
-    animation: fadeInUp 0.8s ease forwards;
-}
+        .carousel-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+        }
 
-.card:nth-child(1) { animation-delay: 0.2s; }
-.card:nth-child(2) { animation-delay: 0.4s; }
-.card:nth-child(3) { animation-delay: 0.6s; }
+        .carousel-wrapper {
+            position: relative;
+            height: 550px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+        .carousel-track {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+        }
 
-.card:hover {
-    transform: translateY(-15px) scale(1.03);
-    box-shadow: 0 20px 50px rgba(0,0,0,0.4);
-}
+        .carousel-slide {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform-style: preserve-3d;
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
 
-.card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.4);
-    z-index: 1;
-    transition: background 0.3s ease;
-}
+        .carousel-slide.active {
+            transform: translate(-50%, -50%) translateZ(0) scale(1);
+            z-index: 3;
+            opacity: 1;
+        }
 
-.card:hover::before {
-    background: rgba(0, 0, 0, 0.3);
-}
+        .carousel-slide.next {
+            transform: translate(-20%, -50%) translateZ(-200px) rotateY(-35deg) scale(0.8);
+            z-index: 2;
+            opacity: 0.7;
+        }
 
-.card-content {
-    position: relative;
-    z-index: 2;
-    text-align: center;
-    color: white;
-}
+        .carousel-slide.prev {
+            transform: translate(-80%, -50%) translateZ(-200px) rotateY(35deg) scale(0.8);
+            z-index: 2;
+            opacity: 0.7;
+        }
 
-.card h3 {
-    font-size: 28px;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-}
+        .carousel-slide.hidden {
+            transform: translate(-50%, -50%) translateZ(-400px) scale(0.5);
+            z-index: 1;
+            opacity: 0;
+            pointer-events: none;
+        }
 
-.card-btn {
-    background: rgba(255, 255, 255, 0.9);
-    color: #2c5f4f;
-    padding: 12px 35px;
-    border-radius: 25px;
-    text-decoration: none;
-    font-size: 14px;
-    display: inline-block;
-    margin-top: 20px;
-    transition: all 0.3s ease;
-    font-weight: bold;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-}
+        /* Pricing Card */
+        .pricing-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            max-width: 400px;
+            width: 400px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
 
-.card-btn:hover {
-    background: white;
-    transform: scale(1.1);
-    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-}
+        .carousel-slide.active .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 80px rgba(0,0,0,0.25);
+        }
 
-.premium-card {
-    transform: scale(1.1);
-    border: 3px solid #ffd700;
-    box-shadow: 0 15px 40px rgba(255, 215, 0, 0.3);
-}
+        .card-image {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            position: relative;
+        }
 
-.premium-card:hover {
-    transform: scale(1.13) translateY(-15px);
-}
+        .card-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.4));
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
 
-.premium-badge {
-    position: absolute;
-    top: 20px;
-    right: -10px;
-    background: #ffd700;
-    color: #333;
-    padding: 5px 15px;
-    font-size: 11px;
-    font-weight: bold;
-    transform: rotate(15deg);
-    z-index: 3;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.3);
-}
+        .plan-name {
+            font-size: 2.5rem;
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .cta-button {
+            background: white;
+            color: #2c3e50;
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .cta-button:hover {
+            background: #2c3e50;
+            color: white;
+            transform: scale(1.05);
+        }
+
+        /* Carousel Navigation */
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.9);
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .carousel-nav:hover {
+            background: white;
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .carousel-nav.prev {
+            left: 1rem;
+        }
+
+        .carousel-nav.next {
+            right: 1rem;
+        }
+
+        /* Carousel Indicators */
+        .carousel-indicators {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #ccc;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .indicator.active {
+            background: #6c7a89;
+            width: 40px;
+            border-radius: 6px;
+        }
 
 /* ===== DETAILS SECTION ===== */
 .details-section {
@@ -505,21 +554,40 @@ footer {
 
 /* ===== RESPONSIVE DESIGN ===== */
 @media (max-width: 768px) {
-    .hero h1 {
+    .hero-title {
         font-size: 36px;
     }
-
-    .pricing-cards {
-        padding: 30px 20px;
+    
+    .carousel-section {
+        padding: 60px 10px;
     }
-
-    .card {
-        width: 100%;
-        max-width: 300px;
+    
+    .carousel-slide {
+        padding: 10px;
     }
-
-    .premium-card {
-        transform: scale(1);
+    
+    .carousel-nav {
+        width: 40px;
+        height: 40px;
+        font-size: 24px;
+    }
+    
+    .carousel-nav.prev {
+        left: 10px;
+    }
+    
+    .carousel-nav.next {
+        right: 10px;
+    }
+    
+    .plan-name {
+        font-size: 36px;
+        margin-bottom: 20px;
+    }
+    
+    .cta-button {
+        padding: 12px 40px;
+        font-size: 14px;
     }
 
     .badge {
@@ -548,7 +616,6 @@ footer {
     .nav-links a {
         font-size: 12px;
     }
-}
-        
     
-  
+    
+}

@@ -19,30 +19,68 @@
         </ul>
     </nav>
 
-    <section class="hero">
-        <h1>Pricing Plan</h1>
-    </section>
+    <!-- Parallax Hero Section -->
+    <div class="parallax-hero">
+        <div class="parallax-bg" id="parallaxBg"></div>
+        <h1 class="hero-title">Pricing Plan</h1>
+    </div>
 
-    <div class="pricing-cards">
-        <div class="card" style="background-image: url('data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 300 400\"><rect fill=\"%234a7c59\" width=\"300\" height=\"400\"/></svg>')">
-            <div class="card-content">
-                <h3>Free</h3>
-                <a href="#free-details" class="card-btn">Get Now</a>
+    <!-- Carousel Section -->
+    <div class="carousel-section">
+        <div class="carousel-container">
+            <button class="carousel-nav prev" id="prevBtn">‹</button>
+            <button class="carousel-nav next" id="nextBtn">›</button>
+            
+            <div class="carousel-wrapper">
+                <div class="carousel-track" id="carouselTrack">
+                    <!-- FREE Plan -->
+                    <div class="carousel-slide">
+                        <div class="pricing-card">
+                            <div style="position: relative;">
+                                <img src="Media\Free Img.png" 
+                                     alt="Free Plan" class="card-image">
+                                <div class="card-overlay">
+                                    <h2 class="plan-name">FREE</h2>
+                                    <button class="cta-button">Get Plan</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PREMIUM Plan -->
+                    <div class="carousel-slide">
+                        <div class="pricing-card">
+                            <div style="position: relative;">
+                                <img src="Media\Premium Img.png" 
+                                     alt="Premium Plan" class="card-image">
+                                <div class="card-overlay">
+                                    <h2 class="plan-name">PREMIUM</h2>
+                                    <button class="cta-button">Get Plan</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- EDUCATION Plan -->
+                    <div class="carousel-slide">
+                        <div class="pricing-card">
+                            <div style="position: relative;">
+                                <img src="Media\Education  Img.png" 
+                                     alt="Education Plan" class="card-image">
+                                <div class="card-overlay">
+                                    <h2 class="plan-name">EDUCATION</h2>
+                                    <button class="cta-button">Get Plan</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
 
-        <div class="card premium-card" style="background-image: url('data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 300 400\"><rect fill=\"%235b8fa3\" width=\"300\" height=\"400\"/></svg>')">
-            <div class="premium-badge">POPULAR</div>
-            <div class="card-content">
-                <h3>Premium</h3>
-                <a href="#premium-details" class="card-btn">Get Now</a>
-            </div>
-        </div>
-
-        <div class="card" style="background-image: url('data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 300 400\"><rect fill=\"%236b8c7a\" width=\"300\" height=\"400\"/></svg>')">
-            <div class="card-content">
-                <h3>Education</h3>
-                <a href="#education-details" class="card-btn">Get Now</a>
+            <div class="carousel-indicators">
+                <button class="indicator active" data-slide="0"></button>
+                <button class="indicator" data-slide="1"></button>
+                <button class="indicator" data-slide="2"></button>
             </div>
         </div>
     </div>
@@ -156,6 +194,3 @@
     <script src="packages.js"></script>
 </body>
 </html>
-
-
-  

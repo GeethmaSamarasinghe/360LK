@@ -137,16 +137,83 @@ document.querySelector('.logo').addEventListener('click', () => {
     });
 });
 
-// ===== PREVENT PARALLAX ON MOBILE =====
-if (window.innerWidth <= 768) {
-    window.removeEventListener('scroll', () => {
-        const hero = document.querySelector('.hero');
-        const scrolled = window.scrollY;
-        hero.style.transform = `translateY(${scrolled * 0.5}px)`;
-    });
-}
+// Parallax Effect
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallaxBg = document.getElementById('parallaxBg');
+            parallaxBg.style.transform = `translateY(${scrolled * 0.5}px)`;
+        });
 
-// ===== CONSOLE WELCOME MESSAGE =====
-console.log('%c360° Virtual Explorer', 'font-size: 24px; color: #2c5f4f; font-weight: bold;');
-console.log('%cWelcome to our pricing page!', 'font-size: 14px; color: #666;');
-    
+        // 3D Curved Carousel Functionality
+        const track = document.getElementById('carouselTrack');
+        const slides = document.querySelectorAll('.carousel-slide');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const indicators = document.querySelectorAll('.indicator');
+        let currentSlide = 0;
+        const totalSlides = 3;
+
+        function updateCarousel() {
+            slides.forEach((slide, index) => {
+                slide.classList.remove('active', 'prev', 'next', 'hidden');
+                
+                if (index === currentSlide) {
+                    slide.classList.add('active');
+                } else if (index === (currentSlide + 1) % totalSlides) {
+                    slide.classList.add('next');
+                } else if (index === (currentSlide - 1 + totalSlides) % totalSlides) {
+                    slide.classList.add('prev');
+                } else {
+                    slide.classList.add('hidden');
+                }
+            });
+            
+            indicators.forEach((indicator, index) => {
+                indicator.classList.toggle('active', index === currentSlide);
+            });
+        }
+
+        nextBtn.addEventListener('click', () => {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateCarousel();
+        });
+
+        prevBtn.addEventListener('click', () => {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            updateCarousel();
+        });
+
+        indicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => {
+                currentSlide = index;
+                updateCarousel();
+            });
+        });
+
+        // Initialize carousel
+        updateCarousel();
+
+        // Auto-advance carousel
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateCarousel();
+        }, 5000);
+
+        // Touch support for mobile
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        track.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        track.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            if (touchStartX - touchEndX > 50) {
+                currentSlide = (currentSlide + 1) % totalSlides;
+                updateCarousel();
+            } else if (touchEndX - touchStartX > 50) {
+                currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+                updateCarousel();
+            }
+        });
