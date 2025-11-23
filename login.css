@@ -14,7 +14,7 @@ body {
       
 .left-side {
     flex: 1;
-    background: linear-gradient(rgba(256, 256, 256, 0.4), rgba(256, 256, 256, 0.4)), url(images/login.jpeg);
+    background: linear-gradient(rgba(256, 256, 256, 0.4), rgba(256, 256, 256, 0.4)), url(Media/login.jpeg);
     background-size: 720px auto;
     display: flex;
     flex-direction: column;
@@ -80,7 +80,36 @@ body {
     color: #666;
     font-size: 14px;
 }
+
+/* Tab Switcher */
+.tab-switcher {
+    display: flex;
+    gap: 0;
+    margin-bottom: 20px;
+    background: #94B2AD;
+    border-radius: 10px;
+    padding: 5px;
+}
         
+.tab-btn {
+    flex: 1;
+    padding: 12px 20px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    color: #544B41;
+    border-radius: 8px;
+    transition: all 0.3s;
+}
+        
+.tab-btn.active {
+    background: #544B41;
+    color: #94B2AD;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+    
 /* Form Sections */
 .form-section {
     display: none;
@@ -97,7 +126,7 @@ body {
 }
         
 .form-group {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
         
 .form-label {
@@ -153,13 +182,13 @@ body {
     display: flex; 
     justify-content: space-between; 
     align-items: center; 
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 .checkbox-group {
     display: flex;
     align-items: center;
     gap: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     justify-content: space-between;
 }
         
@@ -189,7 +218,7 @@ body {
 .forgot-password {
     text-align: right;
     margin-top: -10px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
         
 .forgot-password a {
@@ -206,7 +235,7 @@ body {
 /* Buttons */
 .btn {
     width: 50%;
-    padding: 14px;
+    padding: 10px;
     border: none;
     border-radius: 50px;
     font-size: 15px;
@@ -239,7 +268,7 @@ body {
     display: flex;
     align-items: center;
     gap: 15px;
-    margin: 25px 0;
+    margin: 15px 0;
     color: #000;
     font-size: 13px;
 }
@@ -261,7 +290,7 @@ body {
         
 .social-btn {
     width: 100%;
-    padding: 12px;
+    padding: 8px;
     border: 2px solid rgba(256, 256, 256, 0.25);
     border-radius: 20px;
     background: rgba(256, 256, 256, 0.25);
