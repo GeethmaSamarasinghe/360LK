@@ -10,7 +10,7 @@ function showTab(tab) {
             
             if (tab === 'login') {
                 document.getElementById('loginForm').classList.add('active');
-                document.querySelector('.form-header h2').textContent = 'Welcome Back!';
+                document.querySelector('.form-header h2').textContent = 'Hi Traveller !';
                 document.querySelector('.form-header p').textContent = 'Login to continue your virtual journey through Sri Lanka';
             } else {
                 document.getElementById('signupForm').classList.add('active');
@@ -26,13 +26,17 @@ function showTab(tab) {
         function togglePassword(inputId) {
             const input = document.getElementById(inputId);
             const button = input.nextElementSibling;
+            const icon = button.querySelector('i');
+
             
             if (input.type === 'password') {
                 input.type = 'text';
-                button.textContent = 'bi bi-eye-slash';
+                icon.classList.remove('bi-eye');
+                icon.classList.add('bi-eye-slash');
             } else {
                 input.type = 'password';
-                button.textContent = 'bi bi-eye';
+                icon.classList.remove('bi-eye-slash');
+                icon.classList.add('bi-eye');
             }
         }
         
