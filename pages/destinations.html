@@ -1,257 +1,537 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>360°LK — Destinations</title>
-  <style>
-    :root{
-      --accent:#0b6e4f;
-      --muted:#6b7280;
-      --card-bg:#fff;
-      --box-shadow:0 8px 24px rgba(12,20,30,0.06);
-      --max-width:1200px;
-    }
-    body{
-      margin:0;
-      font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
-      background:#f6f7fb;
-      text-align:center;
-    }
-    .container{max-width:var(--max-width);margin:0 auto;padding:20px}
+<meta charset="UTF-8">
+<title>Destinations | 360°LK</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    header{display:flex;align-items:center;justify-content:space-between;padding:10px 0}
-    .logo{display:flex;gap:12px;align-items:center}
-    nav a{margin-left:10px;padding:8px 12px;border-radius:8px;background:transparent;border:1px solid rgba(12,20,30,0.04)}
+<style>
+/* ===================== COLOR PALETTE ===================== */
+:root {
+    --brown: #544B41;
+    --cream: #CEC1B1;
+    --teal: #94B2AD;
+    --bg-grey: #90a0a6;
+    --gold: #FFB343;
+}
 
-    h1{margin:8px 0}
-    p.lead{color:var(--muted)}
+/* ===================== RESET ===================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
 
-    .section{margin-top:18px}
-    .section h3{margin:6px 0}
+body {
+    background: var(--bg-grey);
+}
 
-    .carousel{
-      position:relative;
-      background:transparent;
-      padding:12px;
-      border-radius:12px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      overflow:hidden;
-    }
+/* ===================== NAVBAR ===================== */
+nav {
+    width: 100%;
+    position: fixed;
+    top: 40px; /* moved navbar down */
+    left: 0;
+    padding: 15px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2000;
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(8px);
+    border-radius: 10px;
+}
 
-    .track{
-      display:flex;
-      gap:16px;
-      transition: transform 0.4s ease;
-    }
+nav .nav-left, nav .nav-right {
+    display: flex;
+    gap: 35px;
+    align-items: center;
+}
 
-    .place{
-      min-width:calc((100% - 16px*4)/5);
-      background:var(--card-bg);
-      border-radius:12px;
-      box-shadow:var(--box-shadow);
-      overflow:hidden;
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      text-align:center;
-    }
+nav a.active {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid black;
+}
 
-    .place img{width:100%;height:140px;object-fit:cover;border-radius:8px 8px 0 0;}
-    .place .body{padding:10px}
+.logo-img {
+    width: 25px;
+    height: auto;
+    transform: scale(6.0);
+    transform-origin: center;
+    overflow: visible;
+}
+
+/* ===================== HEADER ===================== */
+header {
+    padding-top: 160px;
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;   
+    align-items: flex-start; 
+}
+
+header h1 {
+    font-size: 55px;
+    color: var(--gold);
+    letter-spacing: 4px;
+    margin-bottom: 0px;
+    margin-top: 20px;
+}
+
+.header-left {
+    width: 50%;
+}
+
+.header-box {
+    background: rgba(255, 255, 255, 0.336); 
+    padding: 10px;
+    border-radius: 12px;
+    width: 60%;
+    font-size: 15px;
+    line-height: 1.8;
+    margin-top: -100px;
+    backdrop-filter: blur(8px); 
+    font-style: italic;              
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.25);  
+}
+
+p.indented {
+    text-indent: 2em;  
+}
+
+.collage {
+    position: relative;
+    width: 600px; 
+    height: 400px; 
+    margin-top: -100px;
+    margin-bottom: 60px;
+}
+
+.collage .pic {
+    position: absolute;
+    border-radius: 6px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    object-fit: cover;
+}
+
+
+.pic1 { width: 300px; height: 170px; top: 20px; right: 0; }
+.pic2 { width: 270px; height: 170px; top: 75px; left: 40px; }
+.pic3 { width: 220px; height: 150px; top: 180px; right: 40px; }
+.pic4 { width: 240px; height: 150px; top: 300px; left: 100px; }
+.pic5 { width: 200px; height: 130px; bottom: 0; right: 80px; }
+.pic6 { width: 200px; height: 130px; bottom: 40px; left: -30px; }
+.pic7 { width: 180px; height: 120px; top: 180px; left: 160px; }
+
+
+.destinations-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    margin-top: 70px;
+}
+
+
+/* ===================== CATEGORY BAR ===================== */
+.category-bar {
+    background: var(--brown);
+    padding: 10px 0;
+    margin: 60px 0 30px;
+}
+
+.category-bar h2 {
+    color: white;
+    text-align: center;
+    letter-spacing: 8px;
+    font-size: 20px;
+}
+
+/* ===================== SLIDER ===================== */
+.slider-container {
+    width: 100%;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    gap: 15px;
+    margin: auto;
+}
+
+.arrow {
+    font-size: 35px;
+    color: var(--black);
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+    padding: 0 2px;
+}
+
+.slider-window {
+    width: 70%; 
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+/* center all cards inside track */
+.slider-track {
+    display: flex;
+    justify-content: center;
+    gap: 20px; 
+    transition: transform 0.45s ease;
+    align-items: center; 
+}
+
+/* ===================== CARD STYLES ===================== */
+.card {
+    background: #D9D9D9;
+    border-radius:0px;
+    padding: 0px;
+    color:black;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.35); 
+}
+
+/* LEFT + RIGHT small */
+.card.small {
+    width: 220px;
+    height: 330px;
+}
+
+.card.small img {
+    width: 100%;
+    height: 150px;  
+    border-radius: 0px;
+    object-fit: cover;
+}
+
+/* BIG CENTER CARD  */
+.card.big {
+    width: 330px;
+    height:400px;
     
-    .view-btn{
-      display:block;
-      margin-top:8px;
-      padding:8px 10px;
-      border-radius:8px;
-      background:var(--accent);
-      color:white;
-      text-decoration:none;
-      width:80%;
-      margin-left:auto;
-      margin-right:auto;
-      text-align:center;
-    }
+}
 
-    .arrow{
-      position:absolute;
-      top:50%;
-      transform:translateY(-50%);
-      background:#fff;
-      border-radius:50%;
-      width:36px;
-      height:36px;
-      display:grid;
-      place-items:center;
-      box-shadow:0 6px 12px rgba(2,6,23,0.08);
-      cursor:pointer;
-      z-index:10;
-    }
-    .arrow.left{left:0}
-    .arrow.right{right:0}
+.card.big img {
+    width: 100%;
+    height: 230px;
+    border-radius: 0px;
+    object-fit: cover;
+}
 
-    @media (max-width:1200px){.place{min-width:calc((100% - 16px*3)/4)}}
-    @media (max-width:992px){.place{min-width:calc((100% - 16px*2)/3)}}
-    @media (max-width:768px){.place{min-width:calc((100% - 16px*1)/2)}}
-    @media (max-width:480px){.place{min-width:100%}}
-  </style>
+.card h3 {
+    text-align: center;
+    margin: 10px 0 7px;
+    color: var(--black);
+}
+
+.card p {
+    font-size: 13px;
+    text-align: center;
+    color: black;
+    padding: 0 5px;
+}
+
+.view-tour {
+    display: block;         
+    width: fit-content;     
+    margin: 10px auto 0;    
+    text-align: center;
+    color: rgb(84, 75, 65);
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+
+.view-tour:hover {
+    text-align: center;
+}
+
+/* ===================== FOOTER (UNCHANGED) ===================== */
+footer {
+    margin-top: 80px;
+    padding: 40px 70px;
+    background: var(--brown);
+    color: #94B2AD;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+}
+
+.footer-t {
+    margin-bottom: 12px;
+    font-size: 15px;
+    letter-spacing: 1px;
+    color:#FFB343
+}
+
+footer p, footer a {
+    font-size: 13px;
+    line-height: 1.6;
+    color: #94B2AD;
+    font-style: "KoPub Batang";
+}
+
+footer a {
+    text-decoration: none;
+}
+
+footer .copyright {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 14px;
+    color:#E3D2BD;
+}
+</style>
+
 </head>
 <body>
-  <div class="container">
-    <header>
-      <div class="logo">
-        <img src="logo-placeholder.png" alt="logo" style="height:44px;width:44px;border-radius:8px">
+
+<!-- ===================== NAVBAR ===================== -->
+<nav>
+    <div class="nav-left">
+        <a href="#">Home</a>
+        <a href="#">Plan</a>
+        <a href="#" class="active">Destinations</a>
+    </div>
+
+    <!-- logo image placeholder -->
+    <div class="logo">
+        <img src="C:\Users\DELL\Downloads\New folder\360lk5.png" class="logo-img">
+    </div>
+
+    <div class="nav-right">
+        <a href="#">Log in</a>
+        <a href="#">Our Story</a>
+        <a href="#">Feedback</a>
+    </div>
+</nav>
+
+<!-- ===================== HEADER SECTION ===================== -->
+<header>
+
+    <div class="header-left">
+        <h1>DESTINATIONS</h1>
+    </div>
+    
+    <div class="destinations-section">
+
+        <div class="header-box">
+            <b>Browse 50+ Sri Lankan destinations through immersive 360° virtual tours and discover the island in a whole new way.</b>
+            Move freely through each location, explore hidden corners, and experience the beauty of Sri Lanka as if you're standing there in person.
+            
+            <p class="indented">History lover? Step into ancient cities, temples, and archaeological wonders.</p>
+            <p class="indented">Beach seeker? Glide through golden shores, calm bays, and crystal-blue coastlines.</p>
+            <p class="indented">Nature enthusiast? Explore forests, waterfalls, and wildlife-rich national parks.</p>
+
+            These virtual tours bring every destination to life—simply choose a place and start exploring.
+        </div>
+
+        <div class="collage">
+            <img src="C:\Users\DELL\Downloads\New folder\c1.jpg" class="pic pic1">
+            <img src="C:\Users\DELL\Downloads\New folder\h2.jpg" class="pic pic2">
+            <img src="C:\Users\DELL\Downloads\New folder\n1.jpg" class="pic pic3">
+            <img src="C:\Users\DELL\Downloads\New folder\ci3.jpg" class="pic pic4">
+            <img src="C:\Users\DELL\Downloads\New folder\ci2.jpg" class="pic pic5">
+            <img src="C:\Users\DELL\Downloads\New folder\n2.jpg" class="pic pic6">
+            <img src="C:\Users\DELL\Downloads\New folder\c2.jpg" class="pic pic7">
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- ===================== JS FOR SLIDER ===================== -->
+<script>
+function slide(id, dir) {
+    const track = document.getElementById(id);
+    const cardWidth = 260; 
+    const pos = Number(track.dataset.pos) || 0;
+
+    
+    let newPos = pos + dir * cardWidth;
+
+    
+    if (newPos < 0) newPos = 0;
+    if (newPos > cardWidth) newPos = cardWidth;
+
+    track.style.transform = `translateX(-${newPos}px)`;
+    track.dataset.pos = newPos;
+}
+</script>
+
+<!-- ===================== NATURE ===================== -->
+<div class="category-bar"><h2>NATURE</h2></div>
+
+<div class="slider-container">
+    <div class="arrow" onclick="slide('nature', -1)">&#10094;</div>
+
+    <div class="slider-window">
+        <div class="slider-track" id="nature">
+            
+            <div class="card small">
+                <img src="C:\Users\DELL\Downloads\New folder\n1.jpg">
+                <h3>Yala National Park</h3><p>Yala National Park is one of Sri Lanka's top wildlife hotspots, famous for leopards and elephants. 
+                    Its diverse landscapes make every safari a unique adventure.</p>
+                <a href="#" class="view-tour">View Tour</a>
+            </div>
+
+            <div class="card big">
+                <img src="C:\Users\DELL\Downloads\New folder\n2.jpg">
+                <h3>Horton Plains</h3><p>Horton Plains is a misty highland plateau known for its breathtaking “World's End” viewpoint. 
+                    It offers scenic trails surrounded by rare flora and fauna.</p>
+                <a href="#" class="view-tour">View Tour</a>
+            </div>
+
+            <div class="card small">
+                <img src="C:\Users\DELL\Downloads\New folder\n3.jpg">
+                <h3>Sinharaja Rain Forest</h3><p>Sinharaja is Sri Lanka's last remaining primary rainforest and a UNESCO World Heritage Site. 
+                    Its rich biodiversity makes it a paradise for nature lovers and researchers.</p>
+                <a href="#" class="view-tour">View Tour</a>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="arrow" onclick="slide('nature', 1)">&#10095;</div>
+</div>
+
+<!-- ===================== CULTURE ===================== -->
+<div class="category-bar"><h2>CULTURE</h2></div>
+
+<div class="slider-container">
+    <div class="arrow" onclick="slide('culture', -1)">&#10094;</div>
+    <div class="slider-window">
+        <div class="slider-track" id="culture">
+
+            <div class="card small"><img src="C:\Users\DELL\Downloads\New folder\c1.jpg"><h3>The Nallur Kandaswami Kovil</h3>
+                <p>Nallur Kovil is one of the most sacred Hindu temples in Sri Lanka, known for its grand architecture. 
+                    The temple's vibrant festivals attract thousands of devotees every year.</p><a class="view-tour" href="#">View Tour</a></div>
+            <div class="card big"><img src="C:\Users\DELL\Downloads\New folder\c2.jpg"><h3>The Dambulla Cave Temple</h3>
+                <p>The Dambulla Cave Temple is Sri Lanka's largest and best-preserved cave temple complex. 
+                    Its ancient murals and Buddha statues make it a key cultural treasure.</p><a class="view-tour" href="#">View Tour</a></div>
+            <div class="card small"><img src="C:\Users\DELL\Downloads\New folder\c3.jpg"><h3>Anuradhapura Sandakadapahana</h3>
+                <p>The Sandakadapahana is an iconic carved moonstone of Anuradhapura, symbolizing the Buddhist cycle of life.</p><a class="view-tour" href="#">View Tour</a></div>
+
+        </div>
+    </div>
+    <div class="arrow" onclick="slide('culture', 1)">&#10095;</div>
+</div>
+
+<!-- ===================== HISTORICAL ===================== -->
+<div class="category-bar"><h2>HISTORICAL</h2></div>
+
+<div class="slider-container">
+    <div class="arrow" onclick="slide('hist', -1)">&#10094;</div>
+    <div class="slider-window">
+        <div class="slider-track" id="hist">
+
+            <div class="card small"><img src="C:\Users\DELL\Downloads\New folder\h1.jpg"><h3>Sigiriya Rock Fortress</h3>
+                <p>Sigiriya is an ancient rock fortress known for its stunning frescoes and engineering brilliance. 
+                    The climb reveals breathtaking views and a deep glimpse into Sri Lanka's royal history.</p><a href="#" class="view-tour">View Tour</a></div>
+            <div class="card big"><img src="C:\Users\DELL\Downloads\New folder\h2.jpg"><h3>The Royal Palace in Polonnaruwa</h3>
+                <p>The Royal Palace in Polonnaruwa showcases the architectural grandeur of ancient Sri Lankan kings. 
+                    Its ruins reflect advanced craftsmanship and the power of the Polonnaruwa kingdom.</p><a href="#" class="view-tour">View Tour</a></div>
+            <div class="card small"><img src="C:\Users\DELL\Downloads\New folder\h3.jpg"><h3>King Parakramabahu Statue</h3>
+                <p>A famed ancient statue believed to depict King Parakramabahu, symbolizing his wisdom and vision for prosperity.</p><a href="#" class="view-tour">View Tour</a></div>
+
+        </div>
+    </div>
+    <div class="arrow" onclick="slide('hist', 1)">&#10095;</div>
+</div>
+
+<!-- ===================== BEACHES ===================== -->
+<div class="category-bar"><h2>BEACHES</h2></div>
+
+<div class="slider-container">
+    <div class="arrow" onclick="slide('beach', -1)">&#10094;</div>
+    <div class="slider-window">
+        <div class="slider-track" id="beach">
+
+            <div class="card small"><img src="C:\Users\DELL\Downloads\New folder\b1.jpg"><h3>Arugambe Beach</h3>
+                <p>Arugambe is a world-renowned surfing beach with golden sands and relaxing coastal vibes. 
+                    It attracts surfers, backpackers, and nature lovers from around the world.</p><a href="#" class="view-tour">View Tour</a></div>
+            <div class="card big"><img src="C:\Users\DELL\Downloads\New folder\b2.jpg"><h3>Koggala Beach</h3>
+                <p>Koggala Beach is a quiet and scenic stretch of coastline ideal for calm getaways. 
+                    The logoon and nearby stilt fishermen add to its natural charm.</p><a href="#" class="view-tour">View Tour</a></div>
+            <div class="card small"><img src="C:\Users\DELL\Downloads\New folder\b3.jpg"><h3>Benthota Beach</h3>
+                <p>Bentota Beach is known for its wide sandy shores and clear waters perfect for water sports. 
+                    It is one of Sri Lanka's most popular resort areas for relaxation and adventure.</p><a href="#" class="view-tour">View Tour</a></div>
+
+        </div>
+    </div>
+    <div class="arrow" onclick="slide('beach', 1)">&#10095;</div>
+</div>
+
+<!-- ===================== CITIES ===================== -->
+<div class="category-bar"><h2>CITIES</h2></div>
+
+<div class="slider-container">
+    <div class="arrow" onclick="slide('city', -1)">&#10094;</div>
+    <div class="slider-window">
+        <div class="slider-track" id="city">
+
+            <div class="card small"><img src="C:\Users\DELL\Downloads\New folder\ci1.jpg"><h3>Colombo</h3>
+                <p>Colombo is Sri Lanka's bustling commercial capital, known for its modern skyline and vibrant city life. 
+                    It blends colonial landmarks, shopping districts, and coastal views into one lively urban experience.</p><a href="#" class="view-tour">View Tour</a></div>
+            <div class="card big"><img src="C:\Users\DELL\Downloads\New folder\ci2.jpg"><h3>Galle</h3>
+                <p>Galle is famous for its historic Dutch Fort, a UNESCO World Heritage Site. 
+                    The city offers charming streets, seaside walls, and a unique mix of culture and architecture.</p><a href="#" class="view-tour">View Tour</a></div>
+            <div class="card small"><img src="C:\Users\DELL\Downloads\New folder\ci3.jpg"><h3>Kandy</h3>
+                <p>Kandy is Sri Lanka's cultural heart, surrounded by mountains and lush greenery. 
+                    It is home to the Temple of the Tooth, one of the most sacred Buddhist sites in the world.</p><a href="#" class="view-tour">View Tour</a></div>
+
+        </div>
+    </div>
+    <div class="arrow" onclick="slide('city', 1)">&#10095;</div>
+</div>
+
+<!-- ===================== FOOTER ===================== -->
+<footer>
+    <div class="footer-grid">
         <div>
-          <div style="font-weight:700">360°LK</div>
-          <div style="font-size:12px;color:var(--muted)">Virtual tours of Sri Lanka</div>
+            <p class="footer-t">About 360°LK</p>
+            <p>An immersive virtual tourism platform connecting culture, technology, and travel.</p>
         </div>
-      </div>
-      <nav>
-        <a href="../index.html">Home</a>
-        <a href="pages/packages.html">Plan</a>
-        <a href="pages/destinations.html">Destination</a>
-        <a href="pages/login.html">Log in</a>
-        <a href="pages/contactus.html">Contact us</a>
-      </nav>
-    </header>
 
-    <main>
-      <h1>Destinations</h1>
-      <p class="lead">Explore curated places across Sri Lanka — pick a category and discover immersive 360° tours.</p>
-
-      <!-- Sections -->
-      <section class="section">
-        <h3>Nature</h3>
-        <div class="carousel" id="nature">
-          <div class="arrow left" data-target="nature">◀</div>
-          <div class="track" data-visible="5">
-            <div class="place"><img src="nature1.jpg"><div class="body"><strong>Horton Plains</strong><a href="vr.html" class="view-btn">View Tour</a></div></div>
-            <div class="place"><img src="nature2.jpg"><div class="body"><strong>Adam's Peak</strong><a href="vr.html" class="view-btn">View Tour</a></div></div>
-            <div class="place"><img src="nature3.jpg"><div class="body"><strong>Knuckles Range</strong><a href="vr.html" class="view-btn">View Tour</a></div></div>
-            <div class="place"><img src="nature4.jpg"><div class="body"><strong>Sinharaja Forest</strong><a href="vr.html" class="view-btn">View Tour</a></div></div>
-            <div class="place"><img src="nature5.jpg"><div class="body"><strong>Yala National Park</strong><a href="vr.html" class="view-btn">View Tour</a></div></div>
-            <div class="place"><img src="nature6.jpg"><div class="body"><strong>Kalpitiya</strong><a href="vr.html" class="view-btn">View Tour</a></div></div>
-            <div class="place"><img src="nature7.jpg"><div class="body"><strong>Knuckles Peaks</strong><a href="vr.html" class="view-btn">View Tour</a></div></div>
-          </div>
-          <div class="arrow right" data-target="nature">▶</div>
+        <div>
+            <p class="footer-t">Quick Links</p>
+            <p>Home</p>
+            <p>Plans</p>
+            <p>Destinations</p>
+            <p>Log in</p>
+            <p>Our Story</p>
         </div>
-      </section>
 
-      <section class="section">
-        <h3>Culture</h3>
-        <div class="carousel" id="culture">
-          <div class="arrow left" data-target="culture">◀</div>
-          <div class="track" data-visible="5">
-            <div class="place"><img src="culture1.jpg"><div class="body"><strong>Kandy Temple</strong><a href="vr.html" class="view-btn">View Tour</a></div></div>
-            <div class="place"><img src="culture2.jpg"><div class="body"><strong>Polonnaruwa</strong><a href="vr.html" class="view-btn">View Tour</a></div></div>
-            <div class="place"><img src="culture3.jpg"><div class="body"><strong>Galle Fort</strong><a href="vr.html" class="view-btn">View Tour</a></div></div>
-            <div class="place"><img src="culture4.jpg"><div class="body"><strong>Jaffna</strong><a href="vr.html" class="view-btn">View Tour</a></div></div>
-            <div class="place"><img src="culture5.jpg"><div class="body"><strong>Traditional Dances</strong><a href="vr.html" class="view-btn">View Tour</a></div></div>
-            <div class="place"><img src="culture6.jpg"><div class="body"><strong>Cultural Festival</strong><a href="vr.html" class="view-btn">View Tour</a></div></div>
-            <div class="place"><img src="culture7.jpg"><div class="body"><strong>Ancient Rituals</strong><a href="vr.html" class="view-btn">View Tour</a></div></div>
-          </div>
-          <div class="arrow right" data-target="culture">▶</div>
+        <div>
+            <p class="footer-t">Top Destinations</p>
+            <p>Sigiriya Rock Fortress</p>
+            <p>Temple of the Tooth Relic</p>
+            <p>Unawatuna Beach</p>
+            <p>Yala National Park</p>
+            <p>Nallur Kovil</p>
         </div>
-      </section>
 
-      <!-- Repeat Historical, Beaches, Cities sections similarly with 7 cards each -->
-      <section class="section">
-        <h3>Historical</h3>
-        <div class="carousel" id="historical">
-          <div class="arrow left" data-target="historical">◀</div>
-          <div class="track" data-visible="5">
-            <div class="place"><img src="hist1.jpg"><div class="body"><strong>Anuradhapura</strong><a href="vr.html" class="view-btn">View Tour</a></div></div>
-            <div class="place"><img src="hist2.jpg"><div class="body"><strong>Sigiriya</strong><a href="vr.html" class="view-btn">View Tour</a></div></div>
-            <div class="place"><img src="hist3.jpg"><div class="body"><strong>Rambodagalla</strong><a href="vr.html" class="view-btn">View Tour</a></div></div>
-            <div class="place"><img src="hist4.jpg"><div class="body"><strong>Polonnaruwa Ruins</strong><a href="vr.html" class="view-btn">View Tour</a></div></div>
-            <div class="place"><img src="hist5.jpg"><div class="body"><strong>Ancient Temples</strong><a href="vr.html" class="view-btn">View Tour</a></div></div>
-            <div class="place"><img src="hist6.jpg"><div class="body"><strong>Royal Gardens</strong><a href="vr.html" class="view-btn">View Tour</a></div></div>
-            <div class="place"><img src="hist7.jpg"><div class="body"><strong>Frescoes</strong><a href="vr.html" class="view-btn">View Tour</a></div></div>
-          </div>
-          <div class="arrow right" data-target="historical">▶</div>
+        <div>
+            <p class="footer-t">Contact Us</p>
+            <p>Phone: +94 77 1234567</p>
+            <p>Email: 360lk@gmail.com</p>
+            <p>Website: 360_lk.com</p>
         </div>
-      </section>
+    </div>
 
-      <section class="section">
-        <h3>Beaches</h3>
-        <div class="carousel" id="beaches">
-          <div class="arrow left" data-target="beaches">◀</div>
-          <div class="track" data-visible="5">
-            <div class="place"><img src="beach1.jpg"><div class="body"><strong>Unawatuna</strong><a href="vr.html" class="view-btn">View Tour</a></div></div>
-            <div class="place"><img src="beach2.jpg"><div class="body"><strong>Mirissa</strong><a href="vr.html" class="view-btn">View Tour</a></div></div>
-            <div class="place"><img src="beach3.jpg"><div class="body"><strong>Trincomalee</strong><a href="vr.html" class="view-btn">View Tour</a></div></div>
-            <div class="place"><img src="beach4.jpg"><div class="body"><strong>Arugam Bay</strong><a href="vr.html" class="view-btn">View Tour</a></div></div>
-            <div class="place"><img src="beach5.jpg"><div class="body"><strong>Nilaveli</strong><a href="vr.html" class="view-btn">View Tour</a></div></div>
-            <div class="place"><img src="beach6.jpg"><div class="body"><strong>Pasikuda</strong><a href="vr.html" class="view-btn">View Tour</a></div></div>
-            <div class="place"><img src="beach7.jpg"><div class="body"><strong>Kalpitiya</strong><a href="vr.html" class="view-btn">View Tour</a></div></div>
-          </div>
-          <div class="arrow right" data-target="beaches">▶</div>
-        </div>
-      </section>
+    <p class="copyright">© 2025 360LK</p>
+</footer>
 
-      <section class="section">
-        <h3>Cities</h3>
-        <div class="carousel" id="cities">
-          <div class="arrow left" data-target="cities">◀</div>
-          <div class="track" data-visible="5">
-            <div class="place"><img src="city1.jpg"><div class="body"><strong>Colombo</strong><a href="vr.html" class="view-btn">View Tour</a></div></div>
-            <div class="place"><img src="city2.jpg"><div class="body"><strong>Negombo</strong><a href="vr.html" class="view-btn">View Tour</a></div></div>
-            <div class="place"><img src="city3.jpg"><div class="body"><strong>Nuwara Eliya</strong><a href="vr.html" class="view-btn">View Tour</a></div></div>
-            <div class="place"><img src="city4.jpg"><div class="body"><strong>Galle</strong><a href="vr.html" class="view-btn">View Tour</a></div></div>
-            <div class="place"><img src="city5.jpg"><div class="body"><strong>Kandy</strong><a href="vr.html" class="view-btn">View Tour</a></div></div>
-            <div class="place"><img src="city6.jpg"><div class="body"><strong>Jaffna</strong><a href="vr.html" class="view-btn">View Tour</a></div></div>
-            <div class="place"><img src="city7.jpg"><div class="body"><strong>Matara</strong><a href="vr.html" class="view-btn">View Tour</a></div></div>
-          </div>
-          <div class="arrow right" data-target="cities">▶</div>
-        </div>
-      </section>
-
-    </main>
-  </div>
-
-  <!-- Old footer kept -->
-  <footer style="margin-top:28px;padding:20px 0;text-align:center;color:var(--muted);background:var(--accent);">
-    © 2025 360°LK — Explore Sri Lanka • Contact: +94 77 1234567 • 360_lk@gmail.com
-  </footer>
-
-  <script>
-    // Carousel script: shift 2 cards at a time
-    document.querySelectorAll('.carousel').forEach(car => {
-      const track = car.querySelector('.track');
-      const left = car.querySelector('.arrow.left');
-      const right = car.querySelector('.arrow.right');
-      const items = track.children;
-      let index = 0;
-      const visible = parseInt(track.getAttribute('data-visible')) || 5;
-      const shift = 2;
-
-      function update(){
-        const itemWidth = items[0].getBoundingClientRect().width + 16;
-        track.style.transform = `translateX(${-index * itemWidth}px)`;
-      }
-
-      right.addEventListener('click', ()=>{
-        if(index < items.length - visible){
-          index = Math.min(index + shift, items.length - visible);
-          update();
-        }
-      });
-
-      left.addEventListener('click', ()=>{
-        if(index > 0){
-          index = Math.max(index - shift, 0);
-          update();
-        }
-      });
-
-      window.addEventListener('resize', ()=>{
-        index = 0;
-        track.style.transform='translateX(0px)';
-      });
-    });
-  </script>
 </body>
 </html>
