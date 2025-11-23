@@ -527,3 +527,72 @@ h1 {
         margin-left: 100px;
     }
 
+    /*CTA Banner*/
+
+.cta-banner{
+    width: 100%;
+    padding-top: 10px;
+    margin-top: 10px;
+} 
+
+.cta-header{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin: 30px;
+
+}
+
+.cta-header img{
+    height:438px;
+    width:775px;
+}
+
+.cta-header h1{
+    font-size: 40px;
+}
+
+.cta-banner p{
+    font-size: 40px;
+    text-align: center;
+}
+
+.btn-group {
+    display: flex;
+    gap: 50px;          
+    margin-top: 20px;
+    margin-left: 500px;
+    margin-bottom: 50px;
+}
+
+.btn {
+    padding: 12px 22px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.btn {
+    background:#FFB343;
+    color: #333;
+    border: 2px solid #ccc;
+}
+
+.btn:hover {
+    background: #f79809;
+}
+
+
+.btn-secondary {
+    background: #CEB79A;   
+    color: rgb(0, 0, 0);
+}
+
+.btn-secondary:hover {
+    background:#d89b51;
+}
+
+
+
