@@ -3,7 +3,6 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
 }
         
 body {
@@ -21,8 +20,8 @@ body {
 
 .left-side {
     flex: 1;
-    background: linear-gradient(rgba(256, 256, 256, 0.4), rgba(256, 256, 256, 0.4)), url(Media/login.jpeg);
-    background-size: 720px auto;
+    background: url(Media/login.png);
+    background-size: 762px auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -34,6 +33,8 @@ body {
 .logo img {
     max-width: 200px;
     margin-bottom: 30px;
+    top: 50px;
+
 }
 
 .tagline {
