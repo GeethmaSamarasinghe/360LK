@@ -11,45 +11,71 @@ h1 {
 }
 
 /*hero section*/
-
-.nav {
+nav {
+    width: 100%;
     position: absolute;
-    top: 0;
+    top: 40px; 
     left: 0;
-    width: 1340px;
-    height:auto;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.4); 
-    z-index: 10;
+    right: 0;
+    padding: 15px 50px;
     display: flex;
-    justify-content: center;
-    margin: 5px;
-
-    font-size: 15px;
-    text-transform: capitalize;
-    font-weight: 500;
-    
-}
-
-.nav a {
-    margin: 10px;
-    padding-left: 30px;
-    padding-right: 30px;
-    color: #FFB343;
-}
-        
-.nav .logo img{
-    width: auto;
-    height: 70px;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
-    padding-left: 150px;
-    padding-right: 150px;
+    z-index: 2000;
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(8px);
+    box-sizing: border-box; 
 }
 
+nav a {
+    text-decoration: none;
+    color: #FFB343;
+    font-family: 'Gowun Batang';
+    font-size: 16px;
+}
+
+nav .nav-left, nav .nav-right {
+    display: flex;
+    gap: 35px;
+}
+
+nav a.active {
+    color: #FFB343;
+    font-weight: 600;
+    text-decoration: underline;
+    text-shadow: 
+        0 0 10px #FFB343,
+        0 0 20px #FFB343,
+        0 0 30px #FFB343;
+    animation: textGlow 2s ease-in-out infinite alternate;
+}
+
+/* Pulsing text glow animation */
+@keyframes textGlow {
+    from {
+        text-shadow: 
+            0 0 10px #FFB343,
+            0 0 20px #FFB343;
+    }
+    to {
+        text-shadow: 
+            0 0 15px #FFB343,
+            0 0 30px #FFB343,
+            0 0 40px #FFB343,
+            0 0 50px #FFB343;
+    }
+}
+
+.logo-img {
+    width: 20px;
+    height: auto;
+    transform: scale(6.0);
+    transform-origin: center;
+    padding: 0;
+}
 
 .normal-video {
-  width:100%;
+  width: 100%;
   height:auto;
   display: block;
   z-index: 1;
