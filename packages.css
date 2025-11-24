@@ -3,12 +3,14 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
 }
 
 body {
     font-family: 'Georgia', serif;
     color: #333;
     overflow-x: hidden;
+
 }
 
 html {
@@ -336,8 +338,8 @@ nav.scrolled {
         background: white;
         border-radius: 15px;
         padding: 40px 40px 40px 240px; /* Added left padding for badge space */
-        margin: 80px auto;
-        margin bottom: 20px;
+        margin-right: 380px;
+        margin-left: 380px;
         max-width: 900px;
         box-shadow: 0 5px 20px rgba(0,0,0,0.1);
         position: relative;
@@ -346,6 +348,7 @@ nav.scrolled {
         transform: translateX(-50px);
     }
 
+    
     /* Alternate layout for even detail boxes */
     .detail-box:nth-child(even) {
         padding: 40px 240px 40px 40px; /* Right padding for badge on right */
