@@ -334,12 +334,13 @@ nav.scrolled {
 }
 
 .badge {
-    position: absolute;
-    right: -30px;
+    position:absolute;
+    left: -50px;
+    right: 200px;
     top: 50%;
     transform: translateY(-50%);
-    width: 180px;
-    height: 180px;
+    width: 90px;
+    height: 90px;
     background: linear-gradient(135deg, #8b6f47, #a68b5b);
     border-radius: 50%;
     display: flex;
@@ -349,25 +350,18 @@ nav.scrolled {
     color: white;
     box-shadow: 0 8px 25px rgba(0,0,0,0.3);
     border: 8px solid #5a4a2f;
-    transition: transform 0.3s ease;
+
 }
 
 .detail-box:hover .badge {
     transform: translateY(-50%) scale(1.1) rotate(5deg);
 }
 
-.badge h3 {
-    font-size: 24px;
-    margin-bottom: 5px;
-    text-transform: uppercase;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+.badge img {
+   height: 180px;
+   width: 180px;
 }
 
-.badge p {
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
 
 .detail-box h2 {
     color: #2c5f4f;
