@@ -313,14 +313,19 @@ nav.scrolled {
 .detail-box {
     background: white;
     border-radius: 15px;
-    padding: 40px;
-    margin: 40px auto;
+    padding: 40px 40px 40px 240px; /* Added left padding for badge space */
+    margin: 80px auto;
     max-width: 900px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.1);
     position: relative;
     transition: all 0.3s ease;
     opacity: 0;
     transform: translateX(-50px);
+}
+
+/* Alternate layout for even detail boxes */
+.detail-box:nth-child(even) {
+    padding: 40px 240px 40px 40px; /* Right padding for badge on right */
 }
 
 .detail-box.visible {
@@ -334,34 +339,38 @@ nav.scrolled {
 }
 
 .badge {
-    position:absolute;
-    left: -50px;
-    right: 200px;
+    position: absolute;
+    left: -100px; /* Position outside the left edge */
     top: 50%;
     transform: translateY(-50%);
-    width: 90px;
-    height: 90px;
-    background: linear-gradient(135deg, #8b6f47, #a68b5b);
-    border-radius: 50%;
+    width: 250px;
+    height: 250px;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: white;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
-    border: 8px solid #5a4a2f;
+    transition: transform 0.3s ease;
+    z-index: 10;
+}
 
+/* Badge on right side for even detail boxes */
+.detail-box:nth-child(even) .badge {
+    left: auto;
+    right: -100px; /* Position outside the right edge */
 }
 
 .detail-box:hover .badge {
-    transform: translateY(-50%) scale(1.1) rotate(5deg);
+    transform: translateY(-50%) scale(1.05) rotate(3deg);
+}
+
+.detail-box:nth-child(even):hover .badge {
+    transform: translateY(-50%) scale(1.05) rotate(-3deg);
 }
 
 .badge img {
-   height: 180px;
-   width: 180px;
+    height: 250px;
+    width: auto;
+    filter: drop-shadow(0 10px 30px rgba(0,0,0,0.4));
 }
-
 
 .detail-box h2 {
     color: #2c5f4f;
@@ -409,31 +418,32 @@ nav.scrolled {
     font-size: 18px;
 }
 
-.pyramids {
-    position: absolute;
-    bottom: 20px;
-    right: 50px;
-    display: flex;
-    gap: 15px;
-    opacity: 0.6;
-}
 
-.pyramid {
-    width: 0;
-    height: 0;
-    border-left: 25px solid transparent;
-    border-right: 25px solid transparent;
-    border-bottom: 40px solid #c4a574;
-    animation: float 3s ease-in-out infinite;
-}
-
-.pyramid:nth-child(1) { animation-delay: 0s; }
-.pyramid:nth-child(2) { animation-delay: 0.5s; }
-.pyramid:nth-child(3) { animation-delay: 1s; }
-
-@keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .detail-box,
+    .detail-box:nth-child(even) {
+        padding: 200px 20px 40px 20px; /* Badge on top for mobile */
+    }
+    
+    .badge,
+    .detail-box:nth-child(even) .badge {
+        left: 50%;
+        top: -80px;
+        transform: translateX(-50%);
+        width: 200px;
+        height: 200px;
+    }
+    
+    .badge img {
+        height: 200px;
+        width: auto;
+    }
+    
+    .detail-box:hover .badge,
+    .detail-box:nth-child(even):hover .badge {
+        transform: translateX(-50%) scale(1.05);
+    }
 }
 
 /* ===== FOOTER ===== */
