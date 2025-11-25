@@ -5,29 +5,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Us - 360°LK</title>
   <link rel="stylesheet" href="about.css">
+  <link href='https://fonts.googleapis.com/css?family=Gowun Batang|Julius Sans One|Kite One|Junge' rel='stylesheet'>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 </head>
 <body>
 
   <!-- ---------- HEADER ----------- -->
   <header class="header">
-    <nav class="nav">
-      <ul class="left-nav">
-        <li><a href="/index.html">Home</a></li>
-        <li><a href="/plans.html">Plans</a></li>
-        <li><a href="/destinations.html">Destinations</a></li>
-        <li><a href="/blogs.html">Blogs</a></li>
-      </ul>
+    <nav>
+                <div class="nav-left">
+                    <a href="../index.html">Home</a>
+                    <a href="packages.html">Plan</a>
+                    <a href="pages/destinations.html">Destinations</a>
+                    <a href="blog.html">Blog</a>
+                </div>
 
-      <div class="logo">
-        <img src="images/sl.png" alt="360°LK">
-      </div>
+                <div class="logo">
+                    <img src="Media/360lk5.png" class="logo-img">
+                </div>
 
-      <ul class="right-nav">
-        <li><a href="/login.html">Log In</a></li>
-        <li><a href="/about.html" class="active">Our Story</a></li>
-        <li><a href="/contact.html">Contact Us</a></li>
-      </ul>
-    </nav>
+                <div class="nav-right">
+                    <a href="login.html">Log in</a>
+                    <a href="aboutus.html" class="active">Our Story</a>
+                    <a href="contactus.html">Contact Us</a>
+                </div>
+            </nav>
   </header>
 
   <!-- ---------- OUR STORY SECTION ---------- -->
@@ -46,7 +48,7 @@
           You can visit amazing places without leaving your home.</em>
           </p><br>
 
-          <p><em>with our platform, you can:</em></p>
+          <p><em>With our platform, you can:</em></p>
           <ul>
             <li>Walk through ancient ruins and beautiful beaches</li>
             <li>Use arrow keys to move around, just like in a video game</li>
@@ -69,11 +71,10 @@
 
   <!-- ---------- VISION & MISSION ---------- -->
  <section class="vm-section">
-  <h2 class="vm-heading">Vision & Mission</h2>
-  <div class="heading-line"></div>
+  <div class="divider">Vision & Mission</div>
 
     <div class="vm-boxes">
-      <div class="box">
+      <div class="boxV">
         <h3><em>Vision</em></h3>
         <p>
           <em>To be the leading platform for virtual tourism in Sri Lanka,
@@ -83,7 +84,7 @@
         </p>
       </div>
 
-      <div class="box">
+      <div class="boxM">
         <h3><em>Mission</em></h3>
         <p>
           <em>360°LK bridges technology and travel by providing high-quality,
@@ -99,44 +100,46 @@
   </section>
 
   <!-- ---------- FOOTER ---------- -->
-  <footer class="footer">
-    <div class="footer-grid">
-      <div>
-        <h4>About 360°LK</h4>
-        <p><em>An immersive virtual<br>
-            tourism platform<br> 
-            connecting culture,<br>
-            technology, and travel.</em></p>
-      </div>
-
-      <div>
-        <h4>Quick Links</h4>
-        <p><em>Home</em></p>
-        <p><em>Plans</em></p>
-        <p><em>Destinations</em></p>
-        <p><em>Blog</em></p>
-        <p><em>Log in</em></p>
-      </div>
-
-      <div>
-        <h4>Top Destinations</h4>
-        <p><em>Sigiriya Rock Fortress</em></p>
-        <p><em>Temple of the Tooth Relie</em></p>
-        <p><em>Yala National Park</em></p>
-        <p><em>Nallur Kovil</em></p>
-      </div>
-
-      <div>
-        <h4>Contact Us</h4>
-        <p>Email: info@360lk.com</p>
-        <p>Phone: +9477 123 4567</p>
-       <p>website: <a href="https://360°_lk.com" target="_blank">360°_lk.com</a></p>
-
-      </div>
-    </div>
-
-    <p class="footer-bottom">© 2025 360°LK</p>
-  </footer>
+  <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About 360°LK</h3>
+                <p>An immersive virtual tourism platform <br>connecting culture, technology,<br> and travel.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="packages.html">Plans</a></li>
+                    <li><a href="pages/destinations.html">Destinations</a></li>
+                    <li><a href="about.html">Our Story</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Top Destinations</h3>
+                <ul>
+                    <li><a href="pages/destinations.html">Sigiriya Rock Fortress</a></li>
+                    <li><a href="pages/destinations.html">Temple of the Tooth Relic</a></li>
+                    <li><a href="pages/destinations.html">Galle Fort</a></li>
+                    <li><a href="pages/destinations.html">Yala</a></li>
+                    <li><a href="pages/destinations.html">Ella</a></li>
+                    <li><a href="pages/destinations.html">Nallur Kovil</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <ul>
+                    <li><i class="bi bi-telephone"></i> +94 77 123-4567</li>
+                    <li><i class="bi bi-envelope-at-fill"></i> 360@gmail.com</li>
+                    <li><i class="bi bi-globe"></i> 360_lk.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2025 Virtual Sri Lanka| All rights reserved | Privacy Policy | Terms of Service
+        </div>
+    </footer>
 
   <script src="about.js"></script>
 </body>
