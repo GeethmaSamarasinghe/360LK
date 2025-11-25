@@ -518,6 +518,8 @@ nav a.active {
     width: 100%;
     padding-top: 10px;
     margin-top: 10px;
+    background: #E3D2BD;
+    overflow: hidden;
 } 
 
 .cta-header{
@@ -525,12 +527,12 @@ nav a.active {
     gap: 20px;
     align-items: center;
     margin: 30px;
-
 }
 
 .cta-header img{
     height:438px;
     width:775px;
+    border-radius: 70px / 20px;
 }
 
 .cta-header h1{
@@ -538,13 +540,13 @@ nav a.active {
 }
 
 .cta-banner p{
-    font-size: 40px;
+    font-size: 30px;
     text-align: center;
 }
 
 .btn-group {
     display: flex;
-    gap: 50px;          
+    gap: 70px;          
     margin-top: 20px;
     margin-left: 500px;
     margin-bottom: 50px;
@@ -569,21 +571,11 @@ nav a.active {
     background: #f79809;
 }
 
-
-.btn-secondary {
-    background: #CEB79A;   
-    color: rgb(0, 0, 0);
-}
-
-.btn-secondary:hover {
-    background:#d89b51;
-}
-
 /* Footer */
 .footer {
     background: #544B41;
-    color: 94B2AD;
-    padding: 50px 40px 30px;
+    color: #94B2AD;
+    padding: 0;
     height: 370px;
 
 }
