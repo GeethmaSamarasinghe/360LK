@@ -19,8 +19,8 @@ body {
 /* Navigation */
 nav {
     width: 100%;
-    position: fixed;
-    top: 5%;
+    position: absolute;
+    top: 20px;
     left: 0;
     right: 0;
     padding: 15px 50px;
@@ -35,14 +35,14 @@ nav {
 
 nav a {
     text-decoration: none;
-    color: #FFB343;
+    color: #544B41;
     font-family: 'Gowun Batang';
     font-size: 16px;
     transition: all 0.3s ease;
 }
 
 nav a:hover {
-    color: #FFD584;
+    color:#544B41;
 }
 
 nav .nav-left,
@@ -53,19 +53,19 @@ nav .nav-right {
 }
 
 nav a.active {
-    color: #FFB343;
+    color: #544B41;
     font-weight: 600;
     text-decoration: underline;
-    text-shadow: 0 0 10px #FFB343, 0 0 20px #FFB343, 0 0 30px #FFB343;
+    text-shadow: 0 0 10px #544B41, 0 0 20px #544B41, 0 0 30px #544B41;
     animation: textGlow 2s ease-in-out infinite alternate;
 }
 
 @keyframes textGlow {
     from {
-        text-shadow: 0 0 10px #FFB343, 0 0 20px #FFB343;
+        text-shadow: 0 0 10px #544B41, 0 0 20px #544B41;
     }
     to {
-        text-shadow: 0 0 15px #FFB343, 0 0 30px #FFB343, 0 0 40px #FFB343, 0 0 50px #FFB343;
+        text-shadow: 0 0 15px #544B41, 0 0 30px #544B41, 0 0 40px #544B41, 0 0 50px #544B41;
     }
 }
 

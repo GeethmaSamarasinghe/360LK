@@ -11,9 +11,9 @@
     <div class="container">              
         <nav>
             <div class="nav-left">
-                <a href="../index.html">Home</a>
+                <a href="index.html">Home</a>
                 <a href="packages.html">Plan</a>
-                <a href="destinations.html">Destinations</a>
+                <a href="pages/destinations.html">Destinations</a>
                 <a href="blog.html" class="active">Blog</a>
             </div>
 
@@ -23,7 +23,7 @@
 
             <div class="nav-right">
                 <a href="login.html">Log in</a>
-                <a href="aboutus.html">Our Story</a>
+                <a href="about.html">Our Story</a>
                 <a href="contactus.html">Contact Us</a>
             </div>
         </nav>
@@ -42,33 +42,50 @@
 
             <div class="slider" id="popular">
                 <div class="slide">
-                    <img src="Media/sigiriya.jpg" alt="Sigiriya">
-                    <h3>Discovering Sigiriya's Ancient Secrets</h3>
-                    <p>Explore the magnificent rock fortress and its fascinating history spanning centuries.</p>
+                    <img src="images\Blog Images\tips 4.webp" alt="Travel">
+                    <h3>Sri Lanka Travel Tips – 13 Things You Need To Know</h3>
+                    <p> Sri Lanka Travel Tips article is a must read for your Sri Lankan adventure.
+                        If someone asks me to describe Sri Lanka in just one word, I’d say “green”. It doesn’t matter where you go but you will surely see a lot of green. The entire country feels like one massive national park and you’re guaranteed to see a wild elephant or two if you spend more than a few weeks here.<a href="https://drifterplanet.com/sri-lanka-travel-tips/">... See More</a>
+                    </p>
                 </div>
 
                 <div class="slide">
-                    <img src="Media/temple.jpg" alt="Temple">
-                    <h3>Sacred Temples of Sri Lanka</h3>
-                    <p>Journey through the spiritual heart of the island's Buddhist heritage.</p>
+                    <img src="images\Blog Images\culture 2.jpg" alt="Cultual Diversity">
+                    <h3>Sri Lanka: An Island Blessed with Cultural Diversity</h3>
+                    <p> Sri Lanka is among the few countries with rich and vast cultural heritage. The culture is a mix of modern as well as traditional elements. This teardrop-shaped island near the Indian Ocean is an oasis of culture and natural treasures.
+                        Formerly known as Ceylon, Sri Lanka is one country where the British, Dutch, Portuguese and Indians have left their mark. It is also a
+                        <a href="https://srilankatourisminfo.com/cultural-diversity-in-sri-lanka/">... See More</a>
+                    </p>
                 </div>
 
                 <div class="slide">
-                    <img src="Media/galle.jpg" alt="Galle Fort">
-                    <h3>Galle Fort: Where History Meets Ocean</h3>
-                    <p>Walk through colonial architecture and stunning coastal views.</p>
+                    <img src="images\Blog Images\location 3.jpg" alt="Beaches">
+                    <h3>Best Beaches in Sri Lanka: Where to Go for Sun, Surf and Relaxation</h3>
+                    <p> Sri Lanka is a paradise for beach lovers. Its 1,300-plus coastline is a true tropical haven, offering golden sands, swaying palms, turquoise waters, world-class surf breaks, tranquil bays and hidden coves. 
+                        Whether you are chasing the perfect wave, craving a hammock nap under a coconut tree, or yearning for a secluded
+                        <a href="https://www.bluelankatours.com/blog/best-beaches-in-sri-lanka-where-to-go-for-sun-surf-and-relaxation">... See More</a>
+                    </p>
                 </div>
 
                 <div class="slide">
-                    <img src="Media/wildlife.jpg" alt="Wildlife">
-                    <h3>Safari Adventures in Yala</h3>
-                    <p>Encounter leopards, elephants, and diverse wildlife in their natural habitat.</p>
+                    <img src="images\Blog Images\activity 2.jpg" alt="Hiking">
+                    <h3>Hiking in Sri Lanka: A guide to the country’s best treks</h3>
+                    <p> Can you go hiking in Sri Lanka? Surprisingly, yes! 
+                        Most of us probably think of beaches and historical sites when we picture this tropical island, but Sri Lanka actually has a lot of great hikes. 
+                        You may not believe me if you’re reading this from a plot of sand on the south coast, planning your next move, but I promise you it’s possible to be cold in this country. 
+                        No, I swear. 
+                        <a href="https://thisremotecorner.com/hiking-in-sri-lanka-guide-to-best-treks/">... See More</a>
+                    </p>
                 </div>
 
                 <div class="slide">
-                    <img src="Media/ella.jpg" alt="Ella">
-                    <h3>Ella's Breathtaking Beauty</h3>
-                    <p>Discover mountain vistas, waterfalls, and tea plantations.</p>
+                    <img src="images\Blog Images\tech 2.jpg" alt="VR">
+                    <h3>What is virtual reality (VR) and how does it work?</h3>
+                    <p> Virtual reality (VR) is a technology that simulates a computer-generated environment and makes it possible to interact with it in a very realistic way. 
+                        It has become increasingly popular in recent years, with applications in fields such as gaming, education, healthcare, and entertainment. 
+                        But what is VR and how can it be applied in production, healthcare and education?
+                        <a href="https://intech-group.vn/what-is-virtual-reality-vr-technology-applying-vr-technology-to-reality-bv1465.htm">... See More</a>
+                    </p>
                 </div>
             </div>
 
@@ -77,8 +94,6 @@
 
         <!-- SEARCH + CATEGORY DROPDOWN -->
         <div class="search-row">
-            <input type="text" id="searchInput" placeholder="Search articles..." onkeyup="searchArticles()">
-            
             <div class="category-dropdown">
                 <button class="dropdown-btn" onclick="toggleDropdown()">Category ▼</button>
                 <div class="dropdown-content" id="dropdown">
@@ -89,6 +104,10 @@
                     <a href="#vr-technology">VR/Technology</a>
                 </div>
             </div>
+
+            <input type="text" id="searchInput" placeholder="Search articles..." onkeyup="searchArticles()">
+            
+            <button class="dropdown-btn"> Search </button>
         </div>
 
         <!-- ================= SECTIONS ================= -->
@@ -100,33 +119,48 @@
 
             <div class="slider" id="tips">
                 <div class="slide">
-                    <img src="images\Blog Images\tips 1.webp" alt="Budget Travel">
-                    <h3>Budget Travel Guide</h3>
-                    <p>Save money while experiencing the best of Sri Lanka with insider tips.</p>
+                    <img src="images\Blog Images\tips 1.webp" alt="Travel Guide">
+                    <h3>Sri Lanka Travel Guide: How To Plan The Perfect Trip</h3>
+                    <p>Sri Lanka is a destination that has it all. This teardrop-shaped island off the coast of India has seen its share of difficulties, 
+                        but in the past two years it has emerged as one of the most vibrant and exciting countries for travel. 
+                        Tourist arrivals in the first half of 2024 are up 60% compared to the same period in 2023, a promising sign for this resilient nation. 
+                        With awe-inspiring cultural attractions, sacred pilgrimage<a href="https://www.forbes.com/sites/liviahengel/2024/07/16/sri-lanka-travel-guide-how-to-plan-the-perfect-trip/">... See More</a>
+                    </p>
                 </div>
 
                 <div class="slide">
-                    <img src="images\Blog Images\tips 2.webp" alt="Packing">
-                    <h3>Essential Packing List</h3>
-                    <p>What to bring for your tropical island adventure.</p>
+                    <img src="images\Blog Images\tips 2.webp" alt="Travel Tips">
+                    <h3>6 Best Travel Tips to Make Your Travels Hassle Free</h3>
+                    <p>Everyone can travel, you can travel with your family, you can travel with your girlfriend, you can travel with your colleagues, and you can even travel solo. 
+                        Whatever type of traveller you are, there is one thing everyone focuses on, make your trip unique.
+                        No one wants to do the same thing every other person did; they want theirs to be unique, one of a kind, a trip they can boast and reminisce about <a href="https://uparhotels.com/blogs/travel-experiences">... See More</a>
+                    </p>
+                    
                 </div>
 
                 <div class="slide">
-                    <img src="images\Blog Images\tips 3.jpg" alt="Transport">
-                    <h3>Getting Around Sri Lanka</h3>
-                    <p>Navigate trains, tuk-tuks, and buses like a local.</p>
+                    <img src="images\Blog Images\tips 3.jpg" alt="Travel Tips">
+                    <h3>UNIQUE TRAVEL Tips (You Haven't Heard a Million Times)</h3>
+                    <p>While traveling, experience starts to save you both money and headaches abroad.  Looking back at our early months traveling we think (face-in-palm) of the costly mistakes we made.   
+                        We wanted to share these tips to save you from the situations we put ourselves in. Traveling around the world is one of the most freeing things you can do.  While "winging-it" always works too, here. <a href="https://www.timandfintravel.com/blog/travel-tips">... See More</a>
+                    </p>
                 </div>
 
                 <div class="slide">
-                    <img src="images\Blog Images\tips 4.webp" alt="Food">
+                    <img src="images\Blog Images\tips 4.webp" alt="Travel">
+                    <h3>Sri Lanka Travel Tips – 13 Things You Need To Know</h3>
+                    <p> Sri Lanka Travel Tips article is a must read for your Sri Lankan adventure.
+                        If someone asks me to describe Sri Lanka in just one word, I’d say “green”. It doesn’t matter where you go but you will surely see a lot of green. The entire country feels like one massive national park and you’re guaranteed to see a wild elephant or two if you spend more than a few weeks here.<a href="https://drifterplanet.com/sri-lanka-travel-tips/">... See More</a>
+                    </p>
+                </div>
+
+                <div class="slide">
+                    <img src="images\Blog Images\tips 5.jpeg" alt="Food">
                     <h3>Must-Try Sri Lankan Dishes</h3>
-                    <p>A culinary journey through flavors and spices.</p>
-                </div>
-
-                                <div class="slide">
-                    <img src="Media/food-guide.jpg" alt="Food">
-                    <h3>Must-Try Sri Lankan Dishes</h3>
-                    <p>A culinary journey through flavors and spices.</p>
+                    <p> Before traveling to Sri Lanka I had no idea what type of foods would be available. I naively assumed that it would be the exact same as Indian food. Although curry, rotti and poppadums are readily available, similar to India, there are so many other foods you must eat in Sri Lanka. 
+                        For me, one of the best parts about traveling is sampling the local cuisine in order to get a sense of the native culture and way of life. Not to mention, the food is often amazing!
+                        <a href="https://www.thecoastalcampaign.com/foods-sri-lanka/">... See More</a>
+                    </p>
                 </div>
             </div>
 
@@ -140,29 +174,50 @@
             
             <div class="slider" id="cultureS">
                 <div class="slide">
-                    <img src="images\Blog Images\culture 1.jpg" alt="Festivals">
-                    <h3>Vibrant Festivals</h3>
-                    <p>Experience colorful celebrations and religious ceremonies.</p>
+                    <img src="images\Blog Images\culture 1.jpg" alt="Culture">
+                    <h3>Sri Lanka Culture</h3>
+                    <p> Population <br> 21,361,667 (2019) <br>
+                        Official languages <br> Sinhala (Indo-Iranian) and Tamil (Dravidian).<br>
+                        Language spoken <br> Sinhala (69%) and Tamil (25.2%) are the primary languages of most Sri Lankans. Other ethnic groups include the Malayalam, the Ambalavasi, the Mapilla, the Telugu, the Vaddars and the Waggai. Other languages have very few speakers (approximately just 300 people speak vedda). English is widely spoken. 
+                        <a href="https://www.originaltravel.co.uk/travel-guide/sri-lanka/culture">... See More</a>
+                    </p>
                 </div>
                 <div class="slide">
-                    <img src="images\Blog Images\culture 2.jpg" alt="Dance">
-                    <h3>Traditional Dance Forms</h3>
-                    <p>The rhythmic beauty of Kandyan and folk dances.</p>
+                    <img src="images\Blog Images\culture 4.jpg" alt="Kandy Esala Perahera">
+                    <h3>Kandy Esala Perahera</h3>
+                    <p> The Esala Perahera in Kandy is one of the oldest and grandest of all Buddhist festivals in Sri Lanka, featuring dancers, jugglers, musicians, fire-breathers, and lavishly decorated elephants. 
+                        This is held in Esala (July or August) which is the month that is believed to commemorate the first teaching given by the Buddha after he attained enlightenment. 
+                        The Kandy Esala Perahera lasts for ten days while various festivities can be witnessed right throughout. 
+                        The Sinhalese term ‘Perahera’ means a parade of musicians, dancers, singers, acrobats and various other performers 
+                        <a href="https://lakpura.com/pages/kandy-esala-perahera?srsltid=AfmBOoosC6LpBnKawRrsKcV_XY6DgVr4qHt20bAk7rJ9RVnJmtyvBg91">... See More</a>
+                    </p>
                 </div>
                 <div class="slide">
-                    <img src="images\Blog Images\culture 3.jpg" alt="Handicrafts">
-                    <h3>Ancient Handicrafts</h3>
-                    <p>Discover traditional arts passed through generations.</p>
+                    <img src="images\Blog Images\culture 2.jpg" alt="Cultural Diversity">
+                    <h3>Sri Lanka: An Island Blessed with Cultural Diversity</h3>
+                    <p> Sri Lanka is among the few countries with rich and vast cultural heritage. The culture is a mix of modern as well as traditional elements. This teardrop-shaped island near the Indian Ocean is an oasis of culture and natural treasures.
+                        Formerly known as Ceylon, Sri Lanka is one country where the British, Dutch, Portuguese and Indians have left their mark. It is also a multi-religious country. With Buddhism being practiced predominantly, other religions include
+                        <a href="https://srilankatourisminfo.com/cultural-diversity-in-sri-lanka/">... See More</a>
+                    </p>
                 </div>
                 <div class="slide">
-                    <img src="Media/ayurveda.jpg" alt="Ayurveda">
-                    <h3>Ayurvedic Traditions</h3>
-                    <p>Ancient healing practices for modern wellness.</p>
+                    <img src="images\Blog Images\culture 3.jpg" alt="Indigenous People">
+                    <h3>The cultural legacy of the indigenous people of Sri Lanka</h3>
+                    <p> The island nation of Sri Lanka has a long history that winds down to prehistoric times. And this history is one of intrigue, vivacity and spectacle. 
+                        Visitors to the island do not always encounter the indigenous people, nor are they familiar with their existence. 
+                        Vedda or Wanniyala-aetto (in the aboriginal language) or Adivasi (in Sinhala) are considered by many to be the earliest known inhabitants of the island. Traditionally, they were forest dwellers who foraged, hunted and lived in close-knit groups
+                        <a href="https://www.bluelankatours.com/blog/the-cultural-legacy-of-the-indigenous-people-of-sri-lanka">... See More</a>
+                    </p>
                 </div>
                 <div class="slide">
-                    <img src="Media/ayurveda.jpg" alt="Ayurveda">
-                    <h3>Ayurvedic Traditions</h3>
-                    <p>Ancient healing practices for modern wellness.</p>
+                    <img src="images\Blog Images\culture 5.jpg" alt="Masks">
+                    <h3>Traditional Sri Lankan Wooden Masks "Vesmuhunu"</h3>
+                    <p>Masks used in Rituals <br>
+                        In an Island famous for worshiping demons believed to be living in trees and mountains, devil masks are in popular usage for ungodly practices. 
+                        Masks used in various dramatic rituals in Sri Lanka can be classified as mythological, demonic, animal-spirit and human figures. 
+                        Oldest of them are animal and demonic ( or animal-cum-demonic, human-cum-demonic).
+                        <a href="https://fernandopriyanga.blogspot.com/2010/09/vesmuhunu-devil-masks-of-sri-lanka.html">... See More</a>
+                    </p>
                 </div>
             </div>
 
@@ -176,29 +231,46 @@
 
             <div class="slider" id="location">
                 <div class="slide">
-                    <img src="images\Blog Images\location 1.jpg" alt="Kandy">
-                    <h3>Kandy: Cultural Capital</h3>
-                    <p>Explore the last kingdom of Sri Lanka.</p>
+                    <img src="images\Blog Images\location 1.jpg" alt="Nothern Region">
+                    <h3>My Journey Through Northern Sri Lanka’s Stories Of Quiet Beauty</h3>
+                    <p> Most travellers to Sri Lanka head south, chasing golden beaches and misty tea trails. However, northern Sri Lanka tells a different story: quieter, raw, and slowly finding its footing. <br>
+                        I had wanted to visit Jaffna ever since watching the 2013 movie Madras Café. Northern Sri Lanka remained distant for years due to its tumultuous war-torn past. Only in recent years
+                        <a href="https://www.travelandleisureasia.com/in/destinations/south-asia/northern-sri-lanka-guide-explore-jaffna-mannar-and-delft-island/">... See More</a>
+                    </p>
                 </div>
                 <div class="slide">
-                    <img src="images\Blog Images\location 2.jpg" alt="Colombo">
-                    <h3>Colombo City Guide</h3>
-                    <p>Urban adventures in the commercial hub.</p>
+                    <img src="images\Blog Images\location 2.jpg" alt="Sigiriya">
+                    <h3>Things to do around Sigiriya</h3>
+                    <p> Nestled in the heart of Sri Lanka’s Cultural Triangle lies Sigiriya, a region steeped in ancient history and natural wonders. 
+                        Here, visitors are transported through time, unraveling stories of local legends while traveling through breathtaking vistas and encountering wildlife in its natural habitat. 
+                        Let’s delve into a few experiences awaiting those who venture into this enchanting region!
+                        <a href="https://www.bluelankatours.com/blog/things-to-do-around-sigiriya">... See More</a>
+                    </p>
                 </div>
                 <div class="slide">
-                    <img src="images\Blog Images\location 3.jpg" alt="Jaffna">
-                    <h3>Jaffna's Tamil Heritage</h3>
-                    <p>Northern culture and historic landmarks.</p>
+                    <img src="images\Blog Images\location 3.jpg" alt="Beaches">
+                    <h3>Best Beaches in Sri Lanka: Where to Go for Sun, Surf and Relaxation</h3>
+                    <p> Sri Lanka is a paradise for beach lovers. Its 1,300-plus coastline is a true tropical haven, offering golden sands, swaying palms, turquoise waters, world-class surf breaks, tranquil bays and hidden coves. 
+                        Whether you are chasing the perfect wave, craving a hammock nap under a coconut tree, or yearning for a secluded
+                        <a href="https://www.bluelankatours.com/blog/best-beaches-in-sri-lanka-where-to-go-for-sun-surf-and-relaxation">... See More</a>
+                    </p>
                 </div>
                 <div class="slide">
-                    <img src="images\Blog Images\location 4.jpg" alt="Nuwara Eliya">
-                    <h3>Nuwara Eliya Tea Country</h3>
-                    <p>Cool climate and British colonial charm.</p>
+                    <img src="images\Blog Images\location 4.jpg" alt="Colombo - Red Mosque">
+                    <h3>Hear the call to prayer at the iconic Red Mosque of Colombo</h3>
+                    <p> It is perhaps Sri Lanka’s most exemplary piece of Indo-Saracenic architecture. 
+                        The candy-striped red and white brickwork and pomegranate-shaped domes of Jami-Ul-Alfar Mosque are distinctive against the Colombo skyline. 
+                        Its crimson colour gives it the moniker – the Red Mosque. Located in Pettah, the heart of trade on the island and downtown Colombo, the mosque attracts nearly
+                        <a href="https://www.bluelankatours.com/blog/red-mosque-colombo">... See More</a>
+                    </p>
                 </div>
                 <div class="slide">
-                    <img src="Media/nuwara-eliya.jpg" alt="Nuwara Eliya">
-                    <h3>Nuwara Eliya Tea Country</h3>
-                    <p>Cool climate and British colonial charm.</p>
+                    <img src="images\Blog Images\location 5.jpg" alt="Nuwara Eliya">
+                    <h3>17 Best Things to Do in Nuwara Eliya for First-Timers</h3>
+                    <p>Nuwara Eliya was the very first town I visited in Sri Lanka after landing in Colombo over a decade ago. 
+                        Since then, I have traveled here on multiple occasions: with my friends visiting from all over the world, with my Sri Lankan boyfriend for a romantic weekend, with my husband (same person as the boyfriend, in case you are wondering) and my parents-in-law for a family getaway. 
+                        <a href="https://thatswhatshehad.com/best-things-to-do-in-nuwara-eliya/">... See More</a>
+                    </p>
                 </div>
             </div>
 
@@ -213,28 +285,48 @@
             <div class="slider" id="activity">
                 <div class="slide">
                     <img src="images\Blog Images\activity 1.jpg" alt="Surfing">
-                    <h3>Surfing Paradise</h3>
-                    <p>Ride the waves at Arugam Bay and beyond.</p>
+                    <h3>The Best Surf Spots in Arugam Bay to Ride the Waves Like a Pro</h3>
+                    <p> Sri Lanka’s east coast is home to one of the world’s top surf destinations – Arugam Bay. With its pristine sands, warm waters, shady coconut trees and consistent swells, this crescent bay attracts surfers from across the globe. Its bustling fishing community magnify the tropical coastal charm. 
+                        Whether you’re a seasoned surfer or a beginner looking to catch your first wave, Arugam Bay has something for everyone.
+                        <a href="https://www.bluelankatours.com/blog/the-best-surf-spots-in-arugam-bay-to-ride-the-waves-like-a-pro">... See More</a>
+                    </p>
                 </div>
                 <div class="slide">
                     <img src="images\Blog Images\activity 2.jpg" alt="Hiking">
-                    <h3>Mountain Hiking Trails</h3>
-                    <p>Conquer peaks like Adam's Peak and Knuckles Range.</p>
+                    <h3>Hiking in Sri Lanka: A guide to the country’s best treks</h3>
+                    <p> Can you go hiking in Sri Lanka? Surprisingly, yes! 
+                        Most of us probably think of beaches and historical sites when we picture this tropical island, but Sri Lanka actually has a lot of great hikes. 
+                        You may not believe me if you’re reading this from a plot of sand on the south coast, planning your next move, but I promise you it’s possible to be cold in this country. 
+                        No, I swear. 
+                        <a href="https://thisremotecorner.com/hiking-in-sri-lanka-guide-to-best-treks/">... See More</a>
+                    </p>
                 </div>
                 <div class="slide">
-                    <img src="images\Blog Images\activity 3.jpg" alt="Diving">
-                    <h3>Scuba Diving Adventures</h3>
-                    <p>Explore vibrant coral reefs and shipwrecks.</p>
+                    <img src="images\Blog Images\activity 3.jpg" alt="Family-Friendly Trip">
+                    <h3>Family-Friendly Sri Lanka: Top Activities for Kids & Parents</h3>
+                    <p>Planning a family getaway that keeps both kids and parents entertained can be a challenge, but not in Sri Lanka. 
+                        The island isn’t just about golden beaches, lush tea plantations and ancient ruins. A spectacular array of family-friendly experiences awaits you here. 
+                        From wildlife safaris that leave children wide-eyed with wonder to cultural experiences that spark curiosity 
+                        <a href="https://www.bluelankatours.com/blog/family-friendly-sri-lanka-top-activities-for-kids-parents">... See More</a>
+                    </p>
                 </div>
                 <div class="slide">
-                    <img src="Media/tea-picking.jpg" alt="Tea">
-                    <h3>Tea Plantation Tours</h3>
-                    <p>From leaf to cup in the highlands.</p>
+                    <img src="images\Blog Images\activity 4.jpg" alt="Tea Plantation">
+                    <h3>Sri Lanka tea plantations</h3>
+                    <p>Not long after the British occupied the ‘Teardrop Isle’ in the early 19th century, they realised Sri Lanka’s highlands were ideal for growing tea. 
+                        Plantations were terraced into the mountainsides, factories and rudimentary accommodations built for pickers, and a rail network engineered to transport leaves down to Colombo. 
+                        The stretch of line between Kandy and Ella is considered one of the most beautiful in the world.
+                        <a href="https://www.responsibletravel.com/holidays/sri-lanka/travel-guide/sri-lanka-tea-plantations">... See More</a>
+                    </p>
                 </div>
                 <div class="slide">
-                    <img src="Media/tea-picking.jpg" alt="Tea">
-                    <h3>Tea Plantation Tours</h3>
-                    <p>From leaf to cup in the highlands.</p>
+                    <img src="images\Blog Images\activity 5.jpg" alt="National Park">
+                    <h3>10 Most Beautiful National Parks in Sri Lanka</h3>
+                    <p> Located in the Indian Ocean, Sri Lanka’s long and ancient history means that there are a wealth of incredible sites to explore on this marvelous island. 
+                        With traces of human settlements dating back to the 6th Century BC, needless to say visitors to Sri Lanka may revel in all the historical, archaeological and cultural sights on offer.
+                        Whether it is delighting in the ruined temples of Anuradhapura and Polonnaruwa, gazing in awe
+                        <a href="https://www.touropia.com/national-parks-in-sri-lanka/">... See More</a>
+                    </p>
                 </div>
             </div>
 
@@ -249,29 +341,47 @@
             <div class="slider" id="vr">
                 <div class="slide">
                     <img src="images\Blog Images\tech 1.png" alt="VR Tour">
-                    <h3>Virtual Reality Tours</h3>
-                    <p>Experience Sri Lanka from anywhere in the world.</p>
+                    <h3>VR For Tourism</h3>
+                    <p>Virtual reality refers to interactive images or videos which enable the viewer to explore the entire 360 degrees of a scene. 
+                        Unlike a regular image of video, which is shot from a fixed view point, VR production captures every part of a location.
+                        In the travel industry, virtual reality can be used to capture tourism destinations in a unique and immersive way.
+                        <a href="https://immersionvr.co.uk/about-360vr/vr-for-tourism/">... See More</a>
+                    </p>
                 </div>
                 <div class="slide">
-                    <img src="images\Blog Images\tech 2.jpg" alt="360 Technology">
-                    <h3>360° Technology Explained</h3>
-                    <p>How we bring destinations to life digitally.</p>
+                    <img src="images\Blog Images\tech 5.jpg" alt="Digital Heritage">
+                    <h3> Concept of Digital Heritage </h3>
+                    <p> Digital heritage is made up of computer-based materials of enduring value that should be kept for future generations. Digital heritage emanates from different communities, industries, sectors and regions. 
+                        Not all digital materials are of enduring value, but those that are require active preservation approaches if continuity of digital heritage is to be maintained.
+                        <a href="https://webarchive.unesco.org/web/20230616073538/https://en.unesco.org/themes/information-preservation/digital-heritage/concept-digital-heritage">... See More</a>
+                    </p>
+                </div>  
+                <div class="slide">
+                    <img src="images\Blog Images\tech 2.jpg" alt="VR">
+                    <h3>What is virtual reality (VR) and how does it work?</h3>
+                    <p> Virtual reality (VR) is a technology that simulates a computer-generated environment and makes it possible to interact with it in a very realistic way. 
+                        It has become increasingly popular in recent years, with applications in fields such as gaming, education, healthcare, and entertainment. 
+                        But what is VR and how can it be applied in production, healthcare and education?
+                        <a href="https://intech-group.vn/what-is-virtual-reality-vr-technology-applying-vr-technology-to-reality-bv1465.htm">... See More</a>
+                    </p>
                 </div>
                 <div class="slide">
-                    <img src="images\Blog Images\tech 3.webp" alt="Future Travel">
-                    <h3>The Future of Travel</h3>
-                    <p>How technology is transforming tourism.</p>
+                    <img src="images\Blog Images\tech 3.webp" alt="Future of Travel with VR">
+                    <h3>Virtual Reality in Tourism: A Revolution in Travel Experiences</h3>
+                    <p>Imagine exploring your dream holiday destination without leaving the comfort of your home or experiencing a hotel room before even stepping foot inside. 
+                        That’s the power of virtual reality in tourism (VR) in the rapidly evolving tourism industry.
+                        In this blog post, we’ll dive into the world of virtual reality in tourism, discussing its benefits,
+                        <a href="https://www.ticketinghub.com/blog/virtual-reality-in-tourism">... See More</a>
+                    </p>
                 </div>
                 <div class="slide">
-                    <img src="Media/digital-heritage.jpg" alt="Digital Heritage">
-                    <h3>Preserving Heritage Digitally</h3>
-                    <p>Using VR to protect cultural sites.</p>
-                </div>
-                <div class="slide">
-                    <img src="Media/digital-heritage.jpg" alt="Digital Heritage">
-                    <h3>Preserving Heritage Digitally</h3>
-                    <p>Using VR to protect cultural sites.</p>
-                </div>
+                    <img src="images\Blog Images\tech 4.webp" alt="360 video and VR">
+                    <h3>What is 360-degree video, and how is it used in VR experiences?</h3>
+                    <p> A 360-degree video is a recording that captures a full spherical view of a scene, allowing viewers to look in any direction—up, down, left, right, or behind—during playback. 
+                        It is created using cameras with multiple lenses or an array of synchronized cameras that capture overlapping fields of view. 
+                        <a href="https://milvus.io/ai-quick-reference/what-is-360degree-video-and-how-is-it-used-in-vr-experiences">... See More</a>
+                    </p>
+                </div>        
             </div>
 
             <button class="arrow right" onclick="slide('vr', 1)">&#10095;</button>
