@@ -1,0 +1,173 @@
+body {
+  margin: 0;
+  font-family: "Georgia", serif;
+  background: #9eb4b0;
+}
+
+/* ---------- HEADER ---------- */
+.header {
+  background: transparent;
+  width: 100%;
+  padding: 20px 0;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin: auto;
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: black;
+  font-size: 16px;
+}
+
+.nav a.active {
+  font-weight: bold;
+}
+
+.logo img {
+  height: 55px;
+}
+
+/* ---------- STORY SECTION ---------- */
+.story-section {
+  padding: 40px 0;
+  width: 90%;
+  margin: auto;
+}
+
+.title {
+  font-size: 52px;
+  margin-bottom: 30px;
+}
+
+.story-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.m-img {
+  width: 220px;
+}
+
+.story-box {
+  position: relative;
+  background: rgba(255, 255, 255, 0.48);
+  padding: 40px 50px;
+  border-radius: 20px;
+  width: 70%;
+}
+
+
+.vertical-text {
+  position: absolute;
+  left: -60px;          /* move slightly left */
+  top: 50%;             /* center vertically */
+  transform: translateY(-50%) rotate(-90deg);
+  transform-origin: center;
+  font-size: 22px;
+  font-weight: 600;
+  color: #000;
+  white-space: nowrap;  /* prevents breaking into two lines */
+}
+
+
+.story-content ul {
+  margin-top: 5px;
+  padding-left: 18px;
+}
+
+/* ---------- VISION & MISSION ---------- */
+/* ---------- VISION & MISSION ---------- */
+.vm-section {
+  width: 90%;
+  margin: 60px auto;
+}
+
+/* NEW heading + line */
+.vm-heading {
+  font-size: 26px;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.heading-line {
+  width: 88%;
+  height: 2px;
+  background: #000;
+  margin-left: 10px;
+  margin-bottom: 35px;
+}
+
+.vm-boxes {
+  display: flex;
+  gap: 40px;
+}
+
+
+.box {
+  background: #ffffff;
+  padding: 30px 35px;
+  border-radius: 28px;  /* smoother rounded shape */
+  width: 45%;
+  min-height: 180px;    /* ensures equal height like screenshot */
+  box-shadow: 0px 3px 10px rgba(0,0,0,0.15);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+
+/* ---------- FOOTER ---------- */
+/* ---------- FOOTER ---------- */
+.footer {
+  background: #4e3b2f;
+  color: white; /* all footer text white by default */
+  padding: 40px 0 10px;
+  margin-top: 60px;
+}
+
+.footer-grid {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+/* Footer headings yellow */
+.footer h4 {
+  margin-bottom: 10px;
+  font-weight: 600;
+  color:#ffb343; /* yellow */
+}
+
+/* Yellow box for About 360°LK */
+.footer-about {
+  background: #ffb343;   
+  padding: 20px;
+  border-radius: 12px;
+  color: #000; /* black text inside yellow box */
+  width: 22%;
+}
+
+/* Footer bottom text */
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  color: white;
+}
+
