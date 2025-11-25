@@ -317,26 +317,25 @@ nav a.active {
 .vr-text {
     flex: 1;
     padding: 10px;
-    background: #E3D2BD;
+    background: transparent;
     border-radius: 20px;
     box-shadow: 0 80px 80px 80px rgba(256,256,256,0.1);
     width: 300px;
     height:350px;
 }
 
-.vr-text h1{
+.vr-text h1 {
     text-align: center;
     padding-top: 30px;
     margin-top: 10px;
     margin-bottom: 10px;
 } 
-.vr-text h2{
+.vr-text h2 {
     text-align: center;
     font-weight: lighter;
     font-size: 17px;
     margin-bottom: 20px;
 } 
-
 .vr-text p {
     font-size: 16px;
     color: #444;
@@ -366,90 +365,36 @@ nav a.active {
     font-size: 15px;
     cursor: pointer;
     transition: 0.3s;
+    font-family: julius sans one;
 }
 
 .btn:hover {
     background: #0077aa;
 }
 
-.vr-image{
-    height: 600px;
-    width: 500px;
-    border-radius: 50px 0 0 50px;
-}
-
-/* Interactive map*/
-
 .map-container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin:30px;
-    
-}
-
-.map-section{
-    padding-top: 10px;
-    margin-top: 10px;
-    display: flex;
-    gap: 20px;
-    align-items: center;
-    
+    align-items: right;
 }
 .map-box {
     width: 600px;
     height: 500px;
     position: relative;
-    border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
-
-
 .map-frame {
     width: 100%;
     height: 100%;
-    border: none;
+    border-radius: 50px 0 0 50px;
     filter: brightness(0.9) contrast(1.2);
 }
 
-
-.map-content{
-    padding: 10px;
-    background: white;
-    border-radius: 20px;
-    /* box-shadow: 0 80px 80px 80px rgba(0,0,0,0.1); */
-    align-content: center;
-    width:700px;
-    height:400px;
-    margin-right:100px;
-}
-
-.map-content h1 {
-    margin-bottom: 10px;
-    color: #000000;
-}
-
-.map-content h3 {
-    font-size: 17px;
-    color: #000000;
-    margin-bottom: 15px;
-    font-weight: lighter;
-    text-align: center;
-}
-.map-content p {
-    font-size: 15px;
-    color:#003366;
-    margin-top: 25px;
-}
-
-/*Benifits Section*/
+/*Benefits Section*/
 
 .benefits{
     width: 100%;
     padding-top: 40px;
     margin-top: 10px;
-    background-color: #E3D2BD;
+    background-color: #fff;
 }
 
 .benefits h1{
@@ -486,6 +431,7 @@ nav a.active {
     background-repeat: no-repeat; 
     background-color: #C3B774; 
     border-radius: 40px;
+    padding: 20px;
     margin-bottom: 30px;
 
 }
@@ -498,7 +444,7 @@ nav a.active {
 .benefit-content {
     font-size: 24px;
     color: #000000;
-    font-weight:lighter;
+    font-weight: lighter;
     background-color: rgba(255, 255, 255, 0.5); 
     margin-top: 80%;                                       
        
@@ -506,7 +452,7 @@ nav a.active {
 
 .benefit-icon{
     border-radius: 50%;
-    background-color: #CEB79A;
+    background-color: #E3D2BD;
     height:100px;
     width: 100px;
     align-content: center;
@@ -559,9 +505,6 @@ nav a.active {
     border: none;
     cursor: pointer;
     transition: 0.3s ease;
-}
-
-.btn {
     background:#FFB343;
     color: #333;
     border: 2px solid #ccc;
