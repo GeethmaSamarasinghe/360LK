@@ -274,18 +274,18 @@ nav a.active {
 }
 
 .Vbtn{
-  padding: 12px 28px;
-  background: #94B2AD;
-  color: #ffffff;
-  border: none;
-  border-radius: 15px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: 0.3s;
-  margin-bottom: 30px;
-  width: 25%;
-  align-self: center;
-
+    padding: 12px 28px;
+    background: #94B2AD;
+    color: #ffffff;
+    border: none;
+    border-radius: 15px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-bottom: 30px;
+    width: 25%;
+    align-self: center;
+    font-family: julius sans one;
 }
 
 .Vbtn:hover {
@@ -310,7 +310,8 @@ nav a.active {
     display: flex;
     gap: 20px;
     align-items: center;
-    margin: 30px;
+    padding-top: 60px;
+    margin-left: 30px;
 }
 
 
