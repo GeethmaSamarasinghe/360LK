@@ -4,7 +4,7 @@ document.getElementById("plan").addEventListener("change", function () {
     // Hide all first
     document.getElementById("PremiumForm").style.display = "none";
     document.getElementById("EducationForm").style.display = "none";
-    document.getElementById("flightForm").style.display = "none";
+    
 
     // Show only the selected one
     if (value === "Premium") {

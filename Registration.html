@@ -8,32 +8,19 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fondamento:ital@0;1&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="Registration.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&family=Fondamento:ital@0;1&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="Booking.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
   <!-- Link the JavaScript file -->
-  <script defer src="Registration.js"></script>
+  <script defer src="Booking.js"></script>
 
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 40px;
-    }
-
-    .form-section {
-      margin-top: 20px;
-      padding: 15px 0px;
-      /*border: 1px solid #ccc;*/
-      border: none;
-      border-radius: 6px;
-      display: none;
-      /* start hidden */
-    }
-  </style>
 </head>
 
 <body>
-  <h1>Registration Details</h1>
+  <h1>Registration <br>Details</h1>
   <form>
 
 
@@ -49,19 +36,21 @@
     <!--Full Package Details-->
     <h2>Full Package Details</h2>
 
-    <label for="plan">Choose the pricing plan</label>
-    <select id="plan">
+    <label for="plan">Choose the pricing plan</label> <br>
+    <select id="plan" class="select-design">
       <option value="">-- Choose --</option>
       <option value="Premium">Premium</option>
       <option value="Educational">Educational</option>
     </select>
 
+
     <!--Premium Form-->
     <div id="PremiumForm" class="form-section">
+      <hr class="hr-line">
       <h2>Premium Plan</h2>
-      <h3>Find the best matching package for VR experience</h3>
+      <p>Find the best matching package for VR experience...</p>
       <label for="category">Select a Package</label><br>
-      <select id="category">
+      <select id="category" class="select-design">
         <option value="">-- Select --</option>
         <option value="most popular package">most popular package</option>
         <option value="historical package">historical package</option>
@@ -71,6 +60,7 @@
       </select><br>
       <!--most popular package-->
       <div id="most-popularForm" class="form-section">
+        <hr class="hr-line">
         <h3> Most Popular Destinations</h3>
         <p>Here the most popular places tourist are visiting...</p>
         <div class="card-container">
@@ -85,8 +75,7 @@
           </div>
 
           <div class="card">
-            <img src="C:\Users\suhan\Pictures\Saved Pictures\remy-lovesy-syY2gTJMBkg-unsplash.jpg" width="20%"
-              alt="Image 3">
+            <img src="C:\Users\suhan\Pictures\Saved Pictures\remy-lovesy-syY2gTJMBkg-unsplash.jpg" alt="Image 3">
             <div class="card-description">Another description goes here for card 3.</div>
           </div>
 
@@ -103,8 +92,9 @@
       </div>
       <!--historical package-->
       <div id="historicalForm" class="form-section">
+        <hr class="hr-line">
         <h3>Ancient Historical Destinations</h3>
-        <p>experience the proud hsistroy of Sri Lanka...</p>
+        <p>experience the proud histroy of Sri Lanka...</p>
         <div class="card-container">
           <div class="card">
             <img src="C:\Users\suhan\Pictures\Saved Pictures\remy-lovesy-syY2gTJMBkg-unsplash.jpg" alt="Image 1">
@@ -117,8 +107,7 @@
           </div>
 
           <div class="card">
-            <img src="C:\Users\suhan\Pictures\Saved Pictures\remy-lovesy-syY2gTJMBkg-unsplash.jpg" width="20%"
-              alt="Image 3">
+            <img src="C:\Users\suhan\Pictures\Saved Pictures\remy-lovesy-syY2gTJMBkg-unsplash.jpg" alt="Image 3">
             <div class="card-description">Another description goes here for card 3.</div>
           </div>
 
@@ -135,6 +124,7 @@
       </div>
       <!--mountain and nature-->
       <div id="mountain-and-natureForm" class="form-section">
+        <hr class="hr-line">
         <h3>Natural Heritage Destinations</h3>
         <p>Relax Yourself with breathtaking natural heritage...</p>
         <div class="card-container">
@@ -149,8 +139,7 @@
           </div>
 
           <div class="card">
-            <img src="C:\Users\suhan\Pictures\Saved Pictures\remy-lovesy-syY2gTJMBkg-unsplash.jpg" width="20%"
-              alt="Image 3">
+            <img src="C:\Users\suhan\Pictures\Saved Pictures\remy-lovesy-syY2gTJMBkg-unsplash.jpg" alt="Image 3">
             <div class="card-description">Another description goes here for card 3.</div>
           </div>
 
@@ -167,6 +156,7 @@
       </div>
       <!--beach side package-->
       <div id="beach-sideForm" class="form-section">
+        <hr class="hr-line">
         <h3>Outstanding Beach Sides </h3>
         <p>Experience the mesmerizing beach sides...</p>
         <div class="card-container">
@@ -181,8 +171,7 @@
           </div>
 
           <div class="card">
-            <img src="C:\Users\suhan\Pictures\Saved Pictures\remy-lovesy-syY2gTJMBkg-unsplash.jpg" width="20%"
-              alt="Image 3">
+            <img src="C:\Users\suhan\Pictures\Saved Pictures\remy-lovesy-syY2gTJMBkg-unsplash.jpg" alt="Image 3">
             <div class="card-description">Another description goes here for card 3.</div>
           </div>
 
@@ -199,20 +188,172 @@
       </div>
       <!--customized package-->
       <div id="customizedForm" class="form-section">
-        <h3>Customize Your Favorations </h3>
-        <p>Customize upto 5 destinations as you prefer...</p>
-        <label>Student email address</label>
-        <input type="email">
-        <label>Student ID:</label>
-        <input type="file">
+        <hr class="hr-line">
+        <h3>Customize Your Favorations</h3>
+        <p>Customize destinations as you prefer...</p>
+        <h4>Nature</h4>
+        <div class="Customize">
+          <div>
+            <label class="miner"><input type="checkbox">Sinharaja Rain Forest</label>
+            <label class="miner"><input type="checkbox">Horton Plains National Park</label>
+            <label class="miner"><input type="checkbox">Yala National Park</label>
+            <label class="miner"><input type="checkbox">Udawalawe National Park</label>
+            <label class="miner"><input type="checkbox">Knuckles Mountain Range</label>
+          </div>
+          <div>
+            <label class="miner"><input type="checkbox">Minneriya National Park</label>
+            <label class="miner"><input type="checkbox">Kanneliya Rainforest</label>
+            <label class="miner"><input type="checkbox">Ravana’s Cave</label>
+            <label class="miner"><input type="checkbox">Sigiriya</label>
+            <label class="miner"><input type="checkbox">Sigiriya</label>
+          </div>
+          <div>
+            <label class="miner"><input type="checkbox">Sigiriya</label>
+            <label class="miner"><input type="checkbox">Sigiriya</label>
+            <label class="miner"><input type="checkbox">Sigiriya</label>
+            <label class="miner"><input type="checkbox">Sigiriya</label>
+            <label class="miner"><input type="checkbox">Sigiriya</label>
+          </div>
+          <div>
+            <label class="miner"><input type="checkbox">Sigiriya</label>
+            <label class="miner"><input type="checkbox">Sigiriya</label>
+            
+          </div>
+        </div>
+        <h4>Culture</h4>
+        <div class="Customize">
+          <div>
+            <label class="miner"><input type="checkbox">Sigiriya</label>
+            <label class="miner"><input type="checkbox">Sigiriya</label>
+            <label class="miner"><input type="checkbox">Sigiriya</label>
+            <label class="miner"><input type="checkbox">Sigiriya</label>
+            <label class="miner"><input type="checkbox">Sigiriya</label>
+          </div>
+          <div>
+            <label class="miner"><input type="checkbox">Sigiriya</label>
+            <label class="miner"><input type="checkbox">Sigiriya</label>
+            <label class="miner"><input type="checkbox">Sigiriya</label>
+            <label class="miner"><input type="checkbox">Sigiriya</label>
+            <label class="miner"><input type="checkbox">Sigiriya</label>
+          </div>
+          <div>
+            <label class="miner"><input type="checkbox">Sigiriya</label>
+            <label class="miner"><input type="checkbox">Sigiriya</label>
+            <label class="miner"><input type="checkbox">Sigiriya</label>
+            <label class="miner"><input type="checkbox">Sigiriya</label>
+            <label class="miner"><input type="checkbox">Sigiriya</label>
+          </div>
+          <div>
+            <label class="miner"><input type="checkbox">Sigiriya</label>
+            <label class="miner"><input type="checkbox">Sigiriya</label>
+            <label class="miner"><input type="checkbox">Sigiriya</label>
+            <label class="miner"><input type="checkbox">Sigiriya</label>
+            <label class="miner"><input type="checkbox">Sigiriya</label>
+          </div>
+        </div>
+        <h4>Historical</h4>
+        <div class="Customize">
+          <div>
+            <label class="miner"><input type="checkbox">Sigiriya</label>
+            <label class="miner"><input type="checkbox">Sigiriya</label>
+            <label class="miner"><input type="checkbox">Sigiriya</label>
+            <label class="miner"><input type="checkbox">Sigiriya</label>
+            <label class="miner"><input type="checkbox">Sigiriya</label>
+          </div>
+          <div>
+            <label class="miner"><input type="checkbox">Sigiriya</label>
+            <label class="miner"><input type="checkbox">Sigiriya</label>
+            <label class="miner"><input type="checkbox">Sigiriya</label>
+            <label class="miner"><input type="checkbox">Sigiriya</label>
+            <label class="miner"><input type="checkbox">Sigiriya</label>
+          </div>
+          <div>
+            <label class="miner"><input type="checkbox">Sigiriya</label>
+            <label class="miner"><input type="checkbox">Sigiriya</label>
+            <label class="miner"><input type="checkbox">Sigiriya</label>
+            <label class="miner"><input type="checkbox">Sigiriya</label>
+            <label class="miner"><input type="checkbox">Sigiriya</label>
+          </div>
+          <div>
+            <label class="miner"><input type="checkbox">Sigiriya</label>
+            <label class="miner"><input type="checkbox">Sigiriya</label>
+            <label class="miner"><input type="checkbox">Sigiriya</label>
+            <label class="miner"><input type="checkbox">Sigiriya</label>
+            <label class="miner"><input type="checkbox">Sigiriya</label>
+          </div>
+        </div>
+        <h4>Beach Sides</h4>
+        <div class="Customize">
+          <div>
+            <label class="miner"><input type="checkbox">Sigiriya</label>
+            <label class="miner"><input type="checkbox">Sigiriya</label>
+            <label class="miner"><input type="checkbox">Sigiriya</label>
+            <label class="miner"><input type="checkbox">Sigiriya</label>
+            <label class="miner"><input type="checkbox">Sigiriya</label>
+          </div>
+          <div>
+            <label class="miner"><input type="checkbox">Sigiriya</label>
+            <label class="miner"><input type="checkbox">Sigiriya</label>
+            <label class="miner"><input type="checkbox">Sigiriya</label>
+            <label class="miner"><input type="checkbox">Sigiriya</label>
+            <label class="miner"><input type="checkbox">Sigiriya</label>
+          </div>
+          <div>
+            <label class="miner"><input type="checkbox">Sigiriya</label>
+            <label class="miner"><input type="checkbox">Sigiriya</label>
+            <label class="miner"><input type="checkbox">Sigiriya</label>
+            <label class="miner"><input type="checkbox">Sigiriya</label>
+            <label class="miner"><input type="checkbox">Sigiriya</label>
+          </div>
+          <div>
+            <label class="miner"><input type="checkbox">Sigiriya</label>
+            <label class="miner"><input type="checkbox">Sigiriya</label>
+            <label class="miner"><input type="checkbox">Sigiriya</label>
+            <label class="miner"><input type="checkbox">Sigiriya</label>
+            <label class="miner"><input type="checkbox">Sigiriya</label>
+          </div>
+        </div>
+        <h4>Cities</h4>
+        <div class="Customize">
+          <div>
+            <label class="miner"><input type="checkbox">Sigiriya</label>
+            <label class="miner"><input type="checkbox">Sigiriya</label>
+            <label class="miner"><input type="checkbox">Sigiriya</label>
+            <label class="miner"><input type="checkbox">Sigiriya</label>
+            <label class="miner"><input type="checkbox">Sigiriya</label>
+          </div>
+          <div>
+            <label class="miner"><input type="checkbox">Sigiriya</label>
+            <label class="miner"><input type="checkbox">Sigiriya</label>
+            <label class="miner"><input type="checkbox">Sigiriya</label>
+            <label class="miner"><input type="checkbox">Sigiriya</label>
+            <label class="miner"><input type="checkbox">Sigiriya</label>
+          </div>
+          <div>
+            <label class="miner"><input type="checkbox">Sigiriya</label>
+            <label class="miner"><input type="checkbox">Sigiriya</label>
+            <label class="miner"><input type="checkbox">Sigiriya</label>
+            <label class="miner"><input type="checkbox">Sigiriya</label>
+            <label class="miner"><input type="checkbox">Sigiriya</label>
+          </div>
+          <div>
+            <label class="miner"><input type="checkbox">Sigiriya</label>
+            <label class="miner"><input type="checkbox">Sigiriya</label>
+            <label class="miner"><input type="checkbox">Sigiriya</label>
+            <label class="miner"><input type="checkbox">Sigiriya</label>
+            <label class="miner"><input type="checkbox">Sigiriya</label>
+          </div>
+        </div>
+
       </div>
     </div>
 
     <!--Educational Form-->
     <div id="EducationForm" class="form-section">
-      <h3>Student valification </h3>
+      <hr class="hr-line">
+      <h2>Student valification </h2>
       <label for="plan">Institution Type</label>
-      <select id="plan" required>
+      <select id="plan" class="select-design" required>
         <option value="">-- Choose --</option>
         <option value="School">School</option>
         <option value="University">University</option>
@@ -222,61 +363,13 @@
       <input type="text" id="uname" required><br>
       <label>Official Email Address</label>
       <input type="email">
-      <label>Verifying Document</label>
-      <input type="file">
+      <label>Verifying Document</label><br>
+      <input type="file"><br>
       <label>Number of Tours</label>
       <input type="text">
     </div>
 
-    <!-- Flight section -->
-    <div id="flightForm" class="form-section">
-      <h3>Flight Ticket</h3>
-      <label>Departure City:</label>
-      <input type="text"><br><br>
-
-      <label>Destination:</label>
-      <input type="text"><br><br>
-
-      <label>Travel Date:</label>
-      <input type="date">
-    </div>
-
-
-
-
-
-
-    <!-- <div class="card-container"> 
-      <div class="card">
-        <img src="C:\Users\suhan\Pictures\Saved Pictures\remy-lovesy-syY2gTJMBkg-unsplash.jpg" alt="Image 1">
-        <div class="card-description">This is a simple description for card 1.</div>
-      </div>
-
-      <div class="card">
-        <img src="C:\Users\suhan\Pictures\Saved Pictures\remy-lovesy-syY2gTJMBkg-unsplash.jpg" alt="Image 2">
-        <div class="card-description">Short description for card 2.</div>
-      </div>
-
-      <div class="card">
-        <img src="C:\Users\suhan\Pictures\Saved Pictures\remy-lovesy-syY2gTJMBkg-unsplash.jpg" width="20%"
-          alt="Image 3">
-        <div class="card-description">Another description goes here for card 3.</div>
-      </div>
-
-      <div class="card">
-        <img src="C:\Users\suhan\Pictures\Saved Pictures\remy-lovesy-syY2gTJMBkg-unsplash.jpg" alt="Image 4">
-        <div class="card-description">Description text for card 4.</div>
-      </div>
-
-      <div class="card">
-        <img src="C:\Users\suhan\Pictures\Saved Pictures\remy-lovesy-syY2gTJMBkg-unsplash.jpg" alt="Image 5">
-        <div class="card-description">Details about card 5.</div>
-      </div>
-    </div>-->
-
-
-
-    <button type="button" class="button">Pay Now</button>
+    <button type="button" class="button">Continue to pay</button>
     <button type="button" class="button">Cancel</button>
   </form>
 </body>
