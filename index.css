@@ -320,7 +320,6 @@ nav a.active {
     padding: 10px;
     background: transparent;
     border-radius: 20px;
-    box-shadow: 0 80px 80px 80px rgba(256,256,256,0.1);
     width: 300px;
     height:350px;
 }
@@ -375,6 +374,7 @@ nav a.active {
 
 .map-container {
     align-items: right;
+    padding-top: 60px;
 }
 .map-box {
     width: 600px;
