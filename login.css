@@ -253,6 +253,10 @@ body {
     color: white;
     box-shadow: 0 4px 15px #94B2AD;
 }
+.btn-primary a {
+    text-decoration: none;
+    color: white;
+}
         
 .btn-primary:hover {
     transform: translateY(-2px);
