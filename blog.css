@@ -1,7 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #94B2AD;
+    font-family: 'Gowun Batang', serif;
+    overflow-x: hidden;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+}
+
+/* Navigation */
 nav {
     width: 100%;
-    position: absolute;
-    top: 40px; 
+    position: fixed;
+    top: 5%;
     left: 0;
     right: 0;
     padding: 15px 50px;
@@ -9,9 +28,9 @@ nav {
     justify-content: space-between;
     align-items: center;
     z-index: 2000;
-    background: rgba(255,255,255,0.12);
+    background: rgba(255, 255, 255, 0.12);
     backdrop-filter: blur(8px);
-    box-sizing: border-box; 
+    box-sizing: border-box;
 }
 
 nav a {
@@ -19,57 +38,270 @@ nav a {
     color: #FFB343;
     font-family: 'Gowun Batang';
     font-size: 16px;
+    transition: all 0.3s ease;
 }
 
-nav .nav-left, nav .nav-right {
+nav a:hover {
+    color: #FFD584;
+}
+
+nav .nav-left,
+nav .nav-right {
     display: flex;
     gap: 35px;
+    align-items: center;
 }
 
 nav a.active {
     color: #FFB343;
     font-weight: 600;
     text-decoration: underline;
-    text-shadow: 
-        0 0 10px #FFB343,
-        0 0 20px #FFB343,
-        0 0 30px #FFB343;
+    text-shadow: 0 0 10px #FFB343, 0 0 20px #FFB343, 0 0 30px #FFB343;
     animation: textGlow 2s ease-in-out infinite alternate;
 }
 
-/* Pulsing text glow animation */
 @keyframes textGlow {
     from {
-        text-shadow: 
-            0 0 10px #FFB343,
-            0 0 20px #FFB343;
+        text-shadow: 0 0 10px #FFB343, 0 0 20px #FFB343;
     }
     to {
-        text-shadow: 
-            0 0 15px #FFB343,
-            0 0 30px #FFB343,
-            0 0 40px #FFB343,
-            0 0 50px #FFB343;
+        text-shadow: 0 0 15px #FFB343, 0 0 30px #FFB343, 0 0 40px #FFB343, 0 0 50px #FFB343;
     }
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .logo-img {
     width: 20px;
     height: auto;
-    transform: scale(6.0);
+    transform: scale(6);
     transform-origin: center;
+}
+
+/* Blog Container */
+.blog-container {
+    width: 100%;
+    padding: 120px 60px 60px;
+    box-sizing: border-box;
+}
+
+/* Page Heading */
+.page-heading {
+    text-align: left;
+    margin-bottom: 50px;
+}
+
+.page-heading h1 {
+    font-size: 60px;
+    color: #544B41;
+    margin-bottom: 10px;
+    font-family: 'Julius Sans One', sans-serif;
+    letter-spacing: 3px;
+}
+
+.page-heading p {
+    font-size: 24px;
+    color: #544B41;
+    font-weight: 300;
+}
+
+/* Title Bar */
+.title-bar {
+    background: #544B41;
+    color: #FFB343;
+    padding: 15px 30px;
+    margin-top: 60px;
+    margin-bottom: 30px;
+    font-size: 22px;
+    letter-spacing: 3px;
+    font-weight: 600;
+    border-radius: 5px;
+}
+
+/* Slider Section */
+.slider-section {
+    position: relative;
+    margin: 30px 0 60px;
+    padding: 0 60px;
+}
+
+.slider {
+    display: flex;
+    gap: 30px;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    padding: 40px 0;
+    scrollbar-width: none;
+}
+
+.slider::-webkit-scrollbar {
+    display: none;
+}
+
+.slide {
+    min-width: calc((100% - 90px) / 4);
+    max-width: calc((100% - 90px) / 4);
+    background: white;
+    border-radius: 12px;
     padding: 0;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.slide img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 12px 12px 0 0;
+}
+
+.slide h3 {
+    padding: 15px 20px 10px;
+    font-size: 18px;
+    color: #544B41;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.slide p {
+    padding: 0 20px 20px;
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+}
+
+.slide:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.slide.active {
+    transform: scale(1.15);
+    box-shadow: 0 10px 30px rgba(255, 179, 67, 0.3);
+    z-index: 10;
+}
+
+/* Arrow Buttons */
+.arrow {
+    background: #544B41;
+    color: #FFB343;
+    border: none;
+    padding: 15px 18px;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 100;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.arrow:hover {
+    background: #FFB343;
+    color: #544B41;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.arrow.left {
+    left: 0;
+}
+
+.arrow.right {
+    right: 0;
+}
+
+/* Search Row */
+.search-row {
+    margin: 40px auto 20px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    max-width: 1200px;
+}
+
+.search-row input[type="text"] {
+    padding: 12px 20px;
+    flex: 1;
+    border: 2px solid #544B41;
+    border-radius: 25px;
+    font-size: 16px;
+    font-family: 'Gowun Batang';
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.search-row input[type="text"]:focus {
+    border-color: #FFB343;
+}
+
+/* Category Dropdown */
+.category-dropdown {
+    position: relative;
+}
+
+.dropdown-btn {
+    padding: 12px 25px;
+    background: #544B41;
+    color: #FFB343;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: 'Gowun Batang';
+    transition: all 0.3s ease;
+}
+
+.dropdown-btn:hover {
+    background: #FFB343;
+    color: #544B41;
+}
+
+.dropdown-content {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    background: white;
+    display: none;
+    flex-direction: column;
+    min-width: 180px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    z-index: 1000;
+}
+
+.dropdown-content a {
+    padding: 12px 20px;
+    text-decoration: none;
+    color: #544B41;
+    font-size: 15px;
+    transition: background 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    background: #FFB343;
+    color: white;
 }
 
 /* Footer */
 .footer {
     background: #544B41;
-    color: 94B2AD;
+    color: #94B2AD;
     padding: 50px 40px 30px;
-    height: 370px;
-
+    margin-top: 80px;
 }
-        
+
 .footer-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -77,34 +309,107 @@ nav a.active {
     max-width: 1200px;
     margin: 0 auto 30px;
 }
-        
+
 .footer-col h4 {
-    font-size: 24px;
+    font-size: 22px;
     margin-bottom: 20px;
     color: #FFB343;
+    font-weight: 600;
 }
+
 .footer-col p {
-    font-size: 16px; 
-    color: #ccc; 
-    line-height: 1.6; 
+    font-size: 15px;
+    color: #CEB79A;
+    line-height: 1.7;
     margin-bottom: 15px;
 }
 
 .footer-col ul {
     list-style: none;
 }
-        
+
 .footer-col li {
-    padding-right: 0;
-    padding-bottom: 15px;
+    padding-bottom: 12px;
     font-size: 14px;
     color: #94B2AD;
+    line-height: 1.6;
 }
-        
+
+.footer-col a {
+    color: #94B2AD;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-col a:hover {
+    color: #FFB343;
+}
+
 .footer-bottom {
-    border-top: 1px solid #555;
+    border-top: 1px solid #6B6157;
     padding-top: 20px;
     text-align: center;
-    font-size: 12px;
+    font-size: 13px;
     color: #CEB79A;
+    margin-top: 30px;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .slide {
+        min-width: calc((100% - 60px) / 3);
+        max-width: calc((100% - 60px) / 3);
+    }
+}
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        padding: 15px 20px;
+    }
+
+    nav .nav-left,
+    nav .nav-right {
+        flex-wrap: wrap;
+        gap: 15px;
+        justify-content: center;
+    }
+
+    .blog-container {
+        padding: 180px 20px 40px;
+    }
+
+    .page-heading h1 {
+        font-size: 40px;
+    }
+
+    .slider-section {
+        padding: 0 30px;
+    }
+
+    .slide {
+        min-width: calc((100% - 30px) / 2);
+        max-width: calc((100% - 30px) / 2);
+    }
+
+    .search-row {
+        flex-direction: column;
+        width: 90%;
+    }
+
+    .search-row input[type="text"] {
+        width: 100%;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .slide {
+        min-width: 100%;
+        max-width: 100%;
+    }
 }

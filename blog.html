@@ -3,75 +3,324 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage  - Sri Lanka Virtual Tourism</title>
+    <title>Blog - Sri Lanka Virtual Tourism</title>
     <link rel="stylesheet" href="blog.css">
-    <link href='https://fonts.googleapis.com/css?family=Gowun Batang|Julius Sans One' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Gowun+Batang|Julius+Sans+One' rel='stylesheet'>
 </head>
 <body>
     <div class="container">              
-            <nav>
-                <div class="nav-left">
-                    <a href="../index.html" class="active">Home</a>
-                    <a href="packages.html">Plan</a>
-                    <a href="destinations.html">Destinations</a>
-                    <a href="blog.html">Blog</a>
+        <nav>
+            <div class="nav-left">
+                <a href="../index.html">Home</a>
+                <a href="packages.html">Plan</a>
+                <a href="destinations.html">Destinations</a>
+                <a href="blog.html" class="active">Blog</a>
+            </div>
 
+            <div class="logo">
+                <img src="Media/360lk5.png" class="logo-img" alt="360°LK Logo">
+            </div>
+
+            <div class="nav-right">
+                <a href="login.html">Log in</a>
+                <a href="aboutus.html">Our Story</a>
+                <a href="contactus.html">Contact Us</a>
+            </div>
+        </nav>
+    </div>
+
+    <div class="blog-container">
+        <!-- PAGE TITLE -->
+        <div class="page-heading">
+            <h1>BLOG</h1>
+            <p>Popular Articles</p>
+        </div>
+
+        <!-- POPULAR ARTICLES SLIDER -->
+        <section class="slider-section">
+            <button class="arrow left" onclick="slide('popular', -1)">&#10094;</button>
+
+            <div class="slider" id="popular">
+                <div class="slide">
+                    <img src="Media/sigiriya.jpg" alt="Sigiriya">
+                    <h3>Discovering Sigiriya's Ancient Secrets</h3>
+                    <p>Explore the magnificent rock fortress and its fascinating history spanning centuries.</p>
                 </div>
 
-                <!-- logo image placeholder -->
-                <div class="logo">
-                    <img src="Media/360lk5.png" class="logo-img">
+                <div class="slide">
+                    <img src="Media/temple.jpg" alt="Temple">
+                    <h3>Sacred Temples of Sri Lanka</h3>
+                    <p>Journey through the spiritual heart of the island's Buddhist heritage.</p>
                 </div>
 
-                <div class="nav-right">
-                    <a href="login.html">Log in</a>
-                    <a href="aboutus.html">Our Story</a>
-                    <a href="contactus.html">Contact Us</a>
+                <div class="slide">
+                    <img src="Media/galle.jpg" alt="Galle Fort">
+                    <h3>Galle Fort: Where History Meets Ocean</h3>
+                    <p>Walk through colonial architecture and stunning coastal views.</p>
                 </div>
-            </nav>
+
+                <div class="slide">
+                    <img src="Media/wildlife.jpg" alt="Wildlife">
+                    <h3>Safari Adventures in Yala</h3>
+                    <p>Encounter leopards, elephants, and diverse wildlife in their natural habitat.</p>
+                </div>
+
+                <div class="slide">
+                    <img src="Media/ella.jpg" alt="Ella">
+                    <h3>Ella's Breathtaking Beauty</h3>
+                    <p>Discover mountain vistas, waterfalls, and tea plantations.</p>
+                </div>
+            </div>
+
+            <button class="arrow right" onclick="slide('popular', 1)">&#10095;</button>
+        </section>
+
+        <!-- SEARCH + CATEGORY DROPDOWN -->
+        <div class="search-row">
+            <input type="text" id="searchInput" placeholder="Search articles..." onkeyup="searchArticles()">
+            
+            <div class="category-dropdown">
+                <button class="dropdown-btn" onclick="toggleDropdown()">Category ▼</button>
+                <div class="dropdown-content" id="dropdown">
+                    <a href="#travel-tips">Travel Tips</a>
+                    <a href="#culture">Culture</a>
+                    <a href="#by-location">By Location</a>
+                    <a href="#by-activity">By Activity</a>
+                    <a href="#vr-technology">VR/Technology</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= SECTIONS ================= -->
+
+        <!-- TRAVEL TIPS -->
+        <div class="title-bar" id="travel-tips">TRAVEL TIPS</div>
+        <section class="slider-section">
+            <button class="arrow left" onclick="slide('tips', -1)">&#10094;</button>
+
+            <div class="slider" id="tips">
+                <div class="slide">
+                    <img src="images\Blog Images\tips 1.webp" alt="Budget Travel">
+                    <h3>Budget Travel Guide</h3>
+                    <p>Save money while experiencing the best of Sri Lanka with insider tips.</p>
+                </div>
+
+                <div class="slide">
+                    <img src="images\Blog Images\tips 2.webp" alt="Packing">
+                    <h3>Essential Packing List</h3>
+                    <p>What to bring for your tropical island adventure.</p>
+                </div>
+
+                <div class="slide">
+                    <img src="images\Blog Images\tips 3.jpg" alt="Transport">
+                    <h3>Getting Around Sri Lanka</h3>
+                    <p>Navigate trains, tuk-tuks, and buses like a local.</p>
+                </div>
+
+                <div class="slide">
+                    <img src="images\Blog Images\tips 4.webp" alt="Food">
+                    <h3>Must-Try Sri Lankan Dishes</h3>
+                    <p>A culinary journey through flavors and spices.</p>
+                </div>
+
+                                <div class="slide">
+                    <img src="Media/food-guide.jpg" alt="Food">
+                    <h3>Must-Try Sri Lankan Dishes</h3>
+                    <p>A culinary journey through flavors and spices.</p>
+                </div>
+            </div>
+
+            <button class="arrow right" onclick="slide('tips', 1)">&#10095;</button>
+        </section>
+
+        <!-- CULTURE -->
+        <div class="title-bar" id="culture">CULTURE</div>
+        <section class="slider-section">
+            <button class="arrow left" onclick="slide('cultureS', -1)">&#10094;</button>
+            
+            <div class="slider" id="cultureS">
+                <div class="slide">
+                    <img src="images\Blog Images\culture 1.jpg" alt="Festivals">
+                    <h3>Vibrant Festivals</h3>
+                    <p>Experience colorful celebrations and religious ceremonies.</p>
+                </div>
+                <div class="slide">
+                    <img src="images\Blog Images\culture 2.jpg" alt="Dance">
+                    <h3>Traditional Dance Forms</h3>
+                    <p>The rhythmic beauty of Kandyan and folk dances.</p>
+                </div>
+                <div class="slide">
+                    <img src="images\Blog Images\culture 3.jpg" alt="Handicrafts">
+                    <h3>Ancient Handicrafts</h3>
+                    <p>Discover traditional arts passed through generations.</p>
+                </div>
+                <div class="slide">
+                    <img src="Media/ayurveda.jpg" alt="Ayurveda">
+                    <h3>Ayurvedic Traditions</h3>
+                    <p>Ancient healing practices for modern wellness.</p>
+                </div>
+                <div class="slide">
+                    <img src="Media/ayurveda.jpg" alt="Ayurveda">
+                    <h3>Ayurvedic Traditions</h3>
+                    <p>Ancient healing practices for modern wellness.</p>
+                </div>
+            </div>
+
+            <button class="arrow right" onclick="slide('cultureS', 1)">&#10095;</button>
+        </section>
+
+        <!-- BY LOCATION -->
+        <div class="title-bar" id="by-location">BY LOCATION</div>
+        <section class="slider-section">
+            <button class="arrow left" onclick="slide('location', -1)">&#10094;</button>
+
+            <div class="slider" id="location">
+                <div class="slide">
+                    <img src="images\Blog Images\location 1.jpg" alt="Kandy">
+                    <h3>Kandy: Cultural Capital</h3>
+                    <p>Explore the last kingdom of Sri Lanka.</p>
+                </div>
+                <div class="slide">
+                    <img src="images\Blog Images\location 2.jpg" alt="Colombo">
+                    <h3>Colombo City Guide</h3>
+                    <p>Urban adventures in the commercial hub.</p>
+                </div>
+                <div class="slide">
+                    <img src="images\Blog Images\location 3.jpg" alt="Jaffna">
+                    <h3>Jaffna's Tamil Heritage</h3>
+                    <p>Northern culture and historic landmarks.</p>
+                </div>
+                <div class="slide">
+                    <img src="images\Blog Images\location 4.jpg" alt="Nuwara Eliya">
+                    <h3>Nuwara Eliya Tea Country</h3>
+                    <p>Cool climate and British colonial charm.</p>
+                </div>
+                <div class="slide">
+                    <img src="Media/nuwara-eliya.jpg" alt="Nuwara Eliya">
+                    <h3>Nuwara Eliya Tea Country</h3>
+                    <p>Cool climate and British colonial charm.</p>
+                </div>
+            </div>
+
+            <button class="arrow right" onclick="slide('location', 1)">&#10095;</button>
+        </section>
+
+        <!-- BY ACTIVITY -->
+        <div class="title-bar" id="by-activity">BY ACTIVITY</div>
+        <section class="slider-section">
+            <button class="arrow left" onclick="slide('activity', -1)">&#10094;</button>
+
+            <div class="slider" id="activity">
+                <div class="slide">
+                    <img src="images\Blog Images\activity 1.jpg" alt="Surfing">
+                    <h3>Surfing Paradise</h3>
+                    <p>Ride the waves at Arugam Bay and beyond.</p>
+                </div>
+                <div class="slide">
+                    <img src="images\Blog Images\activity 2.jpg" alt="Hiking">
+                    <h3>Mountain Hiking Trails</h3>
+                    <p>Conquer peaks like Adam's Peak and Knuckles Range.</p>
+                </div>
+                <div class="slide">
+                    <img src="images\Blog Images\activity 3.jpg" alt="Diving">
+                    <h3>Scuba Diving Adventures</h3>
+                    <p>Explore vibrant coral reefs and shipwrecks.</p>
+                </div>
+                <div class="slide">
+                    <img src="Media/tea-picking.jpg" alt="Tea">
+                    <h3>Tea Plantation Tours</h3>
+                    <p>From leaf to cup in the highlands.</p>
+                </div>
+                <div class="slide">
+                    <img src="Media/tea-picking.jpg" alt="Tea">
+                    <h3>Tea Plantation Tours</h3>
+                    <p>From leaf to cup in the highlands.</p>
+                </div>
+            </div>
+
+            <button class="arrow right" onclick="slide('activity', 1)">&#10095;</button>
+        </section>
+
+        <!-- VR/TECHNOLOGY -->
+        <div class="title-bar" id="vr-technology">VR/TECHNOLOGY</div>
+        <section class="slider-section">
+            <button class="arrow left" onclick="slide('vr', -1)">&#10094;</button>
+
+            <div class="slider" id="vr">
+                <div class="slide">
+                    <img src="images\Blog Images\tech 1.png" alt="VR Tour">
+                    <h3>Virtual Reality Tours</h3>
+                    <p>Experience Sri Lanka from anywhere in the world.</p>
+                </div>
+                <div class="slide">
+                    <img src="images\Blog Images\tech 2.jpg" alt="360 Technology">
+                    <h3>360° Technology Explained</h3>
+                    <p>How we bring destinations to life digitally.</p>
+                </div>
+                <div class="slide">
+                    <img src="images\Blog Images\tech 3.webp" alt="Future Travel">
+                    <h3>The Future of Travel</h3>
+                    <p>How technology is transforming tourism.</p>
+                </div>
+                <div class="slide">
+                    <img src="Media/digital-heritage.jpg" alt="Digital Heritage">
+                    <h3>Preserving Heritage Digitally</h3>
+                    <p>Using VR to protect cultural sites.</p>
+                </div>
+                <div class="slide">
+                    <img src="Media/digital-heritage.jpg" alt="Digital Heritage">
+                    <h3>Preserving Heritage Digitally</h3>
+                    <p>Using VR to protect cultural sites.</p>
+                </div>
+            </div>
+
+            <button class="arrow right" onclick="slide('vr', 1)">&#10095;</button>
+        </section>
+
     </div>
 
     <div class="footer">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h4>About 360°LK </h4>
-                    <p>An immersive virtual tourism platform connecting culture, technology, and travel.</p>
-                </div>
-                <div class="footer-col">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li>Home</li>
-                        <li>Plans</li>
-                        <li>Destinations</li>
-                        <li>Our Story</li>
-                        <li>Log in</li>
-                        <li>Contact Us</li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Top Destinations</h4>
-                    <ul>
-                        <li>Sigiriya Rock Fortress</li>
-                        <li>Temple of the Tooth Relic</li>
-                        <li>Galle Fort</li>
-                        <li>Yala</li>
-                        <li>Ella</li>
-                        <li>Nallur Kovil</li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Contact</h4>
-                    <ul>
-                        <li>Phone: +94 77 1234567</li>
-                        <li>Email: 360lk@gmail.com</li>
-                        <li>Website: 360_lk.com</li>
-                    </ul>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>About 360°LK</h4>
+                <p>An immersive virtual tourism platform connecting culture, technology, and travel.</p>
             </div>
-            
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="packages.html">Plans</a></li>
+                    <li><a href="destinations.html">Destinations</a></li>
+                    <li><a href="aboutus.html">Our Story</a></li>
+                    <li><a href="login.html">Log in</a></li>
+                    <li><a href="contactus.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Top Destinations</h4>
+                <ul>
+                    <li>Sigiriya Rock Fortress</li>
+                    <li>Temple of the Tooth Relic</li>
+                    <li>Galle Fort</li>
+                    <li>Yala</li>
+                    <li>Ella</li>
+                    <li>Nallur Kovil</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul>
+                    <li>Phone: +94 77 1234567</li>
+                    <li>Email: 360lk@gmail.com</li>
+                    <li>Website: 360_lk.com</li>
+                </ul>
+            </div>
         </div>
         <div class="footer-bottom">
             &copy; 2025 Virtual Sri Lanka. All rights reserved. | Privacy Policy | Terms of Service
         </div>
     </div>
+
+    <script src="blog.js"></script>
 </body>
 </html>
