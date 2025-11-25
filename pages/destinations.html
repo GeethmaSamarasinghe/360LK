@@ -138,7 +138,6 @@ p.indented {
     margin-top: 70px;
 }
 
-
 /* ===================== CATEGORY BAR ===================== */
 .category-bar {
     background: var(--brown);
@@ -151,90 +150,54 @@ p.indented {
     text-align: center;
     letter-spacing: 8px;
     font-size: 20px;
-}
+} 
 
-/* ===================== SLIDER ===================== */
-.slider-container {
+.carousel {
+    position: relative;
     width: 100%;
+    height: 500px;
+    perspective: 1700px;
     display: flex;
-    justify-content: center; 
+    justify-content: center;
     align-items: center;
-    gap: 15px;
-    margin: auto;
 }
 
-.arrow {
-    font-size: 35px;
-    color: var(--black);
-    font-weight: bold;
-    cursor: pointer;
-    user-select: none;
-    padding: 0 2px;
-}
-
-.slider-window {
-    width: 70%; 
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-}
-
-/* center all cards inside track */
-.slider-track {
-    display: flex;
-    justify-content: center;
-    gap: 20px; 
-    transition: transform 0.45s ease;
-    align-items: center; 
-}
-
-/* ===================== CARD STYLES ===================== */
 .card {
-    background: #D9D9D9;
-    border-radius:0px;
-    padding: 0px;
-    color:black;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.35); 
-}
-
-/* LEFT + RIGHT small */
-.card.small {
-    width: 220px;
+    position: absolute;
+    width: 230px;
     height: 330px;
-}
-
-.card.small img {
-    width: 100%;
-    height: 150px;  
+    background: #d9d9d9;
     border-radius: 0px;
-    object-fit: cover;
+    display: flex;
+    flex-direction: column;   
+    overflow: hidden;
+    padding-bottom: 10px;
+    color: black;
+    font-size: 14px;
+    cursor: pointer;
+    transition: transform 0.6s ease, opacity 0.6s ease;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.35);
 }
 
-/* BIG CENTER CARD  */
-.card.big {
-    width: 330px;
-    height:400px;
-    
-}
-
-.card.big img {
+.card-img {
     width: 100%;
-    height: 230px;
-    border-radius: 0px;
+    height: 156px;
     object-fit: cover;
 }
 
 .card h3 {
-    text-align: center;
-    margin: 10px 0 7px;
-    color: var(--black);
+    margin: 10px 12px 5px;
+    color: black;
+    text-align:center;
 }
 
 .card p {
-    font-size: 13px;
-    text-align: center;
+    font-size: 14px;
+    margin: 0 12px;
     color: black;
-    padding: 0 5px;
+    line-height: 1.4;
+    flex-grow: 1; /* fills remaining space */
+    text-align:center;
 }
 
 .view-tour {
@@ -350,152 +313,205 @@ footer .copyright {
 
 </header>
 
-
-<!-- ===================== JS FOR SLIDER ===================== -->
-<script>
-function slide(id, dir) {
-    const track = document.getElementById(id);
-    const cardWidth = 260; 
-    const pos = Number(track.dataset.pos) || 0;
-
-    
-    let newPos = pos + dir * cardWidth;
-
-    
-    if (newPos < 0) newPos = 0;
-    if (newPos > cardWidth) newPos = cardWidth;
-
-    track.style.transform = `translateX(-${newPos}px)`;
-    track.dataset.pos = newPos;
-}
-</script>
-
 <!-- ===================== NATURE ===================== -->
 <div class="category-bar"><h2>NATURE</h2></div>
-
-<div class="slider-container">
-    <div class="arrow" onclick="slide('nature', -1)">&#10094;</div>
-
-    <div class="slider-window">
-        <div class="slider-track" id="nature">
-            
-            <div class="card small">
-                <img src="C:\Users\DELL\Downloads\New folder\n1.jpg">
-                <h3>Yala National Park</h3><p>Yala National Park is one of Sri Lanka's top wildlife hotspots, famous for leopards and elephants. 
-                    Its diverse landscapes make every safari a unique adventure.</p>
-                <a href="#" class="view-tour">View Tour</a>
-            </div>
-
-            <div class="card big">
-                <img src="../images/destinations/n2.jpg">
-                <h3>Horton Plains</h3><p>Horton Plains is a misty highland plateau known for its breathtaking “World's End” viewpoint. 
+<div class="carousel" id="carousel">
+     <div class="card">
+        <img src="../images/destinations/n4.jpg" class="card-img">
+        <h3>Udawalawe National Park</h3>
+        <p>Udawalawe is famous for its large elephant population and open grasslands, offering one of the best wildlife viewing experiences in Sri Lanka.</p>
+        <a href="vr.html" class="view-tour">View Tour</a>
+     </div> 
+     
+     <div class="card">
+        <img src="../images/destinations/n2.jpg" class="card-img">
+        <h3>Horton Plains</h3>
+        <p>Horton Plains is a misty highland plateau known for its breathtaking "World's End" viewpoint. 
                     It offers scenic trails surrounded by rare flora and fauna.</p>
-                <a href="#" class="view-tour">View Tour</a>
-            </div>
+        <a href="vr.html" class="view-tour">View Tour</a>
+     </div> 
+     
+     <div class="card">
+        <img src="../images/destinations/n1.jpg" class="card-img">
+        <h3>Yala National Park</h3>
+        <p>Yala National Park is a top wildlife destination known for its leopards, elephants, and beautiful dry-zone landscapes that attract many visitors.</p>
+        <a href="vr.html" class="view-tour">View Tour</a>
+     </div> 
+     
+     <div class="card">
+        <img src="../images/destinations/n3.jpg" class="card-img">
+        <h3>Sinharaja Rain Forest</h3>
+        <p>Sinharaja is Sri Lanka's last primary rainforest, rich with unique plants and animals, making it a paradise for nature lovers.</p>
+        <a href="vr.html" class="view-tour">View Tour</a>
+     </div> 
 
-            <div class="card small">
-                <img src="../images/destinations/n3.jpg">
-                <h3>Sinharaja Rain Forest</h3><p>Sinharaja is Sri Lanka's last remaining primary rainforest and a UNESCO World Heritage Site. 
-                    Its rich biodiversity makes it a paradise for nature lovers and researchers.</p>
-                <a href="#" class="view-tour">View Tour</a>
-            </div>
-
-        </div>
-    </div>
-
-    <div class="arrow" onclick="slide('nature', 1)">&#10095;</div>
+     <div class="card">
+        <img src="../images/destinations/n5.jpg" class="card-img">
+        <h3>Knuckles Mountain Range</h3>
+        <p>The Knuckles Range offers scenic trails, rare biodiversity, and stunning mountain views ideal for trekking and outdoor exploration.</p>
+        <a href="vr.html" class="view-tour">View Tour</a>
+     </div>  
 </div>
-
 <!-- ===================== CULTURE ===================== -->
 <div class="category-bar"><h2>CULTURE</h2></div>
+<div class="carousel" id="carousel">
+     <div class="card">
+        <img src="../images/destinations/c4.jpg" class="card-img">
+        <h3>Temple of the Tooth</h3>
+        <p>This temple houses the sacred tooth relic of the Buddha and remains one of the most important religious sites in Sri Lanka today.</p>
+        <a href="vr.html" class="view-tour">View Tour</a>
+     </div> 
+     
+     <div class="card">
+        <img src="../images/destinations/c1.jpg" class="card-img">
+        <h3>The Nallur Kandaswami Kovil</h3>
+        <p>Nallur Kovil is a sacred Hindu temple known for its golden architecture and vibrant annual festivals.</p>
+        <a href="vr.html" class="view-tour">View Tour</a>
+     </div> 
+     
+     <div class="card">
+        <img src="../images/destinations/c2.jpg" class="card-img">
+        <h3>Dambulla Cave Temple</h3>
+        <p>The Dambulla Cave Temple is the largest and best-preserved cave temple in Sri Lanka, filled with murals and ancient statues that reflect its history.</p>
+        <a href="vr.html" class="view-tour">View Tour</a>
+     </div> 
+     
+     <div class="card">
+        <img src="../images/destinations/c3.jpg" class="card-img">
+        <h3>Anuradhapura Sandakadapahana</h3>
+        <p>The Sandakadapahana is an iconic carved moonstone of Anuradhapura, symbolizing the Buddhist cycle of life.</p>
+        <a href="vr.html" class="view-tour">View Tour</a>
+     </div> 
 
-<div class="slider-container">
-    <div class="arrow" onclick="slide('culture', -1)">&#10094;</div>
-    <div class="slider-window">
-        <div class="slider-track" id="culture">
-
-            <div class="card small"><img src="../images/destinations/c1.jpg"><h3>The Nallur Kandaswami Kovil</h3>
-                <p>Nallur Kovil is one of the most sacred Hindu temples in Sri Lanka, known for its grand architecture. 
-                    The temple's vibrant festivals attract thousands of devotees every year.</p><a class="view-tour" href="vr.html">View Tour</a></div>
-            <div class="card big"><img src="../images/destinations/c2.jpg"><h3>The Dambulla Cave Temple</h3>
-                <p>The Dambulla Cave Temple is Sri Lanka's largest and best-preserved cave temple complex. 
-                    Its ancient murals and Buddha statues make it a key cultural treasure.</p><a class="view-tour" href="vr.html">View Tour</a></div>
-            <div class="card small"><img src="../images/destinations/c3.jpg"><h3>Anuradhapura Sandakadapahana</h3>
-                <p>The Sandakadapahana is an iconic carved moonstone of Anuradhapura, symbolizing the Buddhist cycle of life.</p><a class="view-tour" href="vr.html">View Tour</a></div>
-
-        </div>
-    </div>
-    <div class="arrow" onclick="slide('culture', 1)">&#10095;</div>
+     <div class="card">
+        <img src="../images/destinations/c5.jpg" class="card-img">
+        <h3>Katharagama Shrine</h3>
+        <p>A major pilgrimage site for multiple religions, known for its spiritual atmosphere, traditional rituals, and vibrant cultural heritage.</p>
+        <a href="vr.html" class="view-tour">View Tour</a>
+     </div>  
 </div>
-
 <!-- ===================== HISTORICAL ===================== -->
 <div class="category-bar"><h2>HISTORICAL</h2></div>
+<div class="carousel" id="carousel">
+     <div class="card">
+        <img src="../images/destinations/h4.jpg" class="card-img">
+        <h3>Jaffna Fort</h3>
+        <p>A coastal fort built by the Portuguese and later expanded by the Dutch, offering a fascinating glimpse into colonial history.</p>
+        <a href="vr.html" class="view-tour">View Tour</a>
+     </div> 
+     
+     <div class="card">
+        <img src="../images/destinations/h1.jpg" class="card-img">
+        <h3>Sigiriya Rock Fortress</h3>
+        <p>Sigiriya is an ancient rock fortress known for its stunning frescoes and engineering brilliance. 
+            The climb reveals breathtaking views and a deep glimpse into Sri Lanka's royal history.</p>
+        <a href="vr.html" class="view-tour">View Tour</a>
+     </div> 
+     
+     <div class="card">
+        <img src="../images/destinations/h2.jpg" class="card-img">
+        <h3>The Royal Palace in Polonnaruwa</h3>
+        <p>The Polonnaruwa Royal Palace showcases the grandeur of ancient kings through its impressive stone ruins.</p>
+        <a href="vr.html" class="view-tour">View Tour</a>
+     </div> 
+     
+     <div class="card">
+        <img src="../images/destinations/h3.jpg" class="card-img">
+        <h3>King Parakramabahu Statue</h3>
+        <p>A famed ancient statue believed to depict King Parakramabahu, symbolizing his wisdom and vision for prosperity.</p>
+        <a href="vr.html" class="view-tour">View Tour</a>
+     </div> 
 
-<div class="slider-container">
-    <div class="arrow" onclick="slide('hist', -1)">&#10094;</div>
-    <div class="slider-window">
-        <div class="slider-track" id="hist">
-
-            <div class="card small"><img src="../images/destinations/h1.jpg"><h3>Sigiriya Rock Fortress</h3>
-                <p>Sigiriya is an ancient rock fortress known for its stunning frescoes and engineering brilliance. 
-                    The climb reveals breathtaking views and a deep glimpse into Sri Lanka's royal history.</p><a href="vr.html" class="view-tour">View Tour</a></div>
-            <div class="card big"><img src="../images/destinations/h2.jpg"><h3>The Royal Palace in Polonnaruwa</h3>
-                <p>The Royal Palace in Polonnaruwa showcases the architectural grandeur of ancient Sri Lankan kings. 
-                    Its ruins reflect advanced craftsmanship and the power of the Polonnaruwa kingdom.</p><a href="vr.html" class="view-tour">View Tour</a></div>
-            <div class="card small"><img src="../images/destinations/h3.jpg"><h3>King Parakramabahu Statue</h3>
-                <p>A famed ancient statue believed to depict King Parakramabahu, symbolizing his wisdom and vision for prosperity.</p><a href="vr.html" class="view-tour">View Tour</a></div>
-
-        </div>
-    </div>
-    <div class="arrow" onclick="slide('hist', 1)">&#10095;</div>
+     <div class="card">
+        <img src="../images/destinations/h5.jpg" class="card-img">
+        <h3>Adam's Peak (Sri Pada)</h3>
+        <p>Adam's Peak is a sacred mountain famous for the footprint at its summit and its long-standing multi-faith pilgrimage tradition.</p>
+        <a href="vr.html" class="view-tour">View Tour</a>
+     </div>  
 </div>
-
+    
 <!-- ===================== BEACHES ===================== -->
 <div class="category-bar"><h2>BEACHES</h2></div>
+<div class="carousel" id="carousel">
+     <div class="card">
+        <img src="../images/destinations/b4.jpg" class="card-img">
+        <h3>Unawatuna Beach</h3>
+        <p>Offers calm turquoise waters and sandy beaches, perfect for swimming and snorkeling. The coral reefs and seaside activities make it a relaxing destination.</p>
+        <a href="vr.html" class="view-tour">View Tour</a>
+     </div> 
+     
+     <div class="card">
+        <img src="../images/destinations/b1.jpg" class="card-img">
+        <h3>Arugam Bay Beach</h3>
+        <p>Arugam bay is a world-renowned surfing beach with golden sands and relaxing coastal vibes. 
+            It attracts surfers, backpackers, and nature lovers from around the world.</p>
+        <a href="vr.html" class="view-tour">View Tour</a>
+     </div> 
+     
+     <div class="card">
+        <img src="../images/destinations/b2.jpg" class="card-img">
+        <h3>Koggala Beach</h3>
+        <p>Koggala Beach is a quiet and scenic stretch of coastline ideal for calm getaways. 
+            The logoon and nearby stilt fishermen add to its natural charm.</p>
+        <a href="vr.html" class="view-tour">View Tour</a>
+     </div> 
+     
+     <div class="card">
+        <img src="../images/destinations/b3.jpg" class="card-img">
+        <h3>Bentota Beach</h3>
+        <p>Bentota Beach is known for its wide sandy shores and clear waters perfect for water sports. 
+            It is one of Sri Lanka's most popular resort areas for relaxation and adventure.</p>
+        <a href="vr.html" class="view-tour">View Tour</a>
+     </div> 
 
-<div class="slider-container">
-    <div class="arrow" onclick="slide('beach', -1)">&#10094;</div>
-    <div class="slider-window">
-        <div class="slider-track" id="beach">
-
-            <div class="card small"><img src="../images/destinations/b1.jpg"><h3>Arugambe Beach</h3>
-                <p>Arugambe is a world-renowned surfing beach with golden sands and relaxing coastal vibes. 
-                    It attracts surfers, backpackers, and nature lovers from around the world.</p><a href="vr.html" class="view-tour">View Tour</a></div>
-            <div class="card big"><img src="../images/destinations/b2.jpg"><h3>Koggala Beach</h3>
-                <p>Koggala Beach is a quiet and scenic stretch of coastline ideal for calm getaways. 
-                    The logoon and nearby stilt fishermen add to its natural charm.</p><a href="vr.html" class="view-tour">View Tour</a></div>
-            <div class="card small"><img src="../images/destinations/b3.jpg"><h3>Benthota Beach</h3>
-                <p>Bentota Beach is known for its wide sandy shores and clear waters perfect for water sports. 
-                    It is one of Sri Lanka's most popular resort areas for relaxation and adventure.</p><a href="vr.html" class="view-tour">View Tour</a></div>
-
-        </div>
-    </div>
-    <div class="arrow" onclick="slide('beach', 1)">&#10095;</div>
+     <div class="card">
+        <img src="../images/destinations/b5.jpg" class="card-img">
+        <h3>Mirissa Beach</h3>
+        <p>Mirissa is famous for whale watching and golden palm-lined beaches. Visitors can enjoy ocean sunsets, water sports, and the lively coastal atmosphere.</p>
+        <a href="vr.html" class="view-tour">View Tour</a>
+     </div>  
 </div>
 
 <!-- ===================== CITIES ===================== -->
 <div class="category-bar"><h2>CITIES</h2></div>
+<div class="carousel" id="carousel">
+     <div class="card">
+        <img src="../images/destinations/ci4.jpg" class="card-img">
+        <h3>Nuwara Eliya</h3>
+        <p>A scenic town in central highlands, known for its cool climate and extensive tea plantations, which earned it the nickname "Little England"</p>
+        <a href="vr.html" class="view-tour">View Tour</a>
+     </div> 
+     
+     <div class="card">
+        <img src="../images/destinations/ci1.jpg" class="card-img">
+        <h3>Colombo</h3>
+        <p>Colombo is the island's busy commercial capital, combining modern skyscrapers, colonial buildings, shopping areas, and coastal views.</p>
+        <a href="vr.html" class="view-tour">View Tour</a>
+     </div> 
+     
+     <div class="card">
+        <img src="../images/destinations/ci2.jpg" class="card-img">
+        <h3>Galle</h3>
+        <p>Galle is home to the historic Dutch Fort, offering colonial-era streets, seaside views, and a unique mix of culture and architecture.</p>
+        <a href="vr.html" class="view-tour">View Tour</a>
+     </div> 
+     
+     <div class="card">
+        <img src="../images/destinations/ci3.jpg" class="card-img">
+        <h3>Kandy</h3>
+        <p>Kandy is the cultural heart of Sri Lanka, surrounded by mountains and known for the Temple of the Tooth and its deep-rooted traditions.</p>
+        <a href="vr.html" class="view-tour">View Tour</a>
+     </div> 
 
-<div class="slider-container">
-    <div class="arrow" onclick="slide('city', -1)">&#10094;</div>
-    <div class="slider-window">
-        <div class="slider-track" id="city">
-
-            <div class="card small"><img src="../images/destinations/ci1.jpg"><h3>Colombo</h3>
-                <p>Colombo is Sri Lanka's bustling commercial capital, known for its modern skyline and vibrant city life. 
-                    It blends colonial landmarks, shopping districts, and coastal views into one lively urban experience.</p><a href="vr.html" class="view-tour">View Tour</a></div>
-            <div class="card big"><img src="../images/destinations/ci2.jpg"><h3>Galle</h3>
-                <p>Galle is famous for its historic Dutch Fort, a UNESCO World Heritage Site. 
-                    The city offers charming streets, seaside walls, and a unique mix of culture and architecture.</p><a href="vr.html" class="view-tour">View Tour</a></div>
-            <div class="card small"><img src="../images/destinations/ci3.jpg"><h3>Kandy</h3>
-                <p>Kandy is Sri Lanka's cultural heart, surrounded by mountains and lush greenery. 
-                    It is home to the Temple of the Tooth, one of the most sacred Buddhist sites in the world.</p><a href="vr.html" class="view-tour">View Tour</a></div>
-
-        </div>
-    </div>
-    <div class="arrow" onclick="slide('city', 1)">&#10095;</div>
+     <div class="card">
+        <img src="../images/destinations/ci5.jpg" class="card-img">
+        <h3>Jaffna</h3>
+        <p>Jaffna is a culturally rich city, known for its historic temples, vibrant markets, and Tamil heritage. 
+            Its local cuisine and traditions attract curious visitors.</p>
+        <a href="vr.html" class="view-tour">View Tour</a>
+     </div>  
 </div>
-
+    
 <!-- ===================== FOOTER ===================== -->
 <footer>
     <div class="footer-grid">
@@ -532,6 +548,77 @@ function slide(id, dir) {
 
     <p class="copyright">© 2025 360LK</p>
 </footer>
+<script>
+/*
+  Initialize one independent carousel instance for each .carousel on the page.
+  This prevents cards from different sections (NATURE, CULTURE, etc.) from
+  interfering with each other.
+*/
+document.querySelectorAll('.carousel').forEach((carouselEl, carouselIdx) => {
+  const cards = Array.from(carouselEl.querySelectorAll('.card'));
+  if (!cards.length) return;
 
+  // Per-carousel state (each carousel has its own centerIndex)
+  let centerIndex = Math.floor(cards.length / 2); // default center = middle card
+
+  // You can tweak spacing/depth per carousel if you want; using same constants is fine
+  const SPACING = 320;
+  const DEPTH = 220;
+
+  function updatePositions() {
+    const total = cards.length;
+
+    cards.forEach((card, i) => {
+      let diff = i - centerIndex;
+
+      // Circular wrap-around
+      if (diff > total / 2) diff -= total;
+      if (diff < -total / 2) diff += total;
+
+      // Base horizontal spacing (center card at x = 0)
+      let x = diff * SPACING;
+
+      // Depth effect
+      let z = -Math.abs(diff) * DEPTH;
+
+      // Scaling rules
+      let scale =
+        diff === 0 ? 1.35 :
+        Math.abs(diff) === 1 ? 0.95 :
+        0.75;
+
+      // Keep left/right spacing symmetric when scaling
+      if (diff > 0) {
+        x += (scale - 1) * 80;
+      } else if (diff < 0) {
+        x -= (scale - 1) * 80;
+      }
+
+      // Hide farthest back cards
+      let opacity = Math.abs(diff) > 2 ? 0 : 1;
+
+      card.style.transform = `translateX(${x}px) translateZ(${z}px) scale(${scale})`;
+      card.style.opacity = opacity;
+      // make sure pointer events are only for visible cards (optional)
+      card.style.pointerEvents = opacity === 0 ? 'none' : 'auto';
+    });
+  }
+
+  // Click handler: only affects this carousel's cards
+  cards.forEach((card, i) => {
+    card.addEventListener('click', () => {
+      centerIndex = i;
+      updatePositions();
+    });
+  });
+
+  // Initial render for this carousel
+  updatePositions();
+
+  // OPTIONAL: resize handler to update layout if you adjust spacing dynamically
+  // window.addEventListener('resize', updatePositions);
+});
+</script>
+    
 </body>
 </html>

@@ -1,0 +1,190 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0px;
+    background-image:
+        linear-gradient(#e3d2bd91, #e3d2bd91),
+        url("C:/Users/suhan/Downloads/972301.jpg");
+    background-color: #E3D2BD;
+    background-size: cover;
+}
+
+.fondamento-regular {
+    font-family: "Fondamento", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.fondamento-regular-italic {
+    font-family: "Fondamento", cursive;
+    font-weight: 400;
+    font-style: italic;
+}
+
+
+.exo-fontf {
+    font-family: "Exo", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+}
+
+form {
+    width: 60%;
+    margin: 2% auto 3% auto;
+    padding: 30px 100px;
+    text-align: center;
+    font-family: "Exo", sans-serif;
+    font-weight: 300;
+    background-color: #544b41eb;
+    border: 2px solid #E3D2BD;
+    border-radius: 10px;
+}
+
+.form-section {
+    display: none;
+    /* to hidden at start */
+}
+
+/*  LOG IN TITLE  */
+h1 {
+    margin: 40px 100px;
+    font-size: 70px;
+    font-weight: bolder;
+    font-family: "Fondamento", cursive;
+}
+
+h2 {
+    font-size: 30px;
+    font-family: "Exo", sans-serif;
+    font-weight: 500;
+    color: #E3D2BD;
+    margin: 5px 0px 0px 0px;
+    text-align: left;
+}
+
+h3 {
+    text-align: left;
+    font-family: "Exo", sans-serif;
+    font-size: 30px;
+    font-weight: 500;
+    color: #E3D2BD;
+
+}
+h4 {
+    text-align: left;
+    color: #544b41;
+    font-family: "Exo", sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    background-color: #e3d2bdbc;
+    padding: 0px 5px;
+}
+
+p {
+    font-size: 13px; 
+    font-family: "Exo", sans-serif;
+    font-weight: 500;
+    color: #fff;
+}
+
+.hr-line{
+    border: 1px solid #E3D2BD;
+}
+
+/*  INPUT FIELDS  */
+label {
+    text-align: left;
+    float: left;
+    font-size: 15px;
+    color: #E3D2BD;
+}
+
+input[type=text],
+input[type=email] {
+    width: 97%;
+    padding: 15px;
+    margin: 20px 0px;
+    background-color: #FEFBFB;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    box-sizing: unset;
+}
+input[type=file]{
+    align-items: left;
+    padding: 5px;
+    margin: 10px 0px;
+    width: 100%;
+}
+
+.select-design{
+    width: 100%;
+    padding: 10px;
+    margin: 20px 0px;
+}
+
+.card-container {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 200px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background: #fff;
+}
+
+.card img {
+    width: 100%;
+    height: 130px;
+    object-fit: cover;
+}
+
+.card-description {
+    padding: 12px;
+    font-size: 14px;
+    color: #333;
+}
+
+/*  REMEMBER ME  */
+.miner {
+    font-size: 13px;
+    color: #E3D2BD;
+    padding: 5px 0px 10px 10px;
+    width: 100%;
+}
+
+input[type=checkbox] {
+    padding: 10px;
+    margin: auto;
+}
+
+.Customize{
+    display: flex;
+
+}
+
+/*  BUTTON  */
+button {
+    width: 20%;
+    padding: 12px 10px;
+    margin: 15px 40px;
+    background-color: #ffffffad;
+    color: #544B41;
+    border: none;
+    border-radius: 3px;
+    font-family: sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #FEFBFB;
+    color: #544B41;
+}
