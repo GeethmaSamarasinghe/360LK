@@ -516,51 +516,79 @@ nav a.active {
 }
 
 /* Footer */
-.footer {
-    background: #544B41;
-    color: #94B2AD;
-    padding: 0;
-    height: 370px;
+footer {
+        background: #544B41;
+        color: #94B2AD;
+        padding: 30px;
+    }
 
-}
-        
-.footer-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 40px;
-    max-width: 1200px;
-    margin: 0 auto 30px;
-}
-        
-.footer-col h4 {
-    font-size: 24px;
-    margin-bottom: 20px;
-    color: #FFB343;
-}
-.footer-col p {
-    font-size: 16px; 
-    color: #ccc; 
-    line-height: 1.6; 
-    margin-bottom: 15px;
-}
+    .footer-content {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        max-width: 1200px;
+        margin: 0 auto;
+        gap: 50px;
+    }
 
-.footer-col ul {
-    list-style: none;
-}
-        
-.footer-col li {
-    padding-right: 0;
-    padding-bottom: 15px;
-    font-size: 14px;
-    color: #94B2AD;
-}
-        
-.footer-bottom {
-    border-top: 1px solid #555;
-    padding-top: 20px;
-    text-align: center;
-    font-size: 12px;
-    color: #CEB79A;
-}
+    .footer-section {
+        margin: 20px;
+        opacity: 0;
+        animation: fadeIn 1s ease forwards;
+    }
+
+    .footer-section:nth-child(1) { animation-delay: 0.2s; }
+    .footer-section:nth-child(2) { animation-delay: 0.4s; }
+    .footer-section:nth-child(3) { animation-delay: 0.6s; }
+    .footer-section:nth-child(4) { animation-delay: 0.8s; }
+
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    .footer-section h3 {
+        color: #FFB343;
+        margin-bottom: 20px;
+        font-size: 18px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .footer-section ul {
+        list-style: none;
+        padding-left: 0;
+    }
+
+    .footer-section li {
+        margin: 10px 0;
+        font-size: 16px;
+        transition: transform 0.3s ease;
+    }
+
+    .footer-section li:hover {
+        transform: translateX(5px);
+    }
+
+    .footer-section a {
+        color: #a8a8a8;
+        text-decoration: none;
+        transition: color 0.3s;
+	color: #94B2AD;
+    }
+
+    .footer-section a:hover {
+        color: #c4a574;
+    }
+
+    .copyright {
+        text-align: center;
+        margin-top: 30px;
+        padding-top: 30px;
+        border-top: 1px solid #555;
+        font-size: 12px;
+	color: #CEB79A;
+    }
+
         
 
