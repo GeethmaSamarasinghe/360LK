@@ -3,220 +3,276 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage  - Sri Lanka Virtual Tourism</title>
-    <link rel="stylesheet" href="index.css">
-    <link href='https://fonts.googleapis.com/css?family=Gowun Batang|Julius Sans One|Kites One' rel='stylesheet'>
+    <title>Contact Us - 360LK</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kite:wght@400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Junge&display=swap" rel="stylesheet">
+
+    <style>
+        /* Reset and basic styling */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: #F5F4E9; /* page background */
+            color: #333;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background-color: #F5F4E9;
+        }
+.nav-left a,
+.nav-right a {
+    margin: 0 15px;
+    font-weight: 500;
+}
+
+.nav-left a:hover,
+.nav-right a:hover {
+    color: #7F8C8D;
+}
+   .logo-img {
+    height: 50px; /* adjust the height as needed */
+    width: auto;  /* keeps the image proportions correct */
+}
+     
+
+        nav a {
+            margin: 0 15px;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: #7F8C8D;
+        }
+.page-title {
+    position: absolute;       /* allows precise positioning */
+    top: 90px;               /* distance from top */
+    left: 409px;              /* distance from left */
+    width: 634px;             /* width of the container */
+    height: 117px;            /* height of the container */
+    font-family: 'Junge', serif; /* your chosen font */
+    font-weight: 400;         /* regular weight */
+    font-size: 72px;          /* adjust size to fill height (approx.) */
+    line-height: 117px;       /* match the height for vertical alignment */
+    text-align: center;       /* center text horizontally */
+    color: #000;              /* black color */
+    opacity: 1;               /* full opacity */
+}
+
+    .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 50px 20px 50px; /* top, right, bottom, left */
+    gap: 50px;
+}
+
+
+        .contact-form {
+            background-color: #D9C9BC; /* brownish box */
+            padding: 30px;
+            border-radius: 15px;
+            width: 400px;
+        }
+
+        .contact-form label {
+            display: block;
+            margin-top: 15px;
+            margin-bottom: 5px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+        }
+
+        .name-fields {
+            display: flex;
+            gap: 10px;
+        }
+
+        .name-fields input {
+            flex: 1;
+        }
+
+        .contact-form button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: #8AA29E;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .contact-form button:hover {
+            background-color: #729088;
+        }
+
+        .image-section img {
+            width: 743px;
+            height: 719px;
+            border-radius: 15px;
+            object-fit: cover;
+        }
+
+        .contact-text {
+            text-align: center;
+            margin-top: 10px;
+            font-style: italic;
+            line-height: 1.6;
+        }
+      .contact-text p:first-child {
+    position: absolute;        /* precise positioning */
+    top: 1053px;               /* distance from top of page */
+    left: 537px;               /* distance from left of page */
+    width: 452px;              /* width of the text box */
+    height: 37px;              /* height of the text box */
+    font-family: 'Kite', sans-serif; /* your font */
+    font-weight: 400;          /* regular */
+    font-style: normal;        /* regular style */
+    font-size: 36px;           /* matches Figma */
+    line-height: 37px;         /* match height for vertical alignment */
+    letter-spacing: 0%;        /* as per layout */
+    text-align: left;          /* align left or center depending on design */
+    opacity: 1;                /* full opacity */
+}
+
+
+        .contact-info {
+            text-align: center;
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            font-size: 16px;
+        }
+
+        .contact-info i {
+            margin-right: 8px;
+        }
+.contact-info img {
+    width: 16px;       /* same width for both */
+    height: 16px;      /* same height for both */
+    margin-right: 6px; /* spacing between icon and text */
+    vertical-align: middle;
+}
+
+
+        footer {
+            background-color: #4E3B2F; /* brown footer */
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+        }
+    </style>
 </head>
 <body>
-    <div class="container">    
-            <!-- Hero Section -->  
-            <section class="hero">
-                <nav>
-                <div class="nav-left">
-                    <a href="../index.html" class="active">Home</a>
-                    <a href="packages.html">Plan</a>
-                    <a href="destinations.html">Destinations</a>
-                    <a href="blog.html">Blog</a>
-                </div>
 
-                <div class="logo">
-                    <img src="Media/360lk5.png" class="logo-img">
-                </div>
+<header>
+    <nav class="nav-left">
+        <a href="index.html">Home</a>
+        <a href="plans.html">Plans</a>
+        <a href="destinations.html">Destinations</a>
+        <a href="blogs.html">Blogs</a>
+    </nav>
 
-                <div class="nav-right">
-                    <a href="login.html">Log in</a>
-                    <a href="aboutus.html">Our Story</a>
-                    <a href="contactus.html">Contact Us</a>
-                </div>
-            </nav>
+    <div class="logo">
+    <img src="image2.png" alt="360LK Logo" class="logo-img">
+</div>
 
-            <video autoplay loop muted class="normal-video">     
-                <source src="Media/Welcome to 360LK.mp4" type="video/mp4">
-            </video>
-            </section>                                  
-            
-            <!-- Statistics Section -->
-           <section class="stats">
-                <h1>Your Virtual Gateway to Sri Lanka</h1>
-                <h2>Discover the island's treasures through cutting-edge technology</h2>
 
-            <div class="cards-container">
-                <div class="card" id="c1">
-                        <div class="icon"><img src="Media/icon sand clock.png"></div>
-                        <div class="card-title">2500+ Years</div>
-                        <div class="card-subtitle">of History</div>
-                </div>
+    <nav class="nav-right">
+        <a href="login.html">Login</a>
+        <a href="our-story.html">Our Story</a>
+        <a href="contact.html">Contact Us</a>
+    </nav>
+</header>
 
-                <div class="card" id="c2">
-                        <div class="icon"><img src="Media/icon map.png"></div>
-                        <div class="card-title">100+ Destinations</div>
-                        <div class="card-subtitle">to Explore</div>
-                </div>
+<div class="page-title">
+    <em>CONTACT US</em>
+</div>
 
-                <div class="card" id="c3">
-                        <div class="icon"><img src="Media/icon 360 View.png"></div>
-                        <div class="card-title">360 Experiences</div>
-                        <div class="card-subtitle">Immersive Tours</div>
-                </div>
-
-                <div class="card" id="c4">
-                        <div class="icon"><img src="Media/icon 4k.png"></div>
-                        <div class="card-title">High-Quality 4K</div>
-                        <div class="card-subtitle">Virtual Tours</div>
-                </div>
+<div class="container">
+    <!-- Contact Form Left Side -->
+    <div class="contact-form">
+        <div class="name-fields">
+            <div>
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" name="firstName" placeholder="First Name">
             </div>
-        </section>
-        
-        <!-- Featured Destinations -->
-        <section class="featured">
-            <h1>Featured Destinations</h1>
-            <h2>Start your journey with our most popular destinations</h2>
-            <div class="dest-grid">
-                <div class="dest-card" id="D1">
-                    <div class="dest-content">Sigiriya Rock Fortress</div>
-                </div>
-                
-                <div class="dest-card" id="D2">
-                    <div class="dest-content">Temple of the Tooth Relic</div>
-                </div>
-                
-                <div class="dest-card" id="D3">
-                    <div class="dest-content">Unawatuna Beach</div>
-                </div>
-                <div class="dest-card" id="D4">
-                    <div class="dest-content">Yala National Park</div>
-                </div>
-            </div>
-            <div style="text-align: center; margin-top: 40px;">
-                <button class="Vbtn">View All Destinations</button>
-            </div>
-        </section>
-            
-
-        <!-- 360° Virtual Tour Preview -->
-        <section class="vr-preview">
-            <div class="vr-content">
-                <div class="vr-text">
-                    <h1>EXPERIENCE TRUE 360 NAVIGATION</h1>
-                    <h2>Experience Like You're Really There</h2>
-                    <p>Step inside Sri Lanka's most breathtaking locations with our interactive virtual tours. Look around, zoom in, and discover hidden details.</p>
-                    <ul class="vr-features">
-                        <li>✓ Full 360° panoramic views</li>
-                        <li>✓ Interactive hotspots</li>
-                        <li>✓ Historical information</li>
-                        <li>✓ High-resolution imagery</li>
-                    </ul>
-                    <button class="btn">Try Virtual Tour</button>
-                </div>
-                <div class="vr-viewer">
-                   <img class="vr-image" src="Media/img9.jpg">
-                </div>
+            <div>
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" name="lastName" placeholder="Last Name">
             </div>
         </div>
-             
-            <!-- Interactive Map -->
-            <section class="map-section">
-                <div class="map-container">
-                    <div class="map-box">
-                        <iframe class="map-frame" src="https://maps.google.com/maps?q=Sri%20Lanka&t=k&z=8&ie=UTF8&iwloc=&output=embed" allowfullscreen="" loading="lazy"></iframe>
-                    </div>
-                </div>
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" placeholder="Email Address">
 
-                <div class="map-content">
-                    <h1>EXPERIENCE TRUE 360 NAVIGATION</h1>
-                    <h3>Unlike static panoramas, our platform lets you move freely through locations</h3>
-                    <p>Walk Through Sri Lanka Virtually
-Our proprietary technology allows you to navigate destinations just like walking in real life.</p> 
-                </div>
-            </section>
-            
-            <!-- Benefits Section -->
-            <section class="benefits">
-                    <h1>Why Explore Virtually?</h1>
-                    <h2>Experience Sri Lanka like never before</h2>
-               
-                <div class="benefits-grid">
-                   
-                    <div class="benefit-card">
-                        <div class="benefit-icon"><img src="Media/People icon.png"></div>
-                        <h4>Accessible to Everyone</h4>
-                        <p>Explore from anywhere, regardless of physical limitations or travel restrictions</p>
-                    </div>
+        <label for="message">Message:</label>
+        <textarea id="message" rows="5" placeholder="Write your message..."></textarea>
 
-                    <div class="benefit-card">
-                        <div class="benefit-icon"><img src="Media/Coin in Hand icon.png"></div>
-                        <h4>Cost-Effective</h4>
-                        <p>No travel expenses, visa fees, or accommodation costs</p>
-                    </div>
-                    <div class="benefit-card">
-                        <div class="benefit-icon"><img src="Media/Tuition icon.png"></div>
-                        <h4>Educational Value</h4>
-                        <p>Rich historical context and cultural insights with every tour</p>
-                    </div>
-                    <div class="benefit-card">
-                        <div class="benefit-icon"><img src="Media/Eye icon.png""></div>
-                        <h4>Preview Before Visit</h4>
-                        <p>Plan your future trip by virtually scouting destinations first</p>
-                    </div>
-                </div>
-            </section>
-            
-            <!-- CTA Banner -->
-            <div class="cta-banner">
-                <div class="cta-header">
-                    <h1>Ready to Explore Sri Lanka Virtually?</h1>
-                    <img src="Media/img10.jpg">
-                </div>
-                
-                <p>Start with 5 free  destinations. No credit Card required</p>
-                <div class="btn-group">
-                    <button class="btn">Start free tour</button>
-                    <button class="btn">View Pricing Plan</button>
-                </div>
-            </div>
-            
-        <!-- Footer -->
-        <div class="footer">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h4>About 360°LK </h4>
-                    <p>An immersive virtual tourism platform connecting culture, technology, and travel.</p>
-                </div>
-                <div class="footer-col">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li>Home</li>
-                        <li>Plans</li>
-                        <li>Destinations</li>
-                        <li>Our Story</li>
-                        <li>Log in</li>
-                        <li>Contact Us</li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Top Destinations</h4>
-                    <ul>
-                        <li>Sigiriya Rock Fortress</li>
-                        <li>Temple of the Tooth Relic</li>
-                        <li>Galle Fort</li>
-                        <li>Yala</li>
-                        <li>Ella</li>
-                        <li>Nallur Kovil</li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Contact</h4>
-                    <ul>
-                        <li>Phone: +94 77 1234567</li>
-                        <li>Email: 360lk@gmail.com</li>
-                        <li>Website: 360_lk.com</li>
-                    </ul>
-            </div>
-            
-        </div>
-        <div class="footer-bottom">
-            &copy; 2025 Virtual Sri Lanka. All rights reserved. | Privacy Policy | Terms of Service
-        </div>
+        <button type="submit">Send</button>
     </div>
+
+    <!-- Image Right Side -->
+    <div class="image-section">
+        <img src="image1.png" alt="Sri Lankan Boat">
+    </div>
+    </div>
+
+
+<div class="contact-text">
+    <p></p><em>We'd like to hear from you!</em></p>
+    <p>If you have any questions or just want to say hi, please use the contact form!</p>
+</div>
+
+
+<div class="contact-info">
+    <div>
+        <img src="image3.png" alt="Phone" class="footer-icon">
+        +94 77 1234567
+    </div>
+    <div>
+        <img src="image4.png" alt="Email" class="footer-icon">
+        360lk@gmail.com
+    </div>
+</div>
+
+
+<footer>
+    &copy; 2025 360LK
+</footer>
+
+<!-- Optional JavaScript -->
+<script>
+    // Simple form submission alert (can be replaced with real backend)
+    const button = document.querySelector('.contact-form button');
+    button.addEventListener('click', function(event){
+        event.preventDefault();
+        alert('Your message has been sent!');
+    });
+</script>
+<!-- Font Awesome CDN for icons -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </body>
 </html>
