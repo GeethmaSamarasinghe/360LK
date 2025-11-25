@@ -1,0 +1,110 @@
+nav {
+    width: 100%;
+    position: absolute;
+    top: 40px; 
+    left: 0;
+    right: 0;
+    padding: 15px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2000;
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(8px);
+    box-sizing: border-box; 
+}
+
+nav a {
+    text-decoration: none;
+    color: #FFB343;
+    font-family: 'Gowun Batang';
+    font-size: 16px;
+}
+
+nav .nav-left, nav .nav-right {
+    display: flex;
+    gap: 35px;
+}
+
+nav a.active {
+    color: #FFB343;
+    font-weight: 600;
+    text-decoration: underline;
+    text-shadow: 
+        0 0 10px #FFB343,
+        0 0 20px #FFB343,
+        0 0 30px #FFB343;
+    animation: textGlow 2s ease-in-out infinite alternate;
+}
+
+/* Pulsing text glow animation */
+@keyframes textGlow {
+    from {
+        text-shadow: 
+            0 0 10px #FFB343,
+            0 0 20px #FFB343;
+    }
+    to {
+        text-shadow: 
+            0 0 15px #FFB343,
+            0 0 30px #FFB343,
+            0 0 40px #FFB343,
+            0 0 50px #FFB343;
+    }
+}
+
+.logo-img {
+    width: 20px;
+    height: auto;
+    transform: scale(6.0);
+    transform-origin: center;
+    padding: 0;
+}
+
+/* Footer */
+.footer {
+    background: #544B41;
+    color: 94B2AD;
+    padding: 50px 40px 30px;
+    height: 370px;
+
+}
+        
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto 30px;
+}
+        
+.footer-col h4 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #FFB343;
+}
+.footer-col p {
+    font-size: 16px; 
+    color: #ccc; 
+    line-height: 1.6; 
+    margin-bottom: 15px;
+}
+
+.footer-col ul {
+    list-style: none;
+}
+        
+.footer-col li {
+    padding-right: 0;
+    padding-bottom: 15px;
+    font-size: 14px;
+    color: #94B2AD;
+}
+        
+.footer-bottom {
+    border-top: 1px solid #555;
+    padding-top: 20px;
+    text-align: center;
+    font-size: 12px;
+    color: #CEB79A;
+}
