@@ -152,11 +152,10 @@ input[type=file]{
     color: #333;
 }
 
-/*  REMEMBER ME  */
 .miner {
     font-size: 13px;
     color: #E3D2BD;
-    padding: 5px 0px 10px 10px;
+    padding: 5px 5px 10px 10px;
     width: 100%;
 }
 
