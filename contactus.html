@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Kite:wght@400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Junge&display=swap" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Gowun Batang|Julius Sans One|Kite One|Junge' rel='stylesheet'>
 
     <style>
         /* Reset and basic styling */
@@ -14,7 +15,7 @@
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Inter', sans-serif;
+            font-family: Julius Sans One;
         }
 
         body {
@@ -34,43 +35,81 @@
             padding: 20px 50px;
             background-color: #F5F4E9;
         }
-.nav-left a,
-.nav-right a {
-    margin: 0 15px;
-    font-weight: 500;
-}
+    nav {
+        width: 100%;
+        position: absolute;
+        top: 5%; 
+        left: 0;
+        right: 0;
+        padding: 15px 50px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 2000;
+        background: rgba(255,255,255,0.12);
+        backdrop-filter: blur(8px);
+        box-sizing: border-box; 
+    }
 
-.nav-left a:hover,
-.nav-right a:hover {
-    color: #7F8C8D;
-}
-   .logo-img {
-    height: 50px; /* adjust the height as needed */
-    width: auto;  /* keeps the image proportions correct */
-}
-     
+    nav a {
+        text-decoration: none;
+        color: #000;
+        font-family: 'Julius Sans One';
+        font-size: 16px;
+    }
 
-        nav a {
-            margin: 0 15px;
-            font-weight: 500;
+    nav .nav-left, nav .nav-right {
+        display: flex;
+        gap: 35px;
+    }
+
+    nav a.active {
+        color: #000;
+        font-weight: 600;
+        text-decoration: underline;
+        text-shadow: 
+            0 0 10px #FFB343,
+            0 0 20px #FFB343,
+            0 0 30px #FFB343;
+        animation: textGlow 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes textGlow {
+        from {
+            text-shadow: 
+                0 0 10px #FFB343,
+                0 0 20px #FFB343;
         }
-
-        nav a:hover {
-            color: #7F8C8D;
+        to {
+            text-shadow: 
+                0 0 15px #FFB343,
+                0 0 30px #FFB343,
+                0 0 40px #FFB343,
+                0 0 50px #FFB343;
         }
+    }
+
+    .logo-img {
+        width: 20px;
+        height: auto;
+        transform: scale(6.0);
+        transform-origin: center;
+        padding: 0;
+    }
 .page-title {
     position: absolute;       /* allows precise positioning */
     top: 90px;               /* distance from top */
     left: 409px;              /* distance from left */
     width: 634px;             /* width of the container */
     height: 117px;            /* height of the container */
-    font-family: 'Junge', serif; /* your chosen font */
+    font-family: 'Junge'; /* your chosen font */
     font-weight: 400;         /* regular weight */
     font-size: 72px;          /* adjust size to fill height (approx.) */
     line-height: 117px;       /* match the height for vertical alignment */
     text-align: center;       /* center text horizontally */
     color: #000;              /* black color */
     opacity: 1;               /* full opacity */
+    padding-top: 50px;
 }
 
     .container {
@@ -79,6 +118,7 @@
     align-items: center;
     padding: 50px 50px 20px 50px; /* top, right, bottom, left */
     gap: 50px;
+    font-family: 'Junge';
 }
 
 
@@ -87,6 +127,7 @@
             padding: 30px;
             border-radius: 15px;
             width: 400px;
+            font-family: 'Junge';
         }
 
         .contact-form label {
@@ -102,6 +143,7 @@
             border-radius: 8px;
             border: 1px solid #ccc;
             font-size: 14px;
+            font-family: 'Junge';
         }
 
         .name-fields {
@@ -132,28 +174,22 @@
             height: 719px;
             border-radius: 15px;
             object-fit: cover;
+            padding: 30px;
         }
 
         .contact-text {
             text-align: center;
             margin-top: 10px;
-            font-style: italic;
             line-height: 1.6;
+            font-size: 20px;
         }
-      .contact-text p:first-child {
-    position: absolute;        /* precise positioning */
-    top: 1053px;               /* distance from top of page */
-    left: 537px;               /* distance from left of page */
-    width: 452px;              /* width of the text box */
-    height: 37px;              /* height of the text box */
-    font-family: 'Kite', sans-serif; /* your font */
-    font-weight: 400;          /* regular */
-    font-style: normal;        /* regular style */
-    font-size: 36px;           /* matches Figma */
-    line-height: 37px;         /* match height for vertical alignment */
-    letter-spacing: 0%;        /* as per layout */
-    text-align: left;          /* align left or center depending on design */
-    opacity: 1;                /* full opacity */
+      .contact-text p {
+        text-align: center;
+        font-family: 'Kite One'; /* your font */
+        font-weight: 200;          
+        font-size: 36px;           /* matches Figma */
+        line-height: 37px;  
+        padding: 40px;
 }
 
 
@@ -189,23 +225,24 @@
 <body>
 
 <header>
-    <nav class="nav-left">
-        <a href="index.html">Home</a>
-        <a href="plans.html">Plans</a>
-        <a href="destinations.html">Destinations</a>
-        <a href="blogs.html">Blogs</a>
+    <nav>
+        <div class="nav-left">
+            <a href="../index.html">Home</a>
+            <a href="packages.html">Plan</a>
+            <a href="pages/destinations.html">Destinations</a>
+            <a href="blog.html">Blog</a>
+        </div>
+        <div class="logo">
+            <img src="Media/360lk5.png" class="logo-img">
+        </div>
+
+        <div class="nav-right">
+            <a href="login.html">Log in</a>
+            <a href="aboutus.html">Our Story</a>
+            <a href="contactus.html" class="active">Contact Us</a>
+        </div>
     </nav>
 
-    <div class="logo">
-    <img src="images/image2.png" alt="360LK Logo" class="logo-img">
-</div>
-
-
-    <nav class="nav-right">
-        <a href="login.html">Login</a>
-        <a href="our-story.html">Our Story</a>
-        <a href="contact.html">Contact Us</a>
-    </nav>
 </header>
 
 <div class="page-title">
@@ -242,7 +279,7 @@
 
 
 <div class="contact-text">
-    <p></p><em>We'd like to hear from you!</em></p>
+    <p>We'd like to hear from you!</em></p>
     <p>If you have any questions or just want to say hi, please use the contact form!</p>
 </div>
 
