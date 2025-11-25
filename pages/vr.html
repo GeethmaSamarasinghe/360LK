@@ -3,89 +3,82 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>360.lk – VR Destination</title>
+<title>360.lk – Sigiriya Rock Fortress</title>
 
 <style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: "Poppins", sans-serif;
-    }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
 
-    body {
-        background: #002b55;
-        color: #fff;
-        overflow-x: hidden;
-    }
+:root {
+    --brown: #544B41;
+    --sand: #CEC1B1;
+    --teal: #94B2AD;
+    --slate: #90A0A6;
+    --amber: #FFB343;
+}
 
-    /* NAVIGATION BAR */
-    nav {
-        width: 100%;
-        background: rgba(0,0,0,0.45);
-        backdrop-filter: blur(8px);
-        padding: 12px 50px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: 100;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.4);
-    }
+body {
+    background:#e3d2bd ;
+    color: #544B41;
+    overflow-x: hidden;
+}
 
-    nav .nav-left {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-    }
+/* NAVIGATION BAR */
+nav {
+    width: 100%;
+    position: fixed;
+    top: 40px; /* moved navbar down */
+    left: 0;
+    padding: 15px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2000;
+    background: #CEC1B1;
+    backdrop-filter: blur(8px);
+    border-radius: 10px;
+}
 
-    nav img {
-        width: 60px;
-    }
+nav .nav-left, nav .nav-right {
+    display: flex;
+    gap: 35px;
+    align-items: center;
+}
 
-    nav h2 {
-        font-size: 26px;
-        font-weight: 700;
-    }
+nav a.active {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid black;
+}
 
-    nav ul {
-        list-style: none;
-        display: flex;
-        gap: 30px;
-    }
+.logo-img {
+    width: 25px;
+    height: auto;
+    transform: scale(6.0);
+    transform-origin: center;
+    overflow: visible;
+}
 
-    nav ul li a {
-        text-decoration: none;
-        color: #fff;
-        font-size: 16px;
-        transition: 0.3s;
-    }
+/* PAGE TITLE */
+.destination-title {
+    text-align: center;
+    margin-top: 140px;
+}
 
-    nav ul li a:hover {
-        color: #00d4ff;
-    }
+.destination-title h1 {
+    font-size: 40px;
+    color: #544B41;
+}
 
-    /* PAGE HEADER */
-    .destination-title {
-        text-align: center;
-        margin-top: 120px;
-        margin-bottom: 20px;
-    }
 
-    .destination-title h1 {
-        font-size: 38px;
-        letter-spacing: 1px;
-    }
-
-    .destination-title p {
-        font-size: 18px;
-        opacity: 0.85;
-    }
-
-    /* VR VIEWER AREA */
-    .vr-container {
+/* VR BOX */
+.vr-container {
         width: 90%;
         max-width: 1200px;
         height: 520px;
@@ -100,30 +93,30 @@
     .vr-placeholder {
         width: 100%;
         height: 100%;
-        background: url('https://i.postimg.cc/QMqZx7jx/vrplaceholder.jpg') center/cover no-repeat;
-        opacity: 0.75;
+        background: url('../images/vr/sigiriya.jpg' )center/cover no-repeat;
+        opacity: 1.75;
     }
 
     .vr-label {
         position: absolute;
         bottom: 15px;
         right: 20px;
-        background: rgba(0,0,0,0.55);
+        background: #a8c0bc;
         padding: 8px 14px;
         border-radius: 10px;
         font-size: 14px;
     }
 
-    /* CONTROL PANEL */
+/* CONTROL PANEL */
     .controls-box {
         width: 85%;
         max-width: 1000px;
         margin: 25px auto;
         padding: 25px;
-        background: rgba(255,255,255,0.12);
+        background: #94b2ad;
         border-radius: 14px;
         backdrop-filter: blur(10px);
-        box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+        box-shadow: #74afa6;
     }
 
     .controls-section {
@@ -137,30 +130,107 @@
         letter-spacing: 1px;
     }
 
-    .movement-buttons {
-        display: grid;
-        grid-template-columns: repeat(3, 100px);
-        gap: 10px;
-        justify-content: center;
-        align-items: center;
-    }
+    .controls-flex{
+    display: flex;
+    align-items: center;
+    gap: 40px;  /* spacing between joystick and zoom buttons */
+}
+    
 
-    .movement-buttons button {
-        padding: 12px;
-        border: none;
-        border-radius: 10px;
-        background: #00aaff;
-        color: #fff;
-        font-size: 15px;
-        cursor: pointer;
-        transition: 0.3s;
-    }
 
-    .movement-buttons button:hover {
-        background: #0088cc;
-    }
 
-    select, input[type="range"] {
+/*        JOYSTICK SECTION       */
+.joystick-wrap {
+    width: 320px;
+    position: relative;
+}
+/* Single Outer Ring */
+.joystick-ring {
+    position: relative;
+    width: 70%;
+    padding-top: 70%;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.1);
+    border: 3px solid rgba(255,255,255,0.25);
+    box-shadow: 0 0 30px rgba(255,255,255,0.4);
+}
+
+
+/* Center circle */
+.joystick-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 65px;
+    height: 65px;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: rgba(255,255,255,0.18);
+    border: 2px solid rgba(255,255,255,0.3);
+}
+
+/* Direction buttons */
+.joy-btn {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border-radius: 18px;
+    background: #aac4bf;
+    color: rgb(16, 0, 0);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Icon */
+.icon {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 4px;
+}
+
+/* Rotations */
+.arrow-up   { transform: rotate(0deg); }
+.arrow-down { transform: rotate(180deg); }
+.arrow-left { transform: rotate(-90deg); }
+.arrow-right{ transform: rotate(90deg); }
+
+/* Button positions (inward) */
+.joy-up    { top: 2%; left: 50%; transform: translateX(-50%); }
+.joy-down  { bottom: 2%; left: 50%; transform: translateX(-50%); }
+.joy-left  { left: 2%; top: 50%; transform: translateY(-50%); }
+.joy-right { right: 2%; top: 50%; transform: translateY(-50%); }
+
+
+/*         ZOOM BUTTONS          */
+
+.zoom-box {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.zoom-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: rgb(158, 208, 213);
+    padding: 12px 20px;
+    border-radius: 10px;
+    border: none;
+    font-size: 16px;
+    color: black;
+}
+
+.zoom-btn svg {
+    width: 20px;
+    height: 20px;
+    fill: black;
+}
+
+select, input[type="range"] {
         width: 350px;
         padding: 10px;
         border-radius: 10px;
@@ -169,74 +239,158 @@
         font-size: 15px;
     }
 
-    /* FOOTER */
-    footer {
-        text-align: center;
-        padding: 20px 0;
-        background: rgba(0,0,0,0.4);
-        position: relative;
-        margin-top: 30px;
-    }
+    .speed-labels {
+    width: 350px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    font-size: 15px;
+    color: white;
+}
 
-    footer a {
-        color: #00d4ff;
-        text-decoration: none;
-    }
+
+/* FOOTER */
+footer {
+    margin-top: 80px;
+    padding: 40px 70px;
+    background: var(--brown);
+    color: #94B2AD;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+}
+
+.footer-t {
+    margin-bottom: 12px;
+    font-size: 15px;
+    letter-spacing: 1px;
+    color:#FFB343
+}
+
+footer p, footer a {
+    font-size: 13px;
+    line-height: 1.6;
+    color: #94B2AD;
+    font-style: "KoPub Batang";
+}
+
+footer a {
+    text-decoration: none;
+}
+
+footer .copyright {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 14px;
+    color:#E3D2BD;
+}
+
 </style>
 
 </head>
 <body>
 
-<!-- NAVIGATION BAR -->
+<!-- NAV BAR -->
 <nav>
     <div class="nav-left">
-        <img src="https://i.postimg.cc/Wpr7JVnP/globe.png">
-        <h2>360.lk</h2>
+        <a href="#">Home</a>
+        <a href="#">Plan</a>
+        <a href="#" class="active">Destinations</a>
     </div>
 
-    <ul>
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="pages/destination.html">Destinations</a></li>
-        <li><a href="pages/packages.html">Plans</a></li>
-        <li><a href="pages/login.html">Log In</a></li>
-        <li><a href="pages/contactus.html">Contact Us</a></li>
-    </ul>
+    <!-- logo image placeholder -->
+    <div class="logo">
+        <img src="../images/vr/360lk5.png" class="logo-img">
+    </div>
+
+    <div class="nav-right">
+        <a href="#">Log in</a>
+        <a href="#">Our Story</a>
+        <a href="#">Feedback</a>
+    </div>
 </nav>
 
-<!-- PAGE TITLE -->
+<!-- PAGE HEADER -->
 <div class="destination-title">
-    <h1>Destination Name</h1>
-    <p>Immersive VR Environment – 360° Experience</p>
+    <h1>Sigiriya Rock Fortress</h1>
 </div>
 
-<!-- VR VIEWER -->
+<!-- VR AREA -->
 <div class="vr-container">
     <div class="vr-placeholder"></div>
     <div class="vr-label">360° Interactive View</div>
 </div>
 
-<!-- CONTROL PANEL -->
+
+<!-- CONTROLS -->
 <div class="controls-box">
+<div class="controls-section">
 
-    <div class="controls-section">
-        <h3>NAVIGATION CONTROLS</h3>
-        <div class="movement-buttons">
-            <div></div>
-            <button onclick="move('forward')">Forward</button>
-            <div></div>
+<h3>NAVIGATION CONTROLS</h3>
 
-            <button onclick="move('left')">Left</button>
-            <button onclick="move('back')">Backward</button>
-            <button onclick="move('right')">Right</button>
+<div class="controls-flex">
+
+    <!-- JOYSTICK LEFT -->
+    <div class="joystick-wrap">
+        <div class="joystick-ring">
+
+            <div class="joystick-inner-ring"></div>
+
+            <!-- Forward -->
+            <button class="joy-btn joy-up">
+                <svg class="icon arrow-up" viewBox="0 0 24 24"><path d="M12 4l-6 10h12z" fill="white"/></svg>
+                Forward
+            </button>
+
+            <!-- Left -->
+            <button class="joy-btn joy-left">
+                <svg class="icon arrow-left" viewBox="0 0 24 24"><path d="M12 4l-6 10h12z" fill="white"/></svg>
+                Left
+            </button>
+
+            <!-- Right -->
+            <button class="joy-btn joy-right">
+                <svg class="icon arrow-right" viewBox="0 0 24 24"><path d="M12 4l-6 10h12z" fill="white"/></svg>
+                Right
+            </button>
+
+            <!-- Backward -->
+            <button class="joy-btn joy-down">
+                <svg class="icon arrow-down" viewBox="0 0 24 24"><path d="M12 4l-6 10h12z" fill="white"/></svg>
+                Backward
+            </button>
+
+            <div class="joystick-center"></div>
         </div>
     </div>
 
+    <!-- ZOOM BUTTONS (RIGHT SIDE) -->
+    <div class="zoom-box">
+        <button class="zoom-btn">
+            <svg viewBox="0 0 24 24"><path fill="white" d="M11 4v7H4v2h7v7h2v-7h7v-2h-7V4z"/></svg>
+            Zoom In
+        </button>
+
+        <button class="zoom-btn">
+            <svg viewBox="0 0 24 24"><path fill="white" d="M4 11h16v2H4z"/></svg>
+            Zoom Out
+        </button>
+    </div>
+</div>
+</div>
     <div class="controls-section">
         <h3>Movement Mode</h3>
         <select id="modeSelect">
-            <option>Walk Mode</option>
-            <option>Fly Mode</option>
-            <option>Auto-Tour Mode</option>
+            <option>Walk</option>
+            <option>Run</option>
+            <option>Jump</option>
+            <option>Climb</option>
+            <option>Swim</option>
+            <option>Dive</option>
+            <option>Rest</option>
         </select>
     </div>
 
@@ -244,18 +398,50 @@
         <h3>Speed</h3>
         <input type="range" id="speedSlider" min="1" max="10" value="5">
     </div>
+    <div class="speed-labels">
+    <span>Slow</span>
+    <span>Normal</span>
+    <span>Fast</span>
+    </div>
 </div>
+
 
 <!-- FOOTER -->
 <footer>
-    © 2024 360.lk | <a href="#">Contact Us</a>
-</footer>
+    <div class="footer-grid">
+        <div>
+            <p class="footer-t">About 360°LK</p>
+            <p>An immersive virtual tourism platform connecting culture, technology, and travel.</p>
+        </div>
 
-<script>
-    function move(direction) {
-        alert("Moving: " + direction);
-    }
-</script>
+        <div>
+            <p class="footer-t">Quick Links</p>
+            <p>Home</p>
+            <p>Plans</p>
+            <p>Destinations</p>
+            <p>Log in</p>
+            <p>Our Story</p>
+        </div>
+
+        <div>
+            <p class="footer-t">Top Destinations</p>
+            <p>Sigiriya Rock Fortress</p>
+            <p>Temple of the Tooth Relic</p>
+            <p>Unawatuna Beach</p>
+            <p>Yala National Park</p>
+            <p>Nallur Kovil</p>
+        </div>
+
+        <div>
+            <p class="footer-t">Contact Us</p>
+            <p>Phone: +94 77 1234567</p>
+            <p>Email: 360lk@gmail.com</p>
+            <p>Website: 360_lk.com</p>
+        </div>
+    </div>
+
+    <p class="copyright">© 2025 360LK</p>
+</footer>
 
 </body>
 </html>
