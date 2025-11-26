@@ -200,7 +200,7 @@ nav a.active {
   
 .featured h1{
     text-align: center;
-    padding-top: 20px;
+    padding-top: 10px;
     margin-top: 10px;
     color: #000000;
 } 
@@ -222,7 +222,7 @@ nav a.active {
     text-align: center;
     position: relative;
     width:300px;
-    height:430px;
+    height:350px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -232,6 +232,7 @@ nav a.active {
     background-repeat: no-repeat;  
     font-family: 'Kite One';
     font-style: italic;
+    border-radius: 15px / 50px;
 
 }
 
@@ -250,26 +251,18 @@ nav a.active {
 }
 
 #D1{
-  width:300px;
-  height:430px;
   background-image: url(Media/img5.jpg);  
 }
 
 #D2{
-  width:300px;
-  height:430px;
   background-image: url(Media/img6.jpg);  
 }
 
 #D3{
-  width:300px;
-  height:430px;
   background-image: url(Media/img7.jpg);  
 }
 
 #D4{
-  width:300px;
-  height:430px;
   background-image: url(Media/img8.jpg);  
 }
 
