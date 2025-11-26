@@ -280,10 +280,13 @@ nav a.active {
     align-self: center;
     font-family: julius sans one;
 }
-
 .Vbtn:hover {
   background: rgb(155, 154, 150);
   color: #000000;
+}
+.Vbtn a {
+    text-decoration: none;
+    color: #ffffff;
 }
 
 /* 360° Virtual Tour Preview */
@@ -360,7 +363,14 @@ nav a.active {
     transition: 0.3s;
     font-family: julius sans one;
 }
-
+#tour a{
+    text-decoration: none;
+    color: white;
+}
+#plans a{
+    text-decoration: none;
+    color: white;
+}
 .btn:hover {
     background: #0077aa;
 }
