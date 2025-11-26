@@ -363,6 +363,11 @@ nav a.active {
     transition: 0.3s;
     font-family: julius sans one;
 }
+.btn a {
+    text-decoration: none;
+    color: #000000;
+}
+
 #tour a{
     text-decoration: none;
     color: white;
@@ -374,6 +379,7 @@ nav a.active {
 .btn:hover {
     background: #0077aa;
 }
+
 
 .map-container {
     align-items: right;
