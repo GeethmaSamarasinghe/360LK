@@ -3,11 +3,12 @@ body {
     margin: 0px;
     background-image:
         linear-gradient(#e3d2bd91, #e3d2bd91),
-        url("C:/Users/suhan/Downloads/972301.jpg");
+        url("Media/RG img/registration-bg.jpg");
     background-color: #E3D2BD;
     background-size: cover;
 }
 
+/* external fonts */
 .fondamento-regular {
     font-family: "Fondamento", cursive;
     font-weight: 400;
@@ -35,7 +36,7 @@ form {
     text-align: center;
     font-family: "Exo", sans-serif;
     font-weight: 300;
-    background-color: #544b41eb;
+    background-color: #544b41f0;
     border: 2px solid #E3D2BD;
     border-radius: 10px;
 }
@@ -45,7 +46,7 @@ form {
     /* to hidden at start */
 }
 
-/*  LOG IN TITLE  */
+/* text decoration */
 h1 {
     margin: 40px 100px;
     font-size: 70px;
@@ -76,8 +77,15 @@ h4 {
     font-family: "Exo", sans-serif;
     font-weight: 400;
     font-size: 20px;
-    background-color: #e3d2bdbc;
+    background-color: #e3d2bdcf;
     padding: 0px 5px;
+}
+
+h5{
+    color: #000000;
+    font-size: 15px; 
+    font-family: "Exo", sans-serif;
+    font-weight: 500;
 }
 
 p {
@@ -91,7 +99,7 @@ p {
     border: 1px solid #E3D2BD;
 }
 
-/*  INPUT FIELDS  */
+/* input field */
 label {
     text-align: left;
     float: left;
@@ -110,6 +118,7 @@ input[type=email] {
     outline: none;
     box-sizing: unset;
 }
+
 input[type=file]{
     align-items: left;
     padding: 5px;
@@ -117,12 +126,24 @@ input[type=file]{
     width: 100%;
 }
 
+input[type=checkbox] {
+    padding: 10px;
+    margin: auto;
+}
+
+/* dropdown design */
 .select-design{
     width: 100%;
     padding: 10px;
     margin: 20px 0px;
+    border-radius: 5px;
+    background-color: #FEFBFB;
 }
+/* .select-design:hover{
+    background-color: #544B41;
+} */
 
+/* image card */
 .card-container {
     display: flex;
     gap: 20px;
@@ -133,11 +154,11 @@ input[type=file]{
 
 .card {
     width: 200px;
-    border: 1px solid #ddd;
+    border: 1px solid #E3D2BD;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    background: #fff;
+    background: #FEFBFB;
 }
 
 .card img {
@@ -152,6 +173,15 @@ input[type=file]{
     color: #333;
 }
 
+.card-description p{
+    color: #000000;
+    font-size: 13px; 
+    font-family: "Exo", sans-serif;
+    font-weight: 300;
+    
+}
+
+/* check box */
 .miner {
     font-size: 13px;
     color: #E3D2BD;
@@ -159,17 +189,12 @@ input[type=file]{
     width: 100%;
 }
 
-input[type=checkbox] {
-    padding: 10px;
-    margin: auto;
-}
-
 .Customize{
     display: flex;
 
 }
 
-/*  BUTTON  */
+/*  button  */
 button {
     width: 20%;
     padding: 12px 10px;
@@ -186,4 +211,39 @@ button {
 button:hover {
     background-color: #FEFBFB;
     color: #544B41;
+}
+
+/* Footer Text */
+.form-footer {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 13px;
+    color: #666;
+}
+        
+.form-footer a {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 600;
+}
+        
+.form-footer a:hover {
+    text-decoration: underline;
+}
+        
+/* Footer Styles */
+footer {
+    background: #544B41;
+    color: #E3D2BD;
+    text-align: center;
+    padding: 20px;
+    margin-top: auto;
+}
+
+        
+
+.footer-content {
+    color: #E3D2BD;
+    font-size: 14px;
+    margin-top: 10px;
 }
