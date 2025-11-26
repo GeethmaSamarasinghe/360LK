@@ -213,6 +213,9 @@ button:hover {
     color: #544B41;
 }
 
+.no-underline{
+    text-decoration: none;
+}
 /* Footer Text */
 .form-footer {
     text-align: center;
