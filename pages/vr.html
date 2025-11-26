@@ -144,10 +144,14 @@ nav a.active {
         border-radius: 14px;
         backdrop-filter: blur(10px);
         box-shadow: #74afa6;
-    }
+        align-items: center;
+        display: flex;
+        justify-content: center; /* Centers horizontally */
+}
 
     .controls-section {
         margin-bottom: 20px;
+        align-items: center;
     }
 
     .controls-section h3 {
@@ -161,6 +165,7 @@ nav a.active {
     display: flex;
     align-items: center;
     gap: 40px;  /* spacing between joystick and zoom buttons */
+    align-items: center;
 }
     
 
@@ -235,8 +240,9 @@ nav a.active {
 .zoom-box {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 10px;
     align-items: center;
+    margin: 30px;
 }
 
 .zoom-btn {
@@ -267,7 +273,9 @@ select, input[type="range"] {
     margin-top: 10px;
     font-size: 15px;
 }
-
+.sec1 {
+    margin-left: 50px;
+}
 .controls-section .modeSelect {
     font-family: 'Junge';
 }
@@ -452,6 +460,7 @@ footer {
     </div>
 </div>
 </div>
+<div class="sec1">
     <div class="controls-section">
         <h3>Movement Mode</h3>
         <select id="modeSelect">
@@ -474,6 +483,7 @@ footer {
     <span>Normal</span>
     <span>Fast</span>
     </div>
+</div>
 </div>
 
 
