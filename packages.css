@@ -57,7 +57,7 @@ nav {
 
 nav a {
     text-decoration: none;
-    color: black;
+    color: white;
     font-family: 'Julius Sans One';
     font-size: 16px;
 }
@@ -176,6 +176,14 @@ nav a.active {
             pointer-events: none;
         }
 
+        .card-overlay .cta-button a {
+            text-decoration: none;
+            color: black;
+        }
+         .card-overlay .cta-button a:hover {
+            text-decoration: none;
+            color: white;
+        }
         /* Pricing Card */
         .pricing-card {
             background: white;
